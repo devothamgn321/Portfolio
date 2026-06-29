@@ -240,6 +240,30 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
 
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
+/* ── BEYOND PRODUCT ── */
+#beyond{background:var(--carbon)}
+.beyond-intro{font-family:var(--P);font-size:1.06rem;font-weight:300;font-style:italic;
+  color:var(--paper);line-height:1.8;max-width:580px;margin-bottom:2.5rem}
+.beyond-intro em{color:var(--chalk);font-style:normal;font-weight:400}
+.beyond-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem}
+.bc{background:var(--panel);border:1px solid var(--line);padding:1.6rem 1.4rem;
+  position:relative;transition:border-color .22s,transform .2s}
+.bc:hover{border-color:var(--line2);transform:translateY(-3px)}
+.bc-icon{font-size:1.5rem;margin-bottom:.7rem;display:block;line-height:1}
+.bc-title{font-family:var(--H);font-size:1.6rem;color:var(--chalk);line-height:.95;
+  letter-spacing:.02em;margin-bottom:.4rem}
+.bc-desc{font-family:var(--M);font-size:.52rem;color:var(--smoke);letter-spacing:.07em;line-height:1.6}
+.beyond-cta-wrap{display:flex;align-items:center;gap:1.5rem}
+.beyond-tagline{font-family:var(--M);font-size:.52rem;color:var(--ash);letter-spacing:.1em;
+  text-transform:uppercase;font-style:italic}
+@media(max-width:768px){
+  .beyond-cards{grid-template-columns:1fr;gap:.7rem}
+  .beyond-intro{font-size:.95rem}
+  .bc{padding:1.2rem 1.1rem}
+  .bc-title{font-size:1.4rem}
+  .beyond-cta-wrap{flex-direction:column;align-items:flex-start;gap:.8rem}
+}
+
 /* ── ACCESSIBILITY ── */
 :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 .skip-link{position:absolute;top:-40px;left:1rem;background:var(--amber);color:var(--void);
@@ -379,6 +403,7 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
     <a href="#casestudies">Work</a>
     <a href="#experience">Experience</a>
     <a href="#tedx">TEDx</a>
+    <a href="#beyond">Beyond</a>
     <a href="campus-atlas.html">Campus Atlas</a>
     <a href="trustshield.html">TrustShield</a>
     <a href="cross-continental-pipeline.html">Pipeline</a>
@@ -656,6 +681,41 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
           <div class="tedx-badge">TEDx<br>JHU<br>2025</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ════ BEYOND PRODUCT ════ -->
+<section id="beyond" class="S">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Beyond Product</div><div class="TN">05</div></div>
+    <h2 class="BIG"><span class="sub">The person behind the PM —</span>More Than Product.</h2>
+    <p class="beyond-intro">
+      Building products is how I solve problems. <em>Photography is how I learn to see them.</em><br>
+      Beyond product management, I document places through travel photography, explore different cultures, and share ideas through public speaking — experiences that shape how I observe users, communicate complexity, and stay genuinely curious.
+    </p>
+    <div class="beyond-cards">
+      <div class="bc">
+        <span class="bc-icon">📷</span>
+        <div class="bc-title">Photography</div>
+        <div class="bc-desc">Capturing stories through travel and careful observation. A practice in noticing what others walk past.</div>
+      </div>
+      <div class="bc">
+        <span class="bc-icon">🌍</span>
+        <div class="bc-title">Travel</div>
+        <div class="bc-desc">Experiencing cultures that broaden perspective. The best product empathy comes from living outside your defaults.</div>
+      </div>
+      <div class="bc">
+        <span class="bc-icon">🎤</span>
+        <div class="bc-title">TEDxJHU</div>
+        <div class="bc-desc">Communicating ideas that inspire action. The discipline of a 12-minute talk transfers directly to every product pitch.</div>
+      </div>
+    </div>
+    <div class="beyond-cta-wrap">
+      <a href="https://bio.link/devothamagn" target="_blank" rel="noopener noreferrer" class="btn bO">Explore More ↗</a>
+      <span class="beyond-tagline">The best PMs stay endlessly curious about the world outside the product.</span>
     </div>
   </div>
 </section>
