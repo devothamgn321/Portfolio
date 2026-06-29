@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Campus Atlas — AI PM Case Study · Devothama GN</title>
+<meta name="description" content="Campus Atlas: AI-native operating system for higher education. Full PM case study — RAG copilot, evaluation framework, GTM roadmap, and working prototype.">
+<meta property="og:title" content="Campus Atlas — AI PM Case Study">
+<meta property="og:description" content="RAG-based AI campus operating system. Full PM case study by Devothama GN.">
+<meta property="og:image" content="https://devothamagn.netlify.app/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#070706;--carbon:#0e0e0d;--panel:#141412;--surface:#1a1a18;
+  --chalk:#eeeadf;--paper:#c4bfb4;--smoke:#787470;--ash:#6b6860;
+  --amber:#e8922a;--amber2:#f4ae55;--amber3:rgba(232,146,42,.11);
+  --red:#d93030;--green:#4caf7d;
+  --line:rgba(232,146,42,.13);--line2:rgba(232,146,42,.28);
+  --H:'Bebas Neue',sans-serif;--P:'Inter',system-ui,sans-serif;--M:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--chalk);font-family:var(--P);overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity:.45;mix-blend-mode:overlay}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;
+  justify-content:space-between;padding:0 3rem;height:54px;
+  background:rgba(7,7,6,.93);backdrop-filter:blur(22px) saturate(1.3);
+  border-bottom:1px solid var(--line)}
+.nav-id{display:flex;align-items:center;gap:.7rem}
+.nav-pip{width:7px;height:7px;background:var(--amber);border-radius:50%;
+  box-shadow:0 0 8px var(--amber);animation:pip 2.4s ease-in-out infinite}
+@keyframes pip{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.6)}}
+.nav-wm{font-family:var(--M);font-size:.6rem;color:var(--amber);letter-spacing:.18em;text-transform:uppercase}
+.nav-links{display:flex;gap:.1rem}
+.nav-links a{font-family:var(--M);font-size:.56rem;color:var(--smoke);text-decoration:none;
+  letter-spacing:.1em;text-transform:uppercase;padding:.38rem .72rem;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--amber)}
+.nav-cta{font-family:var(--M);font-size:.56rem;color:var(--void);background:var(--amber);
+  padding:.4rem 1.1rem;text-decoration:none;letter-spacing:.12em;text-transform:uppercase}
+.nav-cta:hover{background:var(--amber2)}
+
+.S{padding:5rem 0}
+.W{max-width:1160px;margin:0 auto;padding:0 3rem}
+.sep{height:1px;background:var(--line);position:relative;overflow:hidden}
+.sep::after{content:'';position:absolute;top:0;left:-100%;width:200%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--amber),var(--red),transparent);
+  animation:sepSlide 5s linear infinite}
+@keyframes sepSlide{to{left:100%}}
+.TR{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.TL{height:1px;flex:0 0 34px;background:var(--amber)}
+.TT{font-family:var(--M);font-size:.56rem;color:var(--amber);letter-spacing:.2em;text-transform:uppercase}
+.TN{font-family:var(--M);font-size:.5rem;color:var(--ash);letter-spacing:.1em}
+.BIG{font-family:var(--H);font-size:clamp(3rem,6vw,6.5rem);line-height:.9;letter-spacing:.02em;color:var(--chalk)}
+.BIG .sub{font-family:var(--P);font-style:italic;font-weight:300;font-size:.3em;
+  display:block;color:var(--amber2);letter-spacing:0;line-height:1.3;margin-bottom:.3em}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--M);font-size:.62rem;
+  letter-spacing:.13em;text-transform:uppercase;text-decoration:none;padding:.8rem 1.9rem;
+  transition:transform .18s,background .2s,color .2s;min-height:44px}
+.bA{background:var(--amber);color:var(--void)}.bA:hover{background:var(--amber2);transform:translateY(-2px)}
+.bO{background:transparent;color:var(--paper);border:1px solid var(--line2)}.bO:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* CASE STUDY HERO */
+.cs-hero{min-height:70vh;display:flex;align-items:flex-end;padding-bottom:4rem;
+  position:relative;overflow:hidden;background:var(--carbon)}
+.cs-hero-grid{position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:55px 55px;mask-image:radial-gradient(ellipse 80% 80% at 30% 60%,black 0%,transparent 80%);opacity:.35}
+.cs-hero-ledge{position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(to bottom,transparent,var(--amber),transparent)}
+.cs-hero-inner{position:relative;z-index:1;padding:7rem 3rem 0;max-width:1160px;margin:0 auto;width:100%}
+.cs-hero-label{font-family:var(--M);font-size:.54rem;color:var(--amber);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;opacity:0;animation:rise .7s .1s forwards}
+.cs-hero-title{font-family:var(--H);font-size:clamp(3.5rem,8vw,9rem);color:var(--chalk);
+  line-height:.88;letter-spacing:.02em;margin-bottom:1.2rem;opacity:0;animation:rise .85s .25s forwards}
+.cs-hero-summary{font-family:var(--P);font-size:1.12rem;font-weight:300;font-style:italic;
+  color:var(--paper);line-height:1.8;max-width:680px;margin-bottom:2rem;
+  opacity:0;animation:rise .85s .4s forwards}
+.cs-hero-tags{display:flex;flex-wrap:wrap;gap:.4rem;opacity:0;animation:rise .7s .55s forwards}
+.cs-hero-tag{font-family:var(--M);font-size:.49rem;color:var(--amber);border:1px solid var(--amber2);
+  padding:.2rem .6rem;letter-spacing:.1em;text-transform:uppercase}
+.cs-hero-links{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem;opacity:0;animation:rise .7s .7s forwards}
+
+/* CONTENT LAYOUT */
+.cs-body{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start}
+.cs-main{}
+.cs-sidebar{position:sticky;top:72px}
+
+/* SIDEBAR */
+.cs-toc{background:var(--panel);border:1px solid var(--line);padding:1.5rem}
+.cs-toc-label{font-family:var(--M);font-size:.49rem;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.8rem}
+.cs-toc a{display:block;font-family:var(--M);font-size:.53rem;color:var(--paper);text-decoration:none;
+  padding:.3rem .4rem;letter-spacing:.06em;border-left:2px solid transparent;
+  transition:color .2s,border-color .2s}
+.cs-toc a:hover{color:var(--amber);border-left-color:var(--amber)}
+.cs-meta-box{background:var(--panel);border:1px solid var(--line);padding:1.5rem;margin-top:1rem}
+.cs-meta-row{margin-bottom:.8rem}
+.cs-meta-label{font-family:var(--M);font-size:.44rem;color:var(--ash);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
+.cs-meta-val{font-family:var(--M);font-size:.58rem;color:var(--chalk)}
+.cs-nav-prev-next{margin-top:1rem;display:flex;flex-direction:column;gap:.5rem}
+.cs-pn-link{font-family:var(--M);font-size:.49rem;color:var(--paper);text-decoration:none;
+  padding:.6rem .8rem;border:1px solid var(--line);display:flex;align-items:center;gap:.5rem;transition:border-color .2s,color .2s}
+.cs-pn-link:hover{border-color:var(--amber);color:var(--amber)}
+.cs-pn-dir{font-size:.42rem;color:var(--ash)}
+
+/* SECTION BLOCKS */
+.cs-section{margin-bottom:3.5rem}
+.cs-section h2{font-family:var(--H);font-size:2.8rem;color:var(--chalk);line-height:.93;margin-bottom:1.2rem;letter-spacing:.02em;scroll-margin-top:72px}
+.cs-section h3{font-family:var(--M);font-size:.7rem;color:var(--amber2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;margin-top:1.5rem}
+.cs-section p{font-family:var(--P);font-size:1.02rem;color:var(--paper);line-height:1.82;margin-bottom:1.1rem;font-weight:300}
+.cs-section p strong{color:var(--chalk);font-weight:500}
+.cs-section ul{list-style:none;margin-bottom:1rem}
+.cs-section ul li{font-family:var(--P);font-size:1rem;color:var(--paper);line-height:1.78;
+  padding:.25rem 0 .25rem 1.2rem;position:relative;font-weight:300}
+.cs-section ul li::before{content:'▸';position:absolute;left:0;color:var(--amber);font-size:.7em;top:.38rem}
+.cs-section ul li strong{color:var(--chalk);font-weight:500}
+
+/* HIGHLIGHT BOX */
+.hl-box{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--amber);
+  padding:1.4rem 1.6rem;margin:1.5rem 0}
+.hl-box p{margin:0;color:var(--paper);font-style:italic}
+.hl-box .hl-label{font-family:var(--M);font-size:.46rem;color:var(--amber);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+
+/* METRIC ROW */
+.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0}
+.metric-box{background:var(--panel);border:1px solid var(--line);padding:1.2rem;text-align:center}
+.metric-n{font-family:var(--H);font-size:2.8rem;color:var(--amber2);line-height:1}
+.metric-l{font-family:var(--M);font-size:.48rem;color:var(--paper);letter-spacing:.09em;text-transform:uppercase;margin-top:.2rem}
+
+/* ARCH DIAGRAM */
+.arch{background:var(--carbon);border:1px solid var(--line);padding:1.8rem;margin:1.5rem 0;font-family:var(--M)}
+.arch-label{font-size:.48rem;color:var(--amber);letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem}
+.arch-flow{display:flex;flex-direction:column;gap:.4rem}
+.arch-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.arch-box{background:var(--panel);border:1px solid var(--line2);padding:.5rem 1rem;font-size:.6rem;color:var(--chalk);letter-spacing:.05em;white-space:nowrap}
+.arch-box.amber{border-color:var(--amber);color:var(--amber)}
+.arch-box.red{border-color:var(--red);color:var(--red)}
+.arch-box.green{border-color:var(--green);color:var(--green)}
+.arch-arr{color:var(--amber);font-size:.8rem}
+
+/* ROADMAP TABLE */
+.roadmap-table{width:100%;border-collapse:collapse;font-family:var(--M);margin:1rem 0}
+.roadmap-table th{font-size:.5rem;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;
+  border-bottom:1px solid var(--amber);padding:.5rem .6rem;text-align:left}
+.roadmap-table td{font-size:.6rem;color:var(--paper);padding:.5rem .6rem;border-bottom:1px solid var(--line);letter-spacing:.02em}
+.roadmap-table tr:last-child td{border-bottom:none}
+.roadmap-table .phase{color:var(--amber2);font-weight:700}
+.roadmap-table .now{background:var(--amber3)}
+
+/* FOOTER / BREADCRUMB */
+.cs-breadcrumb{background:var(--carbon);border-top:1px solid var(--line);padding:1.2rem 3rem}
+.cs-bc-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.cs-bc-left,.cs-bc-right{display:flex;gap:1rem;align-items:center}
+.cs-bc-link{font-family:var(--M);font-size:.51rem;color:var(--smoke);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.cs-bc-link:hover{color:var(--amber)}
+.cs-bc-sep{color:var(--line2)}
+
+footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3rem;
+  display:flex;align-items:center;justify-content:space-between}
+.fl{font-family:var(--M);font-size:.51rem;color:var(--ash);letter-spacing:.07em}
+.fr{display:flex;gap:1.3rem}
+.fr a{font-family:var(--M);font-size:.51rem;color:var(--ash);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.fr a:hover{color:var(--amber)}
+
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.skip-link{position:absolute;top:-40px;left:1rem;background:var(--amber);color:var(--void);
+  font-family:var(--M);font-size:.6rem;padding:.5rem 1rem;text-decoration:none;z-index:9999;transition:top .2s}
+.skip-link:focus{top:1rem}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+
+@media(max-width:960px){
+  nav{padding:0 1.5rem}.nav-links{display:none}.W{padding:0 1.5rem}
+  .cs-body{grid-template-columns:1fr}
+  .cs-sidebar{position:static}
+  .cs-hero-inner{padding:6rem 1.5rem 0}
+  .cs-breadcrumb{padding:1rem 1.5rem}
+}
+@media(max-width:768px){
+  nav{padding:0 1rem;height:48px}.W{padding:0 1rem}
+  .cs-hero-title{font-size:3rem}
+  .cs-hero-summary{font-size:.97rem}
+  .cs-hero-links{flex-direction:column}
+  .cs-hero-links .btn{width:100%}
+  .BIG{font-size:1.8rem}
+  .cs-section h2{font-size:2rem}
+  .metric-row{grid-template-columns:1fr 1fr}
+  .arch-row{flex-direction:column;align-items:flex-start}
+  footer{flex-direction:column;gap:.6rem;text-align:center}
+  .cs-bc-inner{flex-direction:column;gap:.6rem}
+}
+</style>
+</head>
+<body>
+<a href="#case-study-top" class="skip-link">Skip to main content</a>
+
+<nav aria-label="Primary navigation">
+  <div class="nav-id">
+    <div class="nav-pip"></div>
+    <span class="nav-wm">DGN · Ruby</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#casestudies">Case Studies</a>
+    <a href="trustshield.html">TrustShield →</a>
+    <a href="cross-continental-pipeline.html">Pipeline →</a>
+  </div>
+  <a href="AI_PM_FINALV3.pdf" target="_blank" rel="noopener noreferrer" class="nav-cta">Resume ↗</a>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero" id="case-study-top">
+  <div class="cs-hero-grid" aria-hidden="true"></div>
+  <div class="cs-hero-ledge" aria-hidden="true"></div>
+  <div class="cs-hero-inner">
+    <div class="cs-hero-label">AI PM Case Study · 01 / 03</div>
+    <h1 class="cs-hero-title">Campus<br>Atlas</h1>
+    <p class="cs-hero-summary">Designed and prototyped an AI-powered campus operating system that helps students navigate registrar, library, dining, transport, and admin workflows through a RAG-based copilot.</p>
+    <div class="cs-hero-tags">
+      <span class="cs-hero-tag">RAG</span>
+      <span class="cs-hero-tag">EdTech</span>
+      <span class="cs-hero-tag">Evaluation Framework</span>
+      <span class="cs-hero-tag">GTM Strategy</span>
+      <span class="cs-hero-tag">Product Roadmap</span>
+      <span class="cs-hero-tag">Working Prototype</span>
+      <span class="cs-hero-tag">0→1 PM Case Study</span>
+    </div>
+    <div class="cs-hero-links">
+      <a href="https://campus-atlas-demo.netlify.app" target="_blank" rel="noopener noreferrer" class="btn bA">Live Demo ↗</a>
+      <a href="https://github.com/devothamgn321/CampusOS" target="_blank" rel="noopener noreferrer" class="btn bO">GitHub ↗</a>
+      <a href="index.html" class="btn bO">← Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- MAIN CONTENT -->
+<section class="S">
+  <div class="W">
+    <div class="cs-body">
+
+      <!-- MAIN -->
+      <div class="cs-main">
+
+        <!-- PROBLEM -->
+        <div class="cs-section" id="problem">
+          <div class="TR"><div class="TL"></div><div class="TT">The Problem</div></div>
+          <h2>Why Universities<br>Are Broken.</h2>
+          <p>Students at most universities operate across <strong>8–12 disconnected systems</strong> — a separate portal for registrar, another for dining, a third for library, different apps for transport and health. No single system understands intent. No system can answer "what do I do next?"</p>
+          <p>Admin teams receive the same questions hundreds of times per week. Tier-1 support is dominated by queries like "where do I drop a course?" and "how do I request a transcript?" — tasks a well-designed AI system could handle in seconds.</p>
+          <div class="hl-box">
+            <div class="hl-label">Core Insight</div>
+            <p>The problem isn't missing information — it's missing intelligence. Every answer exists somewhere on the university website. The gap is that students can't find it when they need it, in the way they think about it.</p>
+          </div>
+          <h3>Users & Pain Points</h3>
+          <ul>
+            <li><strong>Students:</strong> Navigate fragmented systems; can't find answers across silos; high cognitive load during critical decisions (registration, graduation, aid)</li>
+            <li><strong>Admin Teams:</strong> Overwhelmed by repetitive tier-1 queries; no visibility into what students are struggling with at scale</li>
+            <li><strong>Service Departments:</strong> Data exists in isolation; no unified way to surface it contextually</li>
+            <li><strong>University Leadership:</strong> No product-level intelligence on student friction points; decisions made from lagging indicators</li>
+          </ul>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- PM THINKING -->
+        <div class="cs-section" id="pm-thinking">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">PM Thinking</div></div>
+          <h2>How I Approached<br>This Problem.</h2>
+
+          <h3>Customer Wedge</h3>
+          <p>Don't boil the ocean. The entry wedge is <strong>first-year student orientation</strong> — the highest-anxiety, highest-friction moment in the university lifecycle. Students need to navigate housing, registration, dining, ID, email, and financial aid simultaneously. Nailing this moment builds trust and stickiness for four years.</p>
+
+          <h3>Personas</h3>
+          <ul>
+            <li><strong>The Overwhelmed Freshman (Sam):</strong> First-gen student, 18, never used a university portal before. Primary goal: not fall behind. Won't read FAQs. Will talk to a chat interface at 11pm.</li>
+            <li><strong>The Power User (Jamie):</strong> Senior, double major, knows the system. Uses the tool for edge cases: petitions, appeals, unofficial transcript timelines, research lab applications.</li>
+            <li><strong>The Admin Coordinator (Dr. Chen):</strong> Processes 60+ student requests/week manually. Wants escalation clarity — know when to step in, have AI handle the rest.</li>
+          </ul>
+
+          <h3>Prioritization Framework</h3>
+          <p>Applied <strong>RICE scoring</strong> across 18 proposed features. Top three by RICE: (1) Registrar Q&A — highest reach, daily frequency; (2) AI Copilot — highest impact, core product belief; (3) Admin Dashboard — unlocks institutional adoption. Deferred: gamification, social features, calendar sync (high effort, low retention evidence).</p>
+
+          <h3>MVP Scope Decision</h3>
+          <div class="hl-box">
+            <div class="hl-label">What's In MVP</div>
+            <p>Student command center with RAG copilot · Registrar + library + dining + transport Q&A · Citation-based answers with confidence thresholds · Admin escalation queue · Single-department pilot (Registrar). What's NOT in MVP: multi-institution support, mobile native app, real-time inventory.</p>
+          </div>
+
+          <h3>Metrics & KPIs</h3>
+          <div class="metric-row">
+            <div class="metric-box">
+              <div class="metric-n">40%</div>
+              <div class="metric-l">Tier-1 Deflection Target</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-n">&lt;3s</div>
+              <div class="metric-l">P95 Answer Latency</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-n">85%</div>
+              <div class="metric-l">Groundedness Score</div>
+            </div>
+          </div>
+          <ul>
+            <li><strong>North Star:</strong> Student sessions ending with "I got my answer" (self-reported or inferred via no-escalation)</li>
+            <li><strong>Engagement:</strong> WAU, queries per session, repeat usage by cohort</li>
+            <li><strong>Quality:</strong> Hallucination rate, citation accuracy, escalation precision, time-to-resolve in admin queue</li>
+            <li><strong>Trust:</strong> NPS, admin override rate (leading indicator of AI trust), escalation abuse rate</li>
+          </ul>
+
+          <h3>Experiment Backlog (Priority Order)</h3>
+          <ul>
+            <li><strong>A/B: Citation format</strong> — footnote-style vs. inline link. Hypothesis: inline improves confidence without slowing reading.</li>
+            <li><strong>A/B: Confidence threshold</strong> — Surface answer at 70% vs 80% groundedness. Tradeoff: coverage vs accuracy.</li>
+            <li><strong>Test: Persona-adaptive tone</strong> — Does adjusting formality by student year improve NPS?</li>
+            <li><strong>Test: Proactive nudges</strong> — Push alerts during registration windows. Hypothesis: reduces deadline-driven surge queries.</li>
+          </ul>
+
+          <h3>Risks & Tradeoffs</h3>
+          <ul>
+            <li><strong>Hallucination risk:</strong> Mitigation — citation-only answers, hard fallback to escalation at &lt;70% confidence</li>
+            <li><strong>Data freshness:</strong> University policies change mid-semester. Mitigation — source TTL tagging, re-ingestion triggers on CMS edits</li>
+            <li><strong>Institutional adoption:</strong> IT security review, FERPA compliance, SSO integration are pre-GTM gates, not afterthoughts</li>
+            <li><strong>Cold-start quality:</strong> RAG accuracy is dataset-dependent. Mitigation — curate and validate 200+ QA pairs before launch</li>
+          </ul>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- AI ARCHITECTURE -->
+        <div class="cs-section" id="ai-arch">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">AI Product Depth</div></div>
+          <h2>RAG Architecture<br>& Eval Framework.</h2>
+          <p>Campus Atlas is built on <strong>Retrieval-Augmented Generation</strong> — not a fine-tuned model, not prompt engineering alone. RAG was chosen because university data changes frequently (policies, deadlines, personnel), and we need traceability to source documents for FERPA-defensible answers.</p>
+
+          <div class="arch">
+            <div class="arch-label">Campus Atlas · RAG Architecture</div>
+            <div class="arch-flow">
+              <div class="arch-row">
+                <div class="arch-box amber">Student Query</div>
+                <span class="arch-arr">→</span>
+                <div class="arch-box">Query Processor<br><small style="color:var(--ash);font-size:.52em">intent + entity extraction</small></div>
+                <span class="arch-arr">→</span>
+                <div class="arch-box">Embedding Model<br><small style="color:var(--ash);font-size:.52em">text-embedding-3-small</small></div>
+              </div>
+              <div class="arch-row" style="margin-left:2rem">
+                <span class="arch-arr">↓</span>
+              </div>
+              <div class="arch-row">
+                <div class="arch-box">Vector Store<br><small style="color:var(--ash);font-size:.52em">Pinecone / pgvector</small></div>
+                <span class="arch-arr">→</span>
+                <div class="arch-box">Chunk Retriever<br><small style="color:var(--ash);font-size:.52em">top-k=5, MMR reranking</small></div>
+                <span class="arch-arr">→</span>
+                <div class="arch-box">Context Builder<br><small style="color:var(--ash);font-size:.52em">citations attached</small></div>
+              </div>
+              <div class="arch-row" style="margin-left:2rem">
+                <span class="arch-arr">↓</span>
+              </div>
+              <div class="arch-row">
+                <div class="arch-box">LLM (GPT-4o)<br><small style="color:var(--ash);font-size:.52em">answer generation</small></div>
+                <span class="arch-arr">→</span>
+                <div class="arch-box amber">Groundedness Check<br><small style="color:var(--ash);font-size:.52em">≥ 0.80 threshold</small></div>
+                <span class="arch-arr">→</span>
+                <div class="arch-box green">Cited Answer<br><small style="color:var(--ash);font-size:.52em">to student</small></div>
+              </div>
+              <div class="arch-row">
+                <div style="font-family:var(--M);font-size:.5rem;color:var(--ash);margin-top:.4rem">
+                  If confidence &lt; 0.70: route to <span style="color:var(--red)">Human Escalation Queue</span> (admin dashboard)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3>Evaluation Framework</h3>
+          <ul>
+            <li><strong>Groundedness score:</strong> Cross-reference answer against retrieved chunks. Target ≥ 0.80. Computed via LLM-as-judge + cosine similarity.</li>
+            <li><strong>Citation accuracy:</strong> Does the cited source URL actually contain the claim? Manual spot-check 10% of production answers weekly.</li>
+            <li><strong>Hallucination rate:</strong> Answers that contain information absent from retrieved context. Target &lt; 3%. Tracked via eval harness on synthetic test set.</li>
+            <li><strong>Escalation precision:</strong> Are the escalated queries the ones that needed human review? Measure: admin override rate on AI-answered queries.</li>
+            <li><strong>Human-in-the-loop:</strong> Admin sees escalated query + reason for escalation + relevant source chunks. Can approve, correct, or override. Corrections feed back into eval log.</li>
+          </ul>
+
+          <h3>Data Ingestion Strategy</h3>
+          <ul>
+            <li>Source: University website, course catalog PDF, registrar policy docs, dining menus, campus maps</li>
+            <li>Chunking: 512-token chunks with 64-token overlap; section-aware splitting for policy docs</li>
+            <li>Metadata: source URL, document type, last-updated timestamp, department, TTL</li>
+            <li>Refresh: Nightly re-ingestion for high-churn sources (dining, library hours); policy docs on CMS trigger</li>
+          </ul>
+        </div>
+
+        <div class="sep"></div>
+
+        <!-- ROADMAP -->
+        <div class="cs-section" id="roadmap">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">Roadmap & GTM</div></div>
+          <h2>From Prototype<br>to Platform.</h2>
+
+          <table class="roadmap-table">
+            <thead><tr><th>Phase</th><th>Timeline</th><th>Focus</th><th>Success Signal</th></tr></thead>
+            <tbody>
+              <tr class="now">
+                <td class="phase">Phase 0 · MVP</td>
+                <td>Now</td>
+                <td>Registrar Q&A · RAG copilot · Prototype</td>
+                <td>100 student beta users · &lt;5% hallucination rate</td>
+              </tr>
+              <tr>
+                <td class="phase">Phase 1 · Pilot</td>
+                <td>M1–M3</td>
+                <td>Single department launch · Admin dashboard · Eval harness live</td>
+                <td>30% tier-1 deflection · Admin NPS &gt; 40</td>
+              </tr>
+              <tr>
+                <td class="phase">Phase 2 · Expand</td>
+                <td>M4–M6</td>
+                <td>Library + dining + transport · Confidence tuning · Proactive alerts</td>
+                <td>5 departments · WAU retention &gt; 60%</td>
+              </tr>
+              <tr>
+                <td class="phase">Phase 3 · Scale</td>
+                <td>M7–M12</td>
+                <td>Multi-department · Analytics layer · API for 3rd-party apps</td>
+                <td>University-wide contract · 40% deflection · platform NPS 50+</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>GTM Strategy</h3>
+          <ul>
+            <li><strong>Landing customer:</strong> Target mid-size universities (5,000–20,000 students) with active digital transformation initiatives. Avoid Tier-1 research universities first (long procurement cycles).</li>
+            <li><strong>Champion:</strong> VP of Student Affairs or Dean of Students — they own the pain, have budget discretion, and are frustrated by IT-led portals that don't solve student problems.</li>
+            <li><strong>Sales motion:</strong> Pilot with one department, measure deflection, show ROI in admin hours saved. Expand to university-wide on proven metrics.</li>
+            <li><strong>Pricing:</strong> Per-institution SaaS, tiered by student enrollment. Freemium single-department pilot. Full contract at university level.</li>
+            <li><strong>Launch moment:</strong> New student orientation — maximum anxiety, maximum query volume, maximum proof of value.</li>
+          </ul>
+
+          <h3>Impact (Honest Framing)</h3>
+          <ul>
+            <li>Designed end-to-end PM case study with full product lifecycle documentation</li>
+            <li>Built working prototype demonstrating RAG copilot with citation-based answers</li>
+            <li>Created evaluation framework with groundedness, hallucination, and escalation metrics</li>
+            <li>Defined KPIs, launch roadmap, and 4-phase GTM strategy</li>
+            <li>Converted a higher-ed pain point into a recruiter-ready AI PM portfolio artifact</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="cs-sidebar">
+        <div class="cs-toc">
+          <div class="cs-toc-label">On This Page</div>
+          <a href="#problem">Problem & Users</a>
+          <a href="#pm-thinking">PM Thinking</a>
+          <a href="#ai-arch">AI Architecture</a>
+          <a href="#roadmap">Roadmap & GTM</a>
+        </div>
+        <div class="cs-meta-box">
+          <div class="cs-meta-row"><div class="cs-meta-label">Type</div><div class="cs-meta-val">AI PM Case Study</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Domain</div><div class="cs-meta-val">Higher Education</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Core Tech</div><div class="cs-meta-val">RAG · GPT-4o · pgvector</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Stage</div><div class="cs-meta-val">Working Prototype</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Status</div><div class="cs-meta-val" style="color:var(--green)">Live Demo Available</div></div>
+        </div>
+        <div class="cs-nav-prev-next">
+          <a href="index.html#casestudies" class="cs-pn-link">
+            <span>←</span>
+            <div><div class="cs-pn-dir">All Case Studies</div>Back to Portfolio</div>
+          </a>
+          <a href="trustshield.html" class="cs-pn-link">
+            <div><div class="cs-pn-dir">Next Case Study →</div>TrustShield AI</div>
+            <span>→</span>
+          </a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM NAV -->
+<div class="cs-breadcrumb">
+  <div class="cs-bc-inner">
+    <div class="cs-bc-left">
+      <a href="index.html" class="cs-bc-link">← Home</a>
+      <span class="cs-bc-sep">·</span>
+      <a href="index.html#casestudies" class="cs-bc-link">Case Studies</a>
+      <span class="cs-bc-sep">·</span>
+      <span style="font-family:var(--M);font-size:.51rem;color:var(--amber)">Campus Atlas</span>
+    </div>
+    <div class="cs-bc-right">
+      <a href="trustshield.html" class="cs-bc-link">TrustShield AI →</a>
+      <a href="cross-continental-pipeline.html" class="cs-bc-link">Pipeline →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fl">© 2026 Devothama GN · AI Product Manager · Campus Atlas</span>
+  <div class="fr">
+    <a href="index.html">Home</a>
+    <a href="trustshield.html">TrustShield</a>
+    <a href="cross-continental-pipeline.html">Pipeline</a>
+    <a href="https://linkedin.com/in/devothamagn" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </div>
+</footer>
+</body>
+</html>

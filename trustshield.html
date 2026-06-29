@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TrustShield AI — AI Trust & Safety PM Case Study · Devothama GN</title>
+<meta name="description" content="TrustShield AI: Responsible AI moderation platform. Explainable signals, risk scoring, human-in-the-loop workflows. Full PM case study by Devothama GN.">
+<meta property="og:title" content="TrustShield AI — AI Trust & Safety PM Case Study">
+<meta property="og:description" content="AI moderation platform with HITL workflows and configurable trust thresholds. PM case study by Devothama GN.">
+<meta property="og:image" content="https://devothamagn.netlify.app/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#070706;--carbon:#0e0e0d;--panel:#141412;--surface:#1a1a18;
+  --chalk:#eeeadf;--paper:#c4bfb4;--smoke:#787470;--ash:#6b6860;
+  --amber:#e8922a;--amber2:#f4ae55;--amber3:rgba(232,146,42,.11);
+  --red:#d93030;--red2:rgba(217,48,48,.12);--green:#4caf7d;
+  --line:rgba(232,146,42,.13);--line2:rgba(232,146,42,.28);
+  --H:'Bebas Neue',sans-serif;--P:'Inter',system-ui,sans-serif;--M:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--chalk);font-family:var(--P);overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity:.45;mix-blend-mode:overlay}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;
+  justify-content:space-between;padding:0 3rem;height:54px;
+  background:rgba(7,7,6,.93);backdrop-filter:blur(22px) saturate(1.3);
+  border-bottom:1px solid var(--line)}
+.nav-id{display:flex;align-items:center;gap:.7rem}
+.nav-pip{width:7px;height:7px;background:var(--red);border-radius:50%;
+  box-shadow:0 0 8px var(--red);animation:pip 2.4s ease-in-out infinite}
+@keyframes pip{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.6)}}
+.nav-wm{font-family:var(--M);font-size:.6rem;color:var(--amber);letter-spacing:.18em;text-transform:uppercase}
+.nav-links{display:flex;gap:.1rem}
+.nav-links a{font-family:var(--M);font-size:.56rem;color:var(--smoke);text-decoration:none;
+  letter-spacing:.1em;text-transform:uppercase;padding:.38rem .72rem;transition:color .2s}
+.nav-links a:hover{color:var(--amber)}
+.nav-cta{font-family:var(--M);font-size:.56rem;color:var(--void);background:var(--amber);
+  padding:.4rem 1.1rem;text-decoration:none;letter-spacing:.12em;text-transform:uppercase}
+.S{padding:5rem 0}.W{max-width:1160px;margin:0 auto;padding:0 3rem}
+.sep{height:1px;background:var(--line);position:relative;overflow:hidden}
+.sep::after{content:'';position:absolute;top:0;left:-100%;width:200%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--red),var(--amber),transparent);
+  animation:sepSlide 5s linear infinite}
+@keyframes sepSlide{to{left:100%}}
+.TR{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.TL{height:1px;flex:0 0 34px;background:var(--red)}
+.TT{font-family:var(--M);font-size:.56rem;color:var(--red);letter-spacing:.2em;text-transform:uppercase}
+.BIG{font-family:var(--H);font-size:clamp(3rem,6vw,6.5rem);line-height:.9;letter-spacing:.02em;color:var(--chalk)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--M);font-size:.62rem;
+  letter-spacing:.13em;text-transform:uppercase;text-decoration:none;padding:.8rem 1.9rem;
+  transition:transform .18s,background .2s,color .2s;min-height:44px}
+.bA{background:var(--red);color:var(--chalk)}.bA:hover{opacity:.85;transform:translateY(-2px)}
+.bO{background:transparent;color:var(--paper);border:1px solid var(--line2)}.bO:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+.cs-hero{min-height:70vh;display:flex;align-items:flex-end;padding-bottom:4rem;
+  position:relative;overflow:hidden;background:var(--carbon)}
+.cs-hero-grid{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(217,48,48,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(217,48,48,.07) 1px,transparent 1px);
+  background-size:55px 55px;mask-image:radial-gradient(ellipse 80% 80% at 70% 40%,black 0%,transparent 80%);opacity:.6}
+.cs-hero-ledge{position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(to bottom,transparent,var(--red),transparent)}
+.cs-hero-inner{position:relative;z-index:1;padding:7rem 3rem 0;max-width:1160px;margin:0 auto;width:100%}
+.cs-hero-label{font-family:var(--M);font-size:.54rem;color:var(--red);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;opacity:0;animation:rise .7s .1s forwards}
+.cs-hero-title{font-family:var(--H);font-size:clamp(3.5rem,8vw,9rem);color:var(--chalk);
+  line-height:.88;letter-spacing:.02em;margin-bottom:1.2rem;opacity:0;animation:rise .85s .25s forwards}
+.cs-hero-summary{font-family:var(--P);font-size:1.12rem;font-weight:300;font-style:italic;
+  color:var(--paper);line-height:1.8;max-width:680px;margin-bottom:2rem;opacity:0;animation:rise .85s .4s forwards}
+.cs-hero-tags{display:flex;flex-wrap:wrap;gap:.4rem;opacity:0;animation:rise .7s .55s forwards}
+.cs-hero-tag{font-family:var(--M);font-size:.49rem;color:var(--red);border:1px solid rgba(217,48,48,.45);
+  padding:.2rem .6rem;letter-spacing:.1em;text-transform:uppercase}
+.cs-hero-links{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem;opacity:0;animation:rise .7s .7s forwards}
+
+.cs-body{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start}
+.cs-sidebar{position:sticky;top:72px}
+.cs-toc{background:var(--panel);border:1px solid var(--line);padding:1.5rem}
+.cs-toc-label{font-family:var(--M);font-size:.49rem;color:var(--red);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.8rem}
+.cs-toc a{display:block;font-family:var(--M);font-size:.53rem;color:var(--paper);text-decoration:none;
+  padding:.3rem .4rem;letter-spacing:.06em;border-left:2px solid transparent;transition:color .2s,border-color .2s}
+.cs-toc a:hover{color:var(--red);border-left-color:var(--red)}
+.cs-meta-box{background:var(--panel);border:1px solid var(--line);padding:1.5rem;margin-top:1rem}
+.cs-meta-row{margin-bottom:.8rem}
+.cs-meta-label{font-family:var(--M);font-size:.44rem;color:var(--ash);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
+.cs-meta-val{font-family:var(--M);font-size:.58rem;color:var(--chalk)}
+.cs-nav-prev-next{margin-top:1rem;display:flex;flex-direction:column;gap:.5rem}
+.cs-pn-link{font-family:var(--M);font-size:.49rem;color:var(--paper);text-decoration:none;
+  padding:.6rem .8rem;border:1px solid var(--line);display:flex;align-items:center;gap:.5rem;transition:border-color .2s,color .2s}
+.cs-pn-link:hover{border-color:var(--amber);color:var(--amber)}
+.cs-pn-dir{font-size:.42rem;color:var(--ash)}
+
+.cs-section{margin-bottom:3.5rem}
+.cs-section h2{font-family:var(--H);font-size:2.8rem;color:var(--chalk);line-height:.93;margin-bottom:1.2rem;letter-spacing:.02em;scroll-margin-top:72px}
+.cs-section h3{font-family:var(--M);font-size:.7rem;color:var(--amber2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;margin-top:1.5rem}
+.cs-section p{font-family:var(--P);font-size:1.02rem;color:var(--paper);line-height:1.82;margin-bottom:1.1rem;font-weight:300}
+.cs-section p strong{color:var(--chalk);font-weight:500}
+.cs-section ul{list-style:none;margin-bottom:1rem}
+.cs-section ul li{font-family:var(--P);font-size:1rem;color:var(--paper);line-height:1.78;
+  padding:.25rem 0 .25rem 1.2rem;position:relative;font-weight:300}
+.cs-section ul li::before{content:'▸';position:absolute;left:0;color:var(--red);font-size:.7em;top:.38rem}
+.cs-section ul li strong{color:var(--chalk);font-weight:500}
+.hl-box{background:var(--red2);border:1px solid rgba(217,48,48,.3);border-left:3px solid var(--red);
+  padding:1.4rem 1.6rem;margin:1.5rem 0}
+.hl-box p{margin:0;color:var(--paper);font-style:italic}
+.hl-box .hl-label{font-family:var(--M);font-size:.46rem;color:var(--red);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+.hl-amber{background:var(--amber3);border:1px solid var(--line2);border-left:3px solid var(--amber);padding:1.4rem 1.6rem;margin:1.5rem 0}
+.hl-amber .hl-label{font-family:var(--M);font-size:.46rem;color:var(--amber);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+.hl-amber p{margin:0;color:var(--paper);font-style:italic}
+
+.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0}
+.metric-box{background:var(--panel);border:1px solid var(--line);padding:1.2rem;text-align:center}
+.metric-box.red-border{border-color:rgba(217,48,48,.4)}
+.metric-n{font-family:var(--H);font-size:2.8rem;color:var(--red);line-height:1}
+.metric-l{font-family:var(--M);font-size:.48rem;color:var(--paper);letter-spacing:.09em;text-transform:uppercase;margin-top:.2rem}
+
+.signal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
+.signal-box{background:var(--panel);border:1px solid var(--line);padding:1.2rem}
+.signal-name{font-family:var(--M);font-size:.58rem;color:var(--chalk);letter-spacing:.06em;margin-bottom:.35rem}
+.signal-desc{font-family:var(--P);font-size:.9rem;color:var(--paper);line-height:1.6;font-weight:300}
+.signal-tag{font-family:var(--M);font-size:.42rem;color:var(--red);border:1px solid rgba(217,48,48,.4);padding:.12rem .4rem;margin-top:.5rem;display:inline-block;letter-spacing:.07em}
+
+.hitl-flow{background:var(--carbon);border:1px solid var(--line);padding:1.8rem;margin:1.5rem 0;font-family:var(--M)}
+.hitl-label{font-size:.48rem;color:var(--red);letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem}
+.hitl-step{display:flex;align-items:flex-start;gap:.8rem;margin-bottom:.8rem;padding-bottom:.8rem;border-bottom:1px solid var(--line)}
+.hitl-step:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.hitl-num{font-size:.7rem;color:var(--red);font-weight:700;min-width:1.5rem}
+.hitl-content{flex:1}
+.hitl-title{font-size:.58rem;color:var(--chalk);letter-spacing:.05em;margin-bottom:.2rem}
+.hitl-desc{font-size:.52rem;color:var(--paper);letter-spacing:.03em;line-height:1.55}
+
+.roadmap-table{width:100%;border-collapse:collapse;font-family:var(--M);margin:1rem 0}
+.roadmap-table th{font-size:.5rem;color:var(--red);letter-spacing:.12em;text-transform:uppercase;
+  border-bottom:1px solid var(--red);padding:.5rem .6rem;text-align:left}
+.roadmap-table td{font-size:.6rem;color:var(--paper);padding:.5rem .6rem;border-bottom:1px solid var(--line);letter-spacing:.02em}
+.roadmap-table tr:last-child td{border-bottom:none}
+.roadmap-table .phase{color:var(--amber2);font-weight:700}
+
+.cs-breadcrumb{background:var(--carbon);border-top:1px solid var(--line);padding:1.2rem 3rem}
+.cs-bc-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.cs-bc-left,.cs-bc-right{display:flex;gap:1rem;align-items:center}
+.cs-bc-link{font-family:var(--M);font-size:.51rem;color:var(--smoke);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.cs-bc-link:hover{color:var(--amber)}
+.cs-bc-sep{color:var(--line2)}
+footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between}
+.fl{font-family:var(--M);font-size:.51rem;color:var(--ash);letter-spacing:.07em}
+.fr{display:flex;gap:1.3rem}
+.fr a{font-family:var(--M);font-size:.51rem;color:var(--ash);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.fr a:hover{color:var(--amber)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.skip-link{position:absolute;top:-40px;left:1rem;background:var(--amber);color:var(--void);font-family:var(--M);font-size:.6rem;padding:.5rem 1rem;text-decoration:none;z-index:9999;transition:top .2s}
+.skip-link:focus{top:1rem}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+@media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.W{padding:0 1.5rem}.cs-body{grid-template-columns:1fr}.cs-sidebar{position:static}.cs-hero-inner{padding:6rem 1.5rem 0}.cs-breadcrumb{padding:1rem 1.5rem}}
+@media(max-width:768px){nav{padding:0 1rem;height:48px}.W{padding:0 1rem}.cs-hero-title{font-size:3rem}.cs-hero-summary{font-size:.97rem}.cs-hero-links{flex-direction:column}.cs-hero-links .btn{width:100%}.cs-section h2{font-size:2rem}.metric-row{grid-template-columns:1fr 1fr}.signal-grid{grid-template-columns:1fr}.hitl-step{flex-direction:column}footer{flex-direction:column;gap:.6rem;text-align:center}.cs-bc-inner{flex-direction:column;gap:.6rem}}
+</style>
+</head>
+<body>
+<a href="#case-study-top" class="skip-link">Skip to main content</a>
+<nav aria-label="Primary navigation">
+  <div class="nav-id"><div class="nav-pip"></div><span class="nav-wm">DGN · Ruby</span></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#casestudies">Case Studies</a>
+    <a href="campus-atlas.html">← Campus Atlas</a>
+    <a href="cross-continental-pipeline.html">Pipeline →</a>
+  </div>
+  <a href="AI_PM_FINALV3.pdf" target="_blank" rel="noopener noreferrer" class="nav-cta">Resume ↗</a>
+</nav>
+
+<div class="cs-hero" id="case-study-top">
+  <div class="cs-hero-grid" aria-hidden="true"></div>
+  <div class="cs-hero-ledge" aria-hidden="true"></div>
+  <div class="cs-hero-inner">
+    <div class="cs-hero-label">AI Trust & Safety · Case Study · 02 / 03</div>
+    <h1 class="cs-hero-title">TrustShield<br>AI</h1>
+    <p class="cs-hero-summary">Responsible AI moderation platform — explainable risk signals, configurable trust thresholds, and human-in-the-loop review workflows for high-stakes content domains.</p>
+    <div class="cs-hero-tags">
+      <span class="cs-hero-tag">AI Safety</span>
+      <span class="cs-hero-tag">HITL Workflows</span>
+      <span class="cs-hero-tag">Risk Scoring</span>
+      <span class="cs-hero-tag">GAN Detection</span>
+      <span class="cs-hero-tag">Responsible AI</span>
+      <span class="cs-hero-tag">PM Case Study</span>
+    </div>
+    <div class="cs-hero-links">
+      <a href="https://github.com/devothamgn321" target="_blank" rel="noopener noreferrer" class="btn bA">GitHub ↗</a>
+      <a href="index.html" class="btn bO">← Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<section class="S">
+  <div class="W">
+    <div class="cs-body">
+      <div class="cs-main">
+
+        <div class="cs-section" id="problem">
+          <div class="TR"><div class="TL"></div><div class="TT">The Problem</div></div>
+          <h2>AI Moderation<br>Is Broken.</h2>
+          <p>Most AI content moderation systems are black boxes — they flag content, but they can't tell a human reviewer <em>why</em>. When a reviewer can't understand the signal, they override it. When they override it too often, they stop trusting the system. When they stop trusting the system, the AI becomes overhead, not leverage.</p>
+          <p>In high-stakes domains — financial content, legal documents, medical information, social media platforms — the cost of a wrong call is asymmetric. A false negative (missed harmful content) is a liability. A false positive (over-restriction) is a product problem. <strong>Neither can be fixed without explainability.</strong></p>
+          <div class="hl-box">
+            <div class="hl-label">The Core Tension</div>
+            <p>AI moderation needs to be fast enough to operate at scale, accurate enough to be trusted, and explainable enough to be overridden intelligently. Most systems optimize for one. TrustShield targets all three.</p>
+          </div>
+          <h3>Users</h3>
+          <ul>
+            <li><strong>Trust & Safety Analysts:</strong> Review flagged content, make final calls. Need explainable signals, not just verdicts. Burn out when queues are noise-filled.</li>
+            <li><strong>Platform Operators:</strong> Configure risk thresholds by domain and audience. Need control without re-training models.</li>
+            <li><strong>Compliance Teams:</strong> Need audit trails, override logs, and evidence packages for regulatory review.</li>
+            <li><strong>ML Engineers:</strong> Need feedback from reviewers to improve model quality. Manual override data is gold for fine-tuning.</li>
+          </ul>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="cs-section" id="pm-thinking">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">PM Thinking</div></div>
+          <h2>Product Strategy<br>& Decisions.</h2>
+
+          <h3>The Product Belief</h3>
+          <div class="hl-amber">
+            <div class="hl-label">Core Hypothesis</div>
+            <p>Reviewers who understand why AI flagged content will make better decisions and generate better training data than reviewers who see only a verdict. Explainability is not a UX nicety — it's a quality flywheel.</p>
+          </div>
+
+          <h3>Personas</h3>
+          <ul>
+            <li><strong>The Overwhelmed Analyst (Priya):</strong> Processes 300+ flags/day. Makes snap decisions because queue pressure is relentless. Doesn't have time to read system docs. Needs signal, not noise.</li>
+            <li><strong>The Policy Owner (Marcus):</strong> Sets content standards for the platform. Wants threshold control without depending on ML team. Cares about false positive rates more than false negatives.</li>
+            <li><strong>The Compliance Lead (Sarah):</strong> Must produce evidence in regulatory inquiries. Needs immutable audit trails with full context for every decision — not just outcomes.</li>
+          </ul>
+
+          <h3>Prioritization</h3>
+          <p>Applied a <strong>Severity × Frequency matrix</strong> across 22 proposed features. Four features dominated: explainable signals (highest impact, highest frequency need), configurable thresholds (high impact, low frequency but high value per use), HITL review queue (table stakes), audit log export (compliance blocker — without it, enterprise deals don't close).</p>
+
+          <h3>Key Tradeoffs</h3>
+          <ul>
+            <li><strong>Speed vs. explainability:</strong> Generating explanations adds ~80ms latency. Decision: async explanation generation — verdict fires first, explanation populates within 500ms. Analyst sees flag immediately.</li>
+            <li><strong>Accuracy vs. coverage:</strong> Higher threshold = fewer false positives, more missed content. Lower threshold = higher recall, noisier queues. Solution: configurable by domain, with different defaults for CSAM vs. spam vs. misinformation.</li>
+            <li><strong>Automation vs. human control:</strong> Auto-remove at 95%+ confidence, auto-approve at &lt;30%, human queue for 30–95%. Operators can adjust these bands.</li>
+            <li><strong>Privacy vs. auditability:</strong> Full context in audit log creates retention liability. Solution: content hashed in logs, reconstructable only with key; metadata always retained.</li>
+          </ul>
+
+          <div class="metric-row">
+            <div class="metric-box red-border">
+              <div class="metric-n">95%</div>
+              <div class="metric-l">Auto-remove threshold</div>
+            </div>
+            <div class="metric-box red-border">
+              <div class="metric-n">&lt;2%</div>
+              <div class="metric-l">Target false negative rate</div>
+            </div>
+            <div class="metric-box red-border">
+              <div class="metric-n">30%</div>
+              <div class="metric-l">Queue reduction via auto-triage</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="cs-section" id="ai-depth">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">AI Product Depth</div></div>
+          <h2>Explainable Signals<br>& Risk Architecture.</h2>
+
+          <h3>Risk Scoring Model</h3>
+          <p>TrustShield uses a <strong>multi-signal ensemble</strong> — not a single model verdict. Each signal is independently computed, independently explainable, and weighted by domain context. The final risk score is a weighted sum, not a black-box classification.</p>
+
+          <div class="signal-grid">
+            <div class="signal-box">
+              <div class="signal-name">Toxicity Signal</div>
+              <div class="signal-desc">Perspective API-based scoring for hate speech, harassment, threat content. Calibrated per-domain.</div>
+              <span class="signal-tag">NLP Classifier</span>
+            </div>
+            <div class="signal-box">
+              <div class="signal-name">Semantic Similarity</div>
+              <div class="signal-desc">Embedding-based match against known-harmful content bank. Catches paraphrased violations.</div>
+              <span class="signal-tag">Vector Search</span>
+            </div>
+            <div class="signal-box">
+              <div class="signal-name">Manipulation Detection</div>
+              <div class="signal-desc">GAN-generated image/video detection via frequency-domain analysis. Flags synthetic media.</div>
+              <span class="signal-tag">GAN Detection</span>
+            </div>
+            <div class="signal-box">
+              <div class="signal-name">Context Graph</div>
+              <div class="signal-desc">User behavior graph signals — posting velocity, account age, prior flags, network centrality in known-bad clusters.</div>
+              <span class="signal-tag">Graph Analysis</span>
+            </div>
+          </div>
+
+          <div class="hl-box">
+            <div class="hl-label">Explainability Principle</div>
+            <p>Every verdict surfaces the top-3 contributing signals with their individual scores, the specific content span that triggered each signal, and the threshold configuration that applied. Reviewers see exactly what the model saw — not just what it decided.</p>
+          </div>
+
+          <h3>Human-in-the-Loop (HITL) Workflow</h3>
+          <div class="hitl-flow">
+            <div class="hitl-label">TrustShield · HITL Review Flow</div>
+            <div class="hitl-step">
+              <div class="hitl-num">01</div>
+              <div class="hitl-content">
+                <div class="hitl-title">Content Ingestion + Multi-signal Scoring</div>
+                <div class="hitl-desc">Content enters pipeline. All 4 signals fire in parallel. Risk score computed in &lt;200ms.</div>
+              </div>
+            </div>
+            <div class="hitl-step">
+              <div class="hitl-num">02</div>
+              <div class="hitl-content">
+                <div class="hitl-title">Threshold Routing</div>
+                <div class="hitl-desc">Score ≥ 0.95 → auto-remove. Score ≤ 0.30 → auto-approve. 0.30–0.95 → human queue with priority weighting by score.</div>
+              </div>
+            </div>
+            <div class="hitl-step">
+              <div class="hitl-num">03</div>
+              <div class="hitl-content">
+                <div class="hitl-title">Reviewer Dashboard</div>
+                <div class="hitl-desc">Analyst sees: content, risk score, top-3 signals with explanations, flagged spans, user context, suggested action. One-click approve/remove/escalate.</div>
+              </div>
+            </div>
+            <div class="hitl-step">
+              <div class="hitl-num">04</div>
+              <div class="hitl-content">
+                <div class="hitl-title">Override + Feedback Loop</div>
+                <div class="hitl-desc">Analyst override is logged with reason. Overrides become labeled training data. Systematic overrides trigger threshold review alerts.</div>
+              </div>
+            </div>
+            <div class="hitl-step">
+              <div class="hitl-num">05</div>
+              <div class="hitl-content">
+                <div class="hitl-title">Audit Trail Export</div>
+                <div class="hitl-desc">Full decision log (AI verdict, signals, reviewer action, timestamp, reason) exportable for compliance. Content hashed; metadata retained.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="cs-section" id="roadmap">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">Roadmap & Impact</div></div>
+          <h2>From Signal<br>to Platform.</h2>
+
+          <table class="roadmap-table">
+            <thead><tr><th>Phase</th><th>Timeline</th><th>Deliverable</th><th>Gate</th></tr></thead>
+            <tbody>
+              <tr><td class="phase">Phase 0</td><td>MVP</td><td>4-signal ensemble · HITL queue · Audit log</td><td>Toxicity &lt;2% FN rate</td></tr>
+              <tr><td class="phase">Phase 1</td><td>M1–M3</td><td>Configurable thresholds by domain · Operator dashboard</td><td>Operator NPS &gt; 45</td></tr>
+              <tr><td class="phase">Phase 2</td><td>M4–M6</td><td>Feedback loop → fine-tuning pipeline · Compliance export</td><td>Override data improving model accuracy +5%</td></tr>
+              <tr><td class="phase">Phase 3</td><td>M7–M12</td><td>Multi-modal (image/video) · API + SDK for platform embedding</td><td>Enterprise contract signed</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Responsible AI Principles Applied</h3>
+          <ul>
+            <li><strong>No single-model auto-remove:</strong> Multi-signal requirement prevents any one classifier from making irreversible decisions alone</li>
+            <li><strong>Explainability by default:</strong> Not a settings toggle — every flag ships with signal breakdown, always</li>
+            <li><strong>Override data as value, not exception:</strong> Reviewer disagreements are treated as model improvement opportunities, not system errors</li>
+            <li><strong>Configurable, not one-size:</strong> Different domains have different risk profiles. A children's platform and a financial news site have different appropriate thresholds.</li>
+            <li><strong>Audit-first design:</strong> Compliance requirements were a design constraint, not an afterthought</li>
+          </ul>
+
+          <h3>Impact (Honest Framing)</h3>
+          <ul>
+            <li>Designed multi-signal AI moderation architecture with explainability as a first-class requirement</li>
+            <li>Defined HITL workflow that turns reviewer disagreement into model improvement signal</li>
+            <li>Built configurable threshold system supporting operator-controlled risk tolerance</li>
+            <li>Produced full PM case study including personas, tradeoffs, metrics, and roadmap</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-toc">
+          <div class="cs-toc-label">On This Page</div>
+          <a href="#problem">Problem & Users</a>
+          <a href="#pm-thinking">PM Thinking</a>
+          <a href="#ai-depth">AI Architecture</a>
+          <a href="#roadmap">Roadmap & Impact</a>
+        </div>
+        <div class="cs-meta-box">
+          <div class="cs-meta-row"><div class="cs-meta-label">Type</div><div class="cs-meta-val">AI Trust & Safety PM</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Domain</div><div class="cs-meta-val">Content Moderation</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Core Tech</div><div class="cs-meta-val">NLP · GAN Detection · Graph</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Focus</div><div class="cs-meta-val">Responsible AI · HITL</div></div>
+        </div>
+        <div class="cs-nav-prev-next">
+          <a href="campus-atlas.html" class="cs-pn-link">
+            <span>←</span>
+            <div><div class="cs-pn-dir">← Previous</div>Campus Atlas</div>
+          </a>
+          <a href="cross-continental-pipeline.html" class="cs-pn-link">
+            <div><div class="cs-pn-dir">Next →</div>Data Pipeline</div>
+            <span>→</span>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="cs-breadcrumb">
+  <div class="cs-bc-inner">
+    <div class="cs-bc-left">
+      <a href="index.html" class="cs-bc-link">← Home</a>
+      <span class="cs-bc-sep">·</span>
+      <a href="index.html#casestudies" class="cs-bc-link">Case Studies</a>
+      <span class="cs-bc-sep">·</span>
+      <span style="font-family:var(--M);font-size:.51rem;color:var(--red)">TrustShield AI</span>
+    </div>
+    <div class="cs-bc-right">
+      <a href="campus-atlas.html" class="cs-bc-link">← Campus Atlas</a>
+      <a href="cross-continental-pipeline.html" class="cs-bc-link">Pipeline →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fl">© 2026 Devothama GN · AI Product Manager · TrustShield AI</span>
+  <div class="fr">
+    <a href="index.html">Home</a>
+    <a href="campus-atlas.html">Campus Atlas</a>
+    <a href="cross-continental-pipeline.html">Pipeline</a>
+    <a href="https://linkedin.com/in/devothamagn" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </div>
+</footer>
+</body>
+</html>

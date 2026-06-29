@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cross-Continental Eco-Economic Data Pipeline — PM Case Study · Devothama GN</title>
+<meta name="description" content="Analyst-facing intelligence platform spanning 5 countries and 4 APIs — designed around analytical questions, not raw data schemas. PM case study by Devothama GN.">
+<meta property="og:title" content="Cross-Continental Eco-Economic Data Pipeline — PM Case Study">
+<meta property="og:description" content="5-country data intelligence platform. PM case study in platform products by Devothama GN.">
+<meta property="og:image" content="https://devothamagn.netlify.app/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#070706;--carbon:#0e0e0d;--panel:#141412;--surface:#1a1a18;
+  --chalk:#eeeadf;--paper:#c4bfb4;--smoke:#787470;--ash:#6b6860;
+  --amber:#e8922a;--amber2:#f4ae55;--amber3:rgba(232,146,42,.11);
+  --red:#d93030;--green:#4caf7d;--green2:rgba(76,175,125,.12);
+  --line:rgba(232,146,42,.13);--line2:rgba(232,146,42,.28);
+  --H:'Bebas Neue',sans-serif;--P:'Inter',system-ui,sans-serif;--M:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--chalk);font-family:var(--P);overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity:.45;mix-blend-mode:overlay}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;
+  justify-content:space-between;padding:0 3rem;height:54px;
+  background:rgba(7,7,6,.93);backdrop-filter:blur(22px) saturate(1.3);
+  border-bottom:1px solid var(--line)}
+.nav-id{display:flex;align-items:center;gap:.7rem}
+.nav-pip{width:7px;height:7px;background:var(--green);border-radius:50%;
+  box-shadow:0 0 8px var(--green);animation:pip 2.4s ease-in-out infinite}
+@keyframes pip{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.6)}}
+.nav-wm{font-family:var(--M);font-size:.6rem;color:var(--amber);letter-spacing:.18em;text-transform:uppercase}
+.nav-links{display:flex;gap:.1rem}
+.nav-links a{font-family:var(--M);font-size:.56rem;color:var(--smoke);text-decoration:none;
+  letter-spacing:.1em;text-transform:uppercase;padding:.38rem .72rem;transition:color .2s}
+.nav-links a:hover{color:var(--amber)}
+.nav-cta{font-family:var(--M);font-size:.56rem;color:var(--void);background:var(--amber);
+  padding:.4rem 1.1rem;text-decoration:none;letter-spacing:.12em;text-transform:uppercase}
+.S{padding:5rem 0}.W{max-width:1160px;margin:0 auto;padding:0 3rem}
+.sep{height:1px;background:var(--line);position:relative;overflow:hidden}
+.sep::after{content:'';position:absolute;top:0;left:-100%;width:200%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--green),var(--amber),transparent);
+  animation:sepSlide 5s linear infinite}
+@keyframes sepSlide{to{left:100%}}
+.TR{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.TL{height:1px;flex:0 0 34px;background:var(--green)}
+.TT{font-family:var(--M);font-size:.56rem;color:var(--green);letter-spacing:.2em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--M);font-size:.62rem;
+  letter-spacing:.13em;text-transform:uppercase;text-decoration:none;padding:.8rem 1.9rem;
+  transition:transform .18s,background .2s,color .2s;min-height:44px}
+.bA{background:var(--green);color:var(--void)}.bA:hover{opacity:.85;transform:translateY(-2px)}
+.bO{background:transparent;color:var(--paper);border:1px solid var(--line2)}.bO:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+.cs-hero{min-height:70vh;display:flex;align-items:flex-end;padding-bottom:4rem;
+  position:relative;overflow:hidden;background:var(--carbon)}
+.cs-hero-grid{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(76,175,125,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(76,175,125,.06) 1px,transparent 1px);
+  background-size:55px 55px;mask-image:radial-gradient(ellipse 90% 80% at 20% 70%,black 0%,transparent 80%);opacity:.8}
+.cs-hero-ledge{position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(to bottom,transparent,var(--green),transparent)}
+.cs-hero-inner{position:relative;z-index:1;padding:7rem 3rem 0;max-width:1160px;margin:0 auto;width:100%}
+.cs-hero-label{font-family:var(--M);font-size:.54rem;color:var(--green);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;opacity:0;animation:rise .7s .1s forwards}
+.cs-hero-title{font-family:var(--H);font-size:clamp(2.8rem,6.5vw,8rem);color:var(--chalk);
+  line-height:.88;letter-spacing:.02em;margin-bottom:1.2rem;opacity:0;animation:rise .85s .25s forwards}
+.cs-hero-summary{font-family:var(--P);font-size:1.12rem;font-weight:300;font-style:italic;
+  color:var(--paper);line-height:1.8;max-width:680px;margin-bottom:2rem;opacity:0;animation:rise .85s .4s forwards}
+.cs-hero-tags{display:flex;flex-wrap:wrap;gap:.4rem;opacity:0;animation:rise .7s .55s forwards}
+.cs-hero-tag{font-family:var(--M);font-size:.49rem;color:var(--green);border:1px solid rgba(76,175,125,.4);
+  padding:.2rem .6rem;letter-spacing:.1em;text-transform:uppercase}
+.cs-hero-links{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem;opacity:0;animation:rise .7s .7s forwards}
+
+.cs-body{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start}
+.cs-sidebar{position:sticky;top:72px}
+.cs-toc{background:var(--panel);border:1px solid var(--line);padding:1.5rem}
+.cs-toc-label{font-family:var(--M);font-size:.49rem;color:var(--green);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.8rem}
+.cs-toc a{display:block;font-family:var(--M);font-size:.53rem;color:var(--paper);text-decoration:none;
+  padding:.3rem .4rem;letter-spacing:.06em;border-left:2px solid transparent;transition:color .2s,border-color .2s}
+.cs-toc a:hover{color:var(--green);border-left-color:var(--green)}
+.cs-meta-box{background:var(--panel);border:1px solid var(--line);padding:1.5rem;margin-top:1rem}
+.cs-meta-row{margin-bottom:.8rem}
+.cs-meta-label{font-family:var(--M);font-size:.44rem;color:var(--ash);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
+.cs-meta-val{font-family:var(--M);font-size:.58rem;color:var(--chalk)}
+.cs-nav-prev-next{margin-top:1rem;display:flex;flex-direction:column;gap:.5rem}
+.cs-pn-link{font-family:var(--M);font-size:.49rem;color:var(--paper);text-decoration:none;
+  padding:.6rem .8rem;border:1px solid var(--line);display:flex;align-items:center;gap:.5rem;transition:border-color .2s,color .2s}
+.cs-pn-link:hover{border-color:var(--amber);color:var(--amber)}
+.cs-pn-dir{font-size:.42rem;color:var(--ash)}
+
+.cs-section{margin-bottom:3.5rem}
+.cs-section h2{font-family:var(--H);font-size:2.8rem;color:var(--chalk);line-height:.93;margin-bottom:1.2rem;letter-spacing:.02em;scroll-margin-top:72px}
+.cs-section h3{font-family:var(--M);font-size:.7rem;color:var(--amber2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;margin-top:1.5rem}
+.cs-section p{font-family:var(--P);font-size:1.02rem;color:var(--paper);line-height:1.82;margin-bottom:1.1rem;font-weight:300}
+.cs-section p strong{color:var(--chalk);font-weight:500}
+.cs-section ul{list-style:none;margin-bottom:1rem}
+.cs-section ul li{font-family:var(--P);font-size:1rem;color:var(--paper);line-height:1.78;
+  padding:.25rem 0 .25rem 1.2rem;position:relative;font-weight:300}
+.cs-section ul li::before{content:'▸';position:absolute;left:0;color:var(--green);font-size:.7em;top:.38rem}
+.cs-section ul li strong{color:var(--chalk);font-weight:500}
+.hl-box{background:var(--green2);border:1px solid rgba(76,175,125,.3);border-left:3px solid var(--green);
+  padding:1.4rem 1.6rem;margin:1.5rem 0}
+.hl-box p{margin:0;color:var(--paper);font-style:italic}
+.hl-box .hl-label{font-family:var(--M);font-size:.46rem;color:var(--green);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+.hl-amber{background:var(--amber3);border:1px solid var(--line2);border-left:3px solid var(--amber);padding:1.4rem 1.6rem;margin:1.5rem 0}
+.hl-amber .hl-label{font-family:var(--M);font-size:.46rem;color:var(--amber);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+.hl-amber p{margin:0;color:var(--paper);font-style:italic}
+
+.country-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin:1.5rem 0}
+.country-box{background:var(--panel);border:1px solid var(--line);padding:1rem .8rem;text-align:center}
+.country-flag{font-size:1.6rem;display:block;margin-bottom:.4rem}
+.country-name{font-family:var(--M);font-size:.52rem;color:var(--chalk);letter-spacing:.06em;text-transform:uppercase}
+.country-apis{font-family:var(--M);font-size:.43rem;color:var(--green);margin-top:.2rem;line-height:1.4}
+
+.tech-stack{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
+.tech-box{background:var(--panel);border:1px solid var(--line);padding:1.2rem}
+.tech-cat{font-family:var(--M);font-size:.5rem;color:var(--green);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem}
+.tech-items{display:flex;flex-wrap:wrap;gap:.3rem}
+.tech-item{font-family:var(--M);font-size:.52rem;color:var(--paper);border:1px solid var(--ash);padding:.15rem .4rem;letter-spacing:.04em}
+
+.arch-diagram{background:var(--carbon);border:1px solid var(--line);padding:1.8rem;margin:1.5rem 0;font-family:var(--M)}
+.arch-label{font-size:.48rem;color:var(--green);letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem}
+.arch-layer{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.arch-layer:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.arch-layer-name{font-size:.5rem;color:var(--ash);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+.arch-layer-items{display:flex;flex-wrap:wrap;gap:.5rem}
+.arch-item{background:var(--panel);border:1px solid var(--line2);padding:.4rem .8rem;font-size:.58rem;color:var(--chalk);letter-spacing:.04em}
+.arch-item.green{border-color:rgba(76,175,125,.5);color:var(--green)}
+.arch-item.amber{border-color:var(--amber2);color:var(--amber2)}
+
+.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0}
+.metric-box{background:var(--panel);border:1px solid rgba(76,175,125,.3);padding:1.2rem;text-align:center}
+.metric-n{font-family:var(--H);font-size:2.8rem;color:var(--green);line-height:1}
+.metric-l{font-family:var(--M);font-size:.48rem;color:var(--paper);letter-spacing:.09em;text-transform:uppercase;margin-top:.2rem}
+
+.query-example{background:var(--carbon);border:1px solid var(--line);border-left:3px solid var(--green);padding:1rem 1.4rem;margin:.8rem 0}
+.query-q{font-family:var(--M);font-size:.6rem;color:var(--chalk);margin-bottom:.3rem}
+.query-a{font-family:var(--P);font-size:.88rem;color:var(--paper);font-style:italic;line-height:1.55}
+
+.cs-breadcrumb{background:var(--carbon);border-top:1px solid var(--line);padding:1.2rem 3rem}
+.cs-bc-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.cs-bc-left,.cs-bc-right{display:flex;gap:1rem;align-items:center}
+.cs-bc-link{font-family:var(--M);font-size:.51rem;color:var(--smoke);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.cs-bc-link:hover{color:var(--amber)}
+.cs-bc-sep{color:var(--line2)}
+footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between}
+.fl{font-family:var(--M);font-size:.51rem;color:var(--ash);letter-spacing:.07em}
+.fr{display:flex;gap:1.3rem}
+.fr a{font-family:var(--M);font-size:.51rem;color:var(--ash);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.fr a:hover{color:var(--amber)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.skip-link{position:absolute;top:-40px;left:1rem;background:var(--amber);color:var(--void);font-family:var(--M);font-size:.6rem;padding:.5rem 1rem;text-decoration:none;z-index:9999;transition:top .2s}
+.skip-link:focus{top:1rem}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+@media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.W{padding:0 1.5rem}.cs-body{grid-template-columns:1fr}.cs-sidebar{position:static}.cs-hero-inner{padding:6rem 1.5rem 0}.cs-breadcrumb{padding:1rem 1.5rem}}
+@media(max-width:768px){nav{padding:0 1rem;height:48px}.W{padding:0 1rem}.cs-hero-title{font-size:2.4rem}.cs-hero-summary{font-size:.97rem}.cs-hero-links{flex-direction:column}.cs-hero-links .btn{width:100%}.cs-section h2{font-size:2rem}.metric-row{grid-template-columns:1fr 1fr}.country-grid{grid-template-columns:1fr 1fr}.tech-stack{grid-template-columns:1fr}footer{flex-direction:column;gap:.6rem;text-align:center}.cs-bc-inner{flex-direction:column;gap:.6rem}}
+</style>
+</head>
+<body>
+<a href="#case-study-top" class="skip-link">Skip to main content</a>
+<nav aria-label="Primary navigation">
+  <div class="nav-id"><div class="nav-pip"></div><span class="nav-wm">DGN · Ruby</span></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#casestudies">Case Studies</a>
+    <a href="campus-atlas.html">Campus Atlas</a>
+    <a href="trustshield.html">← TrustShield</a>
+  </div>
+  <a href="AI_PM_FINALV3.pdf" target="_blank" rel="noopener noreferrer" class="nav-cta">Resume ↗</a>
+</nav>
+
+<div class="cs-hero" id="case-study-top">
+  <div class="cs-hero-grid" aria-hidden="true"></div>
+  <div class="cs-hero-ledge" aria-hidden="true"></div>
+  <div class="cs-hero-inner">
+    <div class="cs-hero-label">Data Platform · PM Case Study · 03 / 03</div>
+    <h1 class="cs-hero-title">Cross-Continental<br>Eco-Economic<br>Data Pipeline</h1>
+    <p class="cs-hero-summary">Analyst-facing intelligence platform spanning 5 countries and 4 APIs — designed around analytical questions, not raw data schemas. A PM case study in platform product thinking.</p>
+    <div class="cs-hero-tags">
+      <span class="cs-hero-tag">Python</span>
+      <span class="cs-hero-tag">Flask API</span>
+      <span class="cs-hero-tag">PostgreSQL</span>
+      <span class="cs-hero-tag">Docker</span>
+      <span class="cs-hero-tag">5 Countries</span>
+      <span class="cs-hero-tag">4 APIs</span>
+      <span class="cs-hero-tag">Platform PM</span>
+    </div>
+    <div class="cs-hero-links">
+      <a href="https://github.com/devothamgn321" target="_blank" rel="noopener noreferrer" class="btn bA">GitHub ↗</a>
+      <a href="index.html" class="btn bO">← Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<section class="S">
+  <div class="W">
+    <div class="cs-body">
+      <div class="cs-main">
+
+        <div class="cs-section" id="problem">
+          <div class="TR"><div class="TL"></div><div class="TT">The Problem</div></div>
+          <h2>Analysts Don't<br>Need More Data.</h2>
+          <p>The core insight driving this project wasn't technical — it was a product observation: <strong>the problem is not data availability</strong>. World Bank, UN FAO, OECD, and dozens of other institutions publish rich datasets. The problem is that analysts spend 60–70% of their time cleaning, joining, and normalizing data before they can answer a single research question.</p>
+          <p>The pipeline was designed around <em>analytical questions first</em>, not data schemas first. Instead of asking "what data do we have?", the design process started with "what questions does an economist or policy researcher actually ask?"</p>
+          <div class="hl-box">
+            <div class="hl-label">PM-First Design Principle</div>
+            <p>The API endpoints were designed to answer research questions, not expose raw database tables. An analyst can ask "how does GDP per capita correlate with deforestation in Sub-Saharan Africa?" — not just "give me the GDP table."</p>
+          </div>
+
+          <h3>Users</h3>
+          <ul>
+            <li><strong>Policy Researchers:</strong> Need cross-country comparisons, trend analysis, and anomaly detection. Time-sensitive — deadlines drive everything. Can't wait for manual data prep.</li>
+            <li><strong>Economists & Analysts:</strong> Deep domain expertise, but not data engineers. Want clean, normalized, query-ready data in formats they know (CSV, JSON, SQL).</li>
+            <li><strong>NGO Program Teams:</strong> Need country-level snapshots covering economic + environmental signals together — not separate databases.</li>
+            <li><strong>Data Journalists:</strong> Need fast access to defensible, well-sourced numbers they can cite. Provenance matters as much as the data.</li>
+          </ul>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="cs-section" id="pm-thinking">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">PM Thinking</div></div>
+          <h2>Platform Product<br>Decisions.</h2>
+
+          <h3>Why This Is a Platform PM Problem</h3>
+          <p>This isn't just a data engineering project — it's a platform product. The decisions that mattered most weren't technical (which database, which API). They were product decisions: <strong>what's the right abstraction layer for the user?</strong> What should be automatic? What should be configurable? Where does the platform end and the analyst begin?</p>
+
+          <h3>Scope Decision: 5 Countries</h3>
+          <div class="hl-amber">
+            <div class="hl-label">Why 5 Countries, Not 50</div>
+            <p>Breadth creates maintenance debt and degrades data quality. 5 countries across 3 continents with full coverage beats 50 countries with patchy, inconsistent data. The selection covers Sub-Saharan Africa, South America, and South/Southeast Asia — maximum geographic and economic diversity at manageable depth.</p>
+          </div>
+
+          <div class="country-grid">
+            <div class="country-box">
+              <span class="country-flag">🇰🇪</span>
+              <div class="country-name">Kenya</div>
+              <div class="country-apis">World Bank<br>UN FAO</div>
+            </div>
+            <div class="country-box">
+              <span class="country-flag">🇧🇷</span>
+              <div class="country-name">Brazil</div>
+              <div class="country-apis">OECD<br>World Bank</div>
+            </div>
+            <div class="country-box">
+              <span class="country-flag">🇮🇳</span>
+              <div class="country-name">India</div>
+              <div class="country-apis">World Bank<br>UN FAO</div>
+            </div>
+            <div class="country-box">
+              <span class="country-flag">🇩🇰</span>
+              <div class="country-name">Denmark</div>
+              <div class="country-apis">OECD<br>Eurostat</div>
+            </div>
+            <div class="country-box">
+              <span class="country-flag">🇵🇭</span>
+              <div class="country-name">Philippines</div>
+              <div class="country-apis">World Bank<br>UN FAO</div>
+            </div>
+          </div>
+
+          <h3>API Design: Questions, Not Tables</h3>
+          <p>The most important product decision was the API contract. Instead of exposing raw database tables ("GET /gdp?country=Kenya"), endpoints were designed around research questions:</p>
+          <div class="query-example">
+            <div class="query-q">GET /api/v1/correlation?metric_a=gdp_per_capita&metric_b=forest_coverage&countries=Kenya,Brazil&years=2010-2023</div>
+            <div class="query-a">Returns pre-computed correlation coefficient, time-series data for both metrics, and data provenance — sourced, normalized, ready to cite.</div>
+          </div>
+          <div class="query-example">
+            <div class="query-q">GET /api/v1/compare?metric=renewable_energy_pct&countries=India,Denmark,Philippines&baseline_year=2015</div>
+            <div class="query-a">Returns indexed comparison table (2015=100) with trend direction, outlier flags, and source documentation per data point.</div>
+          </div>
+
+          <h3>Key Build vs. Buy Decisions</h3>
+          <ul>
+            <li><strong>ETL layer (Build):</strong> Each API has its own schema, rate limits, and update cadence. A generic ETL framework would have added complexity without enough benefit at this scale.</li>
+            <li><strong>Query layer (Build with PostgreSQL):</strong> Analytical queries are complex and require joins across tables. An in-house PostgreSQL instance gives full control. Managed DB adds cost without clear benefit for v1.</li>
+            <li><strong>API wrapper (Flask):</strong> Lightweight, well-documented, Python-native. Aligns with analyst skill set; no need for heavy framework.</li>
+            <li><strong>Containerization (Docker):</strong> Reproducibility is a product requirement, not just a dev practice. Analysts who clone the repo need the same environment. Docker enforces that.</li>
+          </ul>
+
+          <h3>Tradeoffs</h3>
+          <ul>
+            <li><strong>Data freshness vs. cost:</strong> Real-time API calls on every request would hit rate limits and add latency. Solution: nightly scheduled ingestion with cache-last-fetch timestamp exposed in API response. Analysts know exactly how fresh their data is.</li>
+            <li><strong>Completeness vs. reliability:</strong> Some metrics aren't available for all countries all years. Decision: never impute, never fill silently. Missing data is explicit — null with a reason code.</li>
+            <li><strong>Schema flexibility vs. query speed:</strong> Normalized relational schema chosen over document store. Research queries join across metrics; relational wins for this access pattern.</li>
+          </ul>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="cs-section" id="tech-arch">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">Technical Architecture</div></div>
+          <h2>4 APIs. 5 Countries.<br>One Platform.</h2>
+
+          <div class="arch-diagram">
+            <div class="arch-label">Pipeline Architecture</div>
+            <div class="arch-layer">
+              <div class="arch-layer-name">Ingestion Layer · 4 External APIs</div>
+              <div class="arch-layer-items">
+                <span class="arch-item green">World Bank API</span>
+                <span class="arch-item green">UN FAO API</span>
+                <span class="arch-item green">OECD Stats API</span>
+                <span class="arch-item green">Eurostat API</span>
+              </div>
+            </div>
+            <div class="arch-layer">
+              <div class="arch-layer-name">Processing Layer · Python ETL</div>
+              <div class="arch-layer-items">
+                <span class="arch-item">Schema Normalizer</span>
+                <span class="arch-item">Unit Standardizer</span>
+                <span class="arch-item">Missing-data Logger</span>
+                <span class="arch-item">Currency Converter</span>
+                <span class="arch-item">Data Validator</span>
+              </div>
+            </div>
+            <div class="arch-layer">
+              <div class="arch-layer-name">Storage Layer</div>
+              <div class="arch-layer-items">
+                <span class="arch-item amber">PostgreSQL · Normalized Schema</span>
+                <span class="arch-item">Redis Cache · 6h TTL</span>
+              </div>
+            </div>
+            <div class="arch-layer">
+              <div class="arch-layer-name">API Layer · Flask REST</div>
+              <div class="arch-layer-items">
+                <span class="arch-item">/api/v1/timeseries</span>
+                <span class="arch-item">/api/v1/compare</span>
+                <span class="arch-item">/api/v1/correlation</span>
+                <span class="arch-item">/api/v1/country-snapshot</span>
+                <span class="arch-item">/api/v1/anomalies</span>
+              </div>
+            </div>
+            <div class="arch-layer">
+              <div class="arch-layer-name">Infrastructure</div>
+              <div class="arch-layer-items">
+                <span class="arch-item green">Docker Compose</span>
+                <span class="arch-item">Cron Scheduler</span>
+                <span class="arch-item">Pytest Suite</span>
+                <span class="arch-item">GitHub Actions CI</span>
+              </div>
+            </div>
+          </div>
+
+          <h3>Tech Stack</h3>
+          <div class="tech-stack">
+            <div class="tech-box">
+              <div class="tech-cat">Data & Processing</div>
+              <div class="tech-items">
+                <span class="tech-item">Python 3.11</span>
+                <span class="tech-item">Pandas</span>
+                <span class="tech-item">NumPy</span>
+                <span class="tech-item">Requests</span>
+                <span class="tech-item">SQLAlchemy</span>
+              </div>
+            </div>
+            <div class="tech-box">
+              <div class="tech-cat">API & Server</div>
+              <div class="tech-items">
+                <span class="tech-item">Flask</span>
+                <span class="tech-item">Flask-RESTful</span>
+                <span class="tech-item">Redis</span>
+                <span class="tech-item">Gunicorn</span>
+              </div>
+            </div>
+            <div class="tech-box">
+              <div class="tech-cat">Database</div>
+              <div class="tech-items">
+                <span class="tech-item">PostgreSQL 15</span>
+                <span class="tech-item">psycopg2</span>
+                <span class="tech-item">Alembic</span>
+              </div>
+            </div>
+            <div class="tech-box">
+              <div class="tech-cat">Infrastructure</div>
+              <div class="tech-items">
+                <span class="tech-item">Docker</span>
+                <span class="tech-item">Docker Compose</span>
+                <span class="tech-item">GitHub Actions</span>
+                <span class="tech-item">Pytest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="cs-section" id="impact">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">Impact & Positioning</div></div>
+          <h2>Why This Is a<br>PM Case Study.</h2>
+
+          <p>This project demonstrates platform product thinking — not just engineering ability. The decisions that shaped this work were product decisions: user abstraction, data freshness tradeoffs, API design philosophy, reproducibility as a user requirement.</p>
+
+          <div class="metric-row">
+            <div class="metric-box">
+              <div class="metric-n">5</div>
+              <div class="metric-l">Countries Covered</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-n">4</div>
+              <div class="metric-l">External APIs Integrated</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-n">5</div>
+              <div class="metric-l">API Endpoints Designed</div>
+            </div>
+          </div>
+
+          <h3>Impact (Honest Framing)</h3>
+          <ul>
+            <li>Designed API contract around analyst research questions, not database schemas</li>
+            <li>Made explicit build vs. buy decisions with documented rationale</li>
+            <li>Chose PostgreSQL relational model over document store based on access-pattern analysis</li>
+            <li>Enforced data provenance — every data point carries source, last-fetch timestamp, and quality flags</li>
+            <li>Designed for reproducibility: Docker Compose ensures identical environment from clone to run</li>
+          </ul>
+
+          <h3>What This Demonstrates as a PM</h3>
+          <ul>
+            <li><strong>User empathy over technical defaults:</strong> The API design started with "what does the analyst need to ask?" not "what does our schema look like?"</li>
+            <li><strong>Opinionated scoping:</strong> 5 countries with full coverage beats 50 with gaps. Depth beats breadth for v1.</li>
+            <li><strong>Tradeoff thinking:</strong> Every design decision (freshness vs. cost, schema vs. flexibility, build vs. buy) is a documented product tradeoff, not a technical default.</li>
+            <li><strong>Platform thinking:</strong> The pipeline is infrastructure. The API is the product. Analyst experience is the design surface.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-toc">
+          <div class="cs-toc-label">On This Page</div>
+          <a href="#problem">Problem & Users</a>
+          <a href="#pm-thinking">PM Thinking</a>
+          <a href="#tech-arch">Architecture</a>
+          <a href="#impact">Impact</a>
+        </div>
+        <div class="cs-meta-box">
+          <div class="cs-meta-row"><div class="cs-meta-label">Type</div><div class="cs-meta-val">Platform PM Case Study</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Domain</div><div class="cs-meta-val">Data Intelligence Platform</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Coverage</div><div class="cs-meta-val">5 Countries · 3 Continents</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">APIs</div><div class="cs-meta-val">World Bank · UN FAO · OECD · Eurostat</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Stack</div><div class="cs-meta-val">Python · Flask · PostgreSQL · Docker</div></div>
+        </div>
+        <div class="cs-nav-prev-next">
+          <a href="trustshield.html" class="cs-pn-link">
+            <span>←</span>
+            <div><div class="cs-pn-dir">← Previous</div>TrustShield AI</div>
+          </a>
+          <a href="index.html#casestudies" class="cs-pn-link">
+            <div><div class="cs-pn-dir">All Case Studies</div>Back to Portfolio</div>
+            <span>→</span>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="cs-breadcrumb">
+  <div class="cs-bc-inner">
+    <div class="cs-bc-left">
+      <a href="index.html" class="cs-bc-link">← Home</a>
+      <span class="cs-bc-sep">·</span>
+      <a href="index.html#casestudies" class="cs-bc-link">Case Studies</a>
+      <span class="cs-bc-sep">·</span>
+      <span style="font-family:var(--M);font-size:.51rem;color:var(--green)">Data Pipeline</span>
+    </div>
+    <div class="cs-bc-right">
+      <a href="campus-atlas.html" class="cs-bc-link">Campus Atlas</a>
+      <a href="trustshield.html" class="cs-bc-link">TrustShield AI</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fl">© 2026 Devothama GN · AI Product Manager · Eco-Economic Data Pipeline</span>
+  <div class="fr">
+    <a href="index.html">Home</a>
+    <a href="campus-atlas.html">Campus Atlas</a>
+    <a href="trustshield.html">TrustShield</a>
+    <a href="https://linkedin.com/in/devothamagn" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </div>
+</footer>
+</body>
+</html>
