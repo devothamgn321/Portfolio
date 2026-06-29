@@ -106,9 +106,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .h-chip.amber{color:var(--amber);border-color:rgba(232,146,42,.4)}
 .h-chip-sep{color:var(--ash);font-family:var(--M);font-size:.48rem}
 
-/* Name — primary visual element (+12% desktop, bold) */
-.h-name{font-family:var(--H);font-size:clamp(4rem,9.5vw,10.2rem);line-height:.86;
-  letter-spacing:.02em;margin-bottom:.55rem;opacity:0;animation:rise .85s .25s forwards}
+/* Name — full-width poster, primary visual element */
+.h-name{font-family:var(--H);font-size:clamp(4.5rem,13vw,13rem);line-height:.84;
+  letter-spacing:.01em;margin-bottom:.55rem;opacity:0;animation:rise .85s .25s forwards}
 .h-nick{font-family:var(--M);font-weight:400;font-size:.095em;display:block;
   color:var(--amber);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.45em;opacity:.8}
 
@@ -122,16 +122,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
   opacity:0;animation:rise .85s .55s forwards}
 .h-stmt em{color:var(--chalk);font-style:normal;font-weight:400}
 
-/* Metrics strip in hero */
-.h-strip{display:grid;grid-template-columns:repeat(3,1fr) auto;border:1px solid var(--line);
-  margin-bottom:1.5rem;opacity:0;animation:rise .85s .7s forwards}
-.hs{padding:.65rem 1rem;border-right:1px solid var(--line)}
-.hs-n{font-family:var(--H);font-size:2rem;color:var(--amber2);line-height:1}
-.hs-l{font-family:var(--M);font-size:.44rem;color:var(--smoke);letter-spacing:.09em;text-transform:uppercase;margin-top:.12rem}
-.hs-s{font-family:var(--M);font-size:.42rem;color:var(--paper);letter-spacing:.05em}
-.hs-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;padding:.65rem 1.6rem;background:var(--panel)}
-.hs-bv{font-family:var(--H);font-size:1.4rem;color:var(--amber2)}
-.hs-bl{font-family:var(--M);font-size:.41rem;color:var(--paper);letter-spacing:.12em;text-transform:uppercase}
+/* h-strip removed — metrics live only in #impact section below */
 
 .h-ctas{display:flex;gap:.7rem;flex-wrap:wrap;opacity:0;animation:rise .85s .85s forwards}
 
@@ -295,8 +286,8 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
   .h-photo-m{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:center top;
     border:2px solid var(--amber);flex-shrink:0;
     box-shadow:0 0 0 3px rgba(232,146,42,.08),0 0 16px rgba(232,146,42,.12)}
-  /* Mobile name — 20–30% larger than previous */
-  .h-mobile-name{font-family:var(--H);font-size:1.35rem;line-height:.93;color:var(--chalk);letter-spacing:.01em}
+  /* Mobile name — poster scale */
+  .h-mobile-name{font-family:var(--H);font-size:clamp(2rem,11vw,3rem);line-height:.9;color:var(--chalk);letter-spacing:.01em}
 
   /* Credibility chips */
   .h-cred-row{gap:.3rem .45rem;margin-bottom:.55rem}
@@ -305,15 +296,6 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
 
   .h-role{font-size:.5rem;margin-bottom:.8rem;letter-spacing:.06em}
   .h-stmt{font-size:.93rem;line-height:1.72;margin-bottom:1rem}
-
-  /* Metrics strip mobile */
-  .h-strip{grid-template-columns:1fr 1fr;margin-bottom:1.1rem}
-  .hs{padding:.55rem .7rem}
-  .hs-n{font-size:1.55rem}
-  .hs-l{font-size:.4rem}
-  .hs-s{font-size:.37rem}
-  .hs-badge{padding:.55rem .7rem;grid-column:span 2}
-  .hs-bv{font-size:1.2rem !important}
 
   /* CTAs */
   .h-ctas{flex-direction:column;gap:.5rem;width:100%;opacity:1;animation:none}
@@ -368,7 +350,7 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
 /* ══ NARROW PHONES ≤414px ══ */
 @media(max-width:414px){
   .h-inner{padding:3.5rem .9rem 1.8rem}
-  .h-mobile-name{font-size:1.22rem}
+  .h-mobile-name{font-size:clamp(1.8rem,10vw,2.4rem)}
   .h-photo-m{width:52px;height:52px}
   .h-chip{font-size:.38rem;padding:.12rem .38rem}
   .h-role{font-size:.46rem}
@@ -445,29 +427,6 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
         <p class="h-stmt">
           I build <em>AI-powered products</em> that turn complex systems into scalable, usable platforms.
         </p>
-
-        <!-- Metrics strip — only here, not repeated below -->
-        <div class="h-strip" aria-label="Key metrics">
-          <div class="hs">
-            <div class="hs-n" data-target="26" data-suffix="%">26%</div>
-            <div class="hs-l">Defect Reduction</div>
-            <div class="hs-s">MBRDI · ADAS</div>
-          </div>
-          <div class="hs">
-            <div class="hs-n" data-target="84" data-suffix="%">84%</div>
-            <div class="hs-l">Validation Coverage</div>
-            <div class="hs-s">IDC6 · AURIX</div>
-          </div>
-          <div class="hs">
-            <div class="hs-n" data-target="95" data-suffix="%">95%</div>
-            <div class="hs-l">Tool Adoption</div>
-            <div class="hs-s">News Corp · 1 month</div>
-          </div>
-          <div class="hs-badge">
-            <div class="hs-bl" style="color:var(--amber)">JHU GPA</div>
-            <div class="hs-bv">3.82</div>
-          </div>
-        </div>
 
         <div class="h-ctas">
           <a href="#casestudies" class="btn bA">Featured Work</a>
