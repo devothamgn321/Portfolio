@@ -555,19 +555,60 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   .film-inner{animation:none !important}
 }
 
+/* ═══ TABLET: 768px breakpoint ═══ */
+@media(max-width:768px){
+  .h-name{font-size:3.4rem;line-height:.9}
+  .h-ctas{flex-wrap:wrap;gap:.6rem}
+  .h-ctas .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+  .h-strip{grid-template-columns:1fr 1fr;gap:1rem}
+  .BIG{font-size:2.8rem}
+  .W{padding:0 1.25rem}
+  .h-inner{padding:5rem 1.25rem 2.5rem}
+  .mini.m3{grid-template-columns:1fr}
+  .tp-grid,.cap-grid,.cert-grid{grid-template-columns:1fr}
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .pj-grid{grid-template-columns:1fr}
+  .pjc.feat{grid-template-columns:1fr}
+  .proj-carousel{grid-template-columns:1fr !important}
+  .feat-wrap{grid-template-columns:1fr}
+  .ab-grid{grid-template-columns:1fr;gap:2rem}
+  .ab-stats{grid-template-columns:1fr 1fr}
+  .exp-row{grid-template-columns:1fr}
+  .edu-grid{grid-template-columns:1fr;gap:2rem}
+  .ted-card{grid-template-columns:1fr;gap:1.5rem}
+  .ct-grid{grid-template-columns:1fr;gap:2.5rem}
+  .thinking-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:.75rem;text-align:center}
+  .h-streak{display:none}
+}
+
 /* ═══ MOBILE: 480px breakpoint ═══ */
 @media(max-width:480px){
-  .h-name{font-size:2.6rem;line-height:.88}
-  .h-ctas{flex-wrap:wrap;gap:.5rem}
-  .h-ctas .btn{font-size:.5rem;padding:.65rem 1rem}
-  .h-strip{grid-template-columns:1fr;gap:1rem}
+  .h-name{font-size:2.4rem;line-height:.88}
+  .h-meta{gap:.4rem .6rem}
+  .h-tag{font-size:.48rem;padding:.25rem .55rem}
+  .h-ctas{flex-direction:column;gap:.5rem;width:100%}
+  .h-ctas .btn{width:100%;text-align:center;justify-content:center;min-height:48px;font-size:.6rem;padding:.9rem 1.2rem}
+  .h-strip{grid-template-columns:1fr;gap:.8rem}
   .hs-badge{display:none}
-  .BIG{font-size:2.4rem}
+  .BIG{font-size:2.1rem;line-height:.92}
   .proj-carousel > div{grid-template-columns:1fr !important}
   .W{padding:0 1rem}
   .h-inner{padding:4.5rem 1rem 2rem}
   .exp-row > div:first-child{padding-bottom:.75rem;border-bottom:1px solid var(--line)}
-  .edu-grid{gap:2rem}
+  .edu-grid{gap:1.5rem}
+  .impact-grid{grid-template-columns:1fr}
+  .tp-grid,.cap-grid,.cert-grid{grid-template-columns:1fr}
+  .mini.m3{grid-template-columns:1fr}
+  .ab-stats{grid-template-columns:1fr}
+  .h-photo{width:80px;height:80px}
+  .h-photo-caption{display:none}
+  section.S{padding:3.5rem 0}
+  .TR{margin-bottom:1.2rem}
+  nav{padding:0 1rem}
+  .nav-id{font-size:.6rem}
+  .nav-cta{font-size:.55rem;padding:.5rem .9rem}
+  .film-strip{display:none}
 }
 
 /* ═══ LARGE MONITOR: cap max content width ═══ */
