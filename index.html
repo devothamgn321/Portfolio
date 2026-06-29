@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Devothama GN — AI Product Manager</title>
-<meta name="description" content="AI Product Manager with engineering background. Campus Atlas, TrustShield AI, Cross-Continental Data Pipeline. MS Engineering Management, Johns Hopkins. Ex-Mercedes-Benz ADAS.">
+<meta name="description" content="AI Product Manager. Campus Atlas, TrustShield AI, Cross-Continental Data Pipeline. MS Engineering Management, Johns Hopkins. Ex-Mercedes-Benz ADAS.">
 <meta name="author" content="Devothama Gundugurki Narasimhamurthy">
 <link rel="canonical" href="https://devothamagn.netlify.app">
 <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --void:#070706;--carbon:#0e0e0d;--panel:#141412;--surface:#1a1a18;--lift:#202020;
+  --void:#070706;--carbon:#0e0e0d;--panel:#141412;--surface:#1a1a18;
   --chalk:#eeeadf;--paper:#c4bfb4;--smoke:#787470;--ash:#6b6860;
   --amber:#e8922a;--amber2:#f4ae55;--amber3:rgba(232,146,42,.11);
   --red:#d93030;--green:#4caf7d;
@@ -34,7 +34,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.05'/%3E%3C/svg%3E");
   opacity:.45;mix-blend-mode:overlay}
 
-/* NAV */
+/* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;
   justify-content:space-between;padding:0 3rem;height:54px;
   background:rgba(7,7,6,.93);backdrop-filter:blur(22px) saturate(1.3);
@@ -54,7 +54,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
   transition:background .2s}
 .nav-cta:hover{background:var(--amber2)}
 
-/* LAYOUT */
+/* ── LAYOUT ── */
 .S{padding:6rem 0;scroll-margin-top:4rem}
 .W{max-width:1160px;margin:0 auto;padding:0 3rem}
 .sep{height:1px;background:var(--line);position:relative;overflow:hidden}
@@ -70,79 +70,78 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .BIG .sub{font-family:var(--P);font-style:italic;font-weight:300;font-size:.3em;
   display:block;color:var(--amber2);letter-spacing:0;line-height:1.3;margin-bottom:.3em}
 
-/* FILM */
+/* ── FILM STRIP ── */
 .film{display:flex;height:33px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
 .film-inner{will-change:transform;display:flex;animation:roll 22s linear infinite;white-space:nowrap}
 @keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.ff{font-family:var(--M);font-size:.49rem;color:var(--ash);padding:0 1.3rem;letter-spacing:.13em;text-transform:uppercase;border-right:1px solid var(--ash);line-height:33px;white-space:nowrap}
+.ff{font-family:var(--M);font-size:.49rem;color:var(--ash);padding:0 1.3rem;letter-spacing:.13em;text-transform:uppercase;border-right:1px solid rgba(107,104,96,.35);line-height:33px;white-space:nowrap}
 .ff.on{color:var(--amber)}
 
-/* BUTTONS */
+/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--M);font-size:.62rem;
   letter-spacing:.13em;text-transform:uppercase;text-decoration:none;padding:.8rem 1.9rem;
   transition:transform .18s,background .2s,color .2s,border-color .2s;cursor:pointer;min-height:44px}
 .bA{background:var(--amber);color:var(--void)}.bA:hover{background:var(--amber2);transform:translateY(-2px)}
 .bO{background:transparent;color:var(--paper);border:1px solid var(--line2)}.bO:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
 
-/* HERO */
-#home{min-height:66vh;position:relative;overflow:hidden;display:flex;align-items:center}
+/* ── HERO ── */
+#home{min-height:62vh;position:relative;overflow:hidden;display:flex;align-items:center}
 .h-grid{position:absolute;inset:0;pointer-events:none;
   background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
   background-size:55px 55px;mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 0%,transparent 80%);opacity:.45}
 .h-streak{position:absolute;top:0;right:0;bottom:0;width:40%;pointer-events:none;
   background:repeating-linear-gradient(108deg,transparent,transparent 2px,rgba(232,146,42,.025) 2px,rgba(232,146,42,.025) 4px);
   mask-image:linear-gradient(to left,black 0%,transparent 100%)}
-.h-ledge{position:absolute;left:0;top:0;bottom:0;width:3px;
-  background:linear-gradient(to bottom,transparent,var(--red),var(--amber),transparent)}
-.h-inner{position:relative;z-index:1;padding:4rem 3rem 2.5rem;max-width:1160px;margin:0 auto;width:100%}
+/* h-ledge REMOVED */
+.h-inner{position:relative;z-index:1;padding:4.5rem 3rem 3rem;max-width:1160px;margin:0 auto;width:100%}
 .h-layout{display:grid;grid-template-columns:1fr 260px;gap:4rem;align-items:center;width:100%}
 .h-mobile-top{display:none}
 
-/* Hero credibility row */
-.h-tags{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;margin-bottom:1rem;
-  opacity:0;animation:rise .7s .15s forwards}
-.h-tag{font-family:var(--M);font-size:.51rem;letter-spacing:.13em;text-transform:uppercase;
-  padding:.22rem .65rem;border:1px solid var(--ash);color:var(--smoke)}
-.h-tag.amber{color:var(--amber);border-color:var(--amber)}
-.h-cred{font-family:var(--M);font-size:.5rem;color:var(--ash);letter-spacing:.12em;text-transform:uppercase}
-.h-cred b{color:var(--amber2)}
+/* Credibility row — single chip line, nowrap per chip */
+.h-cred-row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .6rem;margin-bottom:.9rem;
+  opacity:0;animation:rise .7s .1s forwards}
+.h-chip{display:inline-flex;align-items:center;white-space:nowrap;
+  font-family:var(--M);font-size:.48rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--smoke);padding:.18rem .6rem;border:1px solid rgba(107,104,96,.4)}
+.h-chip.amber{color:var(--amber);border-color:rgba(232,146,42,.4)}
+.h-chip-sep{color:var(--ash);font-family:var(--M);font-size:.48rem}
 
-/* Name — +12% */
-.h-name{font-family:var(--H);font-size:clamp(3.6rem,8.5vw,9.2rem);line-height:.87;
-  letter-spacing:.02em;margin-bottom:.6rem;opacity:0;animation:rise .85s .3s forwards}
-.h-nick{font-family:var(--M);font-weight:400;font-size:.11em;display:block;
-  color:var(--amber);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.5em;opacity:.85}
+/* Name — primary visual element (+12% desktop, bold) */
+.h-name{font-family:var(--H);font-size:clamp(4rem,9.5vw,10.2rem);line-height:.86;
+  letter-spacing:.02em;margin-bottom:.55rem;opacity:0;animation:rise .85s .25s forwards}
+.h-nick{font-family:var(--M);font-weight:400;font-size:.095em;display:block;
+  color:var(--amber);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.45em;opacity:.8}
 
-/* Positioning row — ONE row only */
-.h-role{font-family:var(--M);font-size:.65rem;color:var(--smoke);letter-spacing:.07em;
-  text-transform:uppercase;margin-bottom:1.3rem;opacity:0;animation:rise .85s .45s forwards;line-height:1.6}
+/* Positioning — one row */
+.h-role{font-family:var(--M);font-size:.64rem;color:var(--smoke);letter-spacing:.07em;
+  text-transform:uppercase;margin-bottom:1.1rem;opacity:0;animation:rise .85s .4s forwards;line-height:1.5}
 .h-role b{color:var(--amber)}
 
-.h-stmt{font-family:var(--P);font-size:1.08rem;font-weight:300;font-style:italic;
-  color:var(--paper);line-height:1.78;max-width:560px;margin-bottom:1.6rem;
-  opacity:0;animation:rise .85s .6s forwards}
+.h-stmt{font-family:var(--P);font-size:1.06rem;font-weight:300;font-style:italic;
+  color:var(--paper);line-height:1.76;max-width:540px;margin-bottom:1.5rem;
+  opacity:0;animation:rise .85s .55s forwards}
 .h-stmt em{color:var(--chalk);font-style:normal;font-weight:400}
 
-/* Metrics strip */
+/* Metrics strip in hero */
 .h-strip{display:grid;grid-template-columns:repeat(3,1fr) auto;border:1px solid var(--line);
-  margin-bottom:1.6rem;opacity:0;animation:rise .85s .75s forwards}
-.hs{padding:.7rem 1.1rem;border-right:1px solid var(--line)}
+  margin-bottom:1.5rem;opacity:0;animation:rise .85s .7s forwards}
+.hs{padding:.65rem 1rem;border-right:1px solid var(--line)}
 .hs-n{font-family:var(--H);font-size:2rem;color:var(--amber2);line-height:1}
-.hs-l{font-family:var(--M);font-size:.46rem;color:var(--smoke);letter-spacing:.09em;text-transform:uppercase;margin-top:.15rem}
-.hs-s{font-family:var(--M);font-size:.44rem;color:var(--paper);letter-spacing:.06em}
-.hs-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;padding:.8rem 1.8rem;background:var(--panel)}
+.hs-l{font-family:var(--M);font-size:.44rem;color:var(--smoke);letter-spacing:.09em;text-transform:uppercase;margin-top:.12rem}
+.hs-s{font-family:var(--M);font-size:.42rem;color:var(--paper);letter-spacing:.05em}
+.hs-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;padding:.65rem 1.6rem;background:var(--panel)}
 .hs-bv{font-family:var(--H);font-size:1.4rem;color:var(--amber2)}
-.hs-bl{font-family:var(--M);font-size:.43rem;color:var(--paper);letter-spacing:.12em;text-transform:uppercase}
+.hs-bl{font-family:var(--M);font-size:.41rem;color:var(--paper);letter-spacing:.12em;text-transform:uppercase}
 
-.h-ctas{display:flex;gap:.7rem;flex-wrap:wrap;opacity:0;animation:rise .85s .9s forwards}
+.h-ctas{display:flex;gap:.7rem;flex-wrap:wrap;opacity:0;animation:rise .85s .85s forwards}
 
-/* Photo */
-.h-right{display:flex;flex-direction:column;align-items:center;gap:.8rem;opacity:0;animation:rise .9s .5s forwards}
+/* Photo column */
+.h-right{display:flex;flex-direction:column;align-items:center;gap:.8rem;opacity:0;animation:rise .9s .45s forwards}
 .h-photo{width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:center top;
   border:2px solid var(--amber);box-shadow:0 0 0 6px rgba(232,146,42,.08),0 0 40px rgba(232,146,42,.12)}
-.h-photo-caption{font-family:var(--M);font-size:.5rem;color:var(--smoke);letter-spacing:.14em;text-transform:uppercase;text-align:center}
+.h-photo-caption{font-family:var(--M);font-size:.48rem;color:var(--smoke);letter-spacing:.14em;text-transform:uppercase;text-align:center}
 
-/* METRICS SECTION */
+/* ── IMPACT METRICS (standalone section, not duplicated in hero) ── */
 #impact{background:var(--carbon)}
 .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
 .ic{background:var(--panel);border:1px solid var(--line);padding:1.6rem 1.3rem;
@@ -153,7 +152,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .ic-l{font-family:var(--M);font-size:.54rem;color:var(--chalk);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem;font-weight:700}
 .ic-c{font-family:var(--M);font-size:.48rem;color:var(--paper);letter-spacing:.07em;text-transform:uppercase;line-height:1.4}
 
-/* FEATURED WORK */
+/* ── FEATURED WORK ── */
 #casestudies{background:var(--void)}
 .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
 .cs-card{background:var(--panel);border:1px solid var(--line);
@@ -170,7 +169,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .cs-cta{font-family:var(--M);font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
   padding:.65rem 1.2rem;display:inline-block;margin-top:auto;align-self:flex-start;transition:all .2s}
 
-/* EXPERIENCE */
+/* ── EXPERIENCE ── */
 #experience{background:var(--carbon)}
 .exp-cards{display:flex;flex-direction:column;gap:1px;margin-top:2.5rem;border:1px solid var(--line)}
 .exp-card{background:var(--panel);padding:2rem 2.5rem;display:grid;grid-template-columns:200px 1fr;gap:2rem;
@@ -188,7 +187,41 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .ex-link{font-family:var(--M);font-size:.5rem;color:var(--amber);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:color .2s}
 .ex-link:hover{color:var(--amber2)}
 
-/* CTA FOOTER */
+/* ── TEDx FEATURE ── */
+#tedx{background:var(--void)}
+.tedx-card{border:1px solid var(--line2);background:var(--panel);
+  display:grid;grid-template-columns:auto 1fr;gap:0;overflow:hidden;
+  position:relative;transition:border-color .25s}
+.tedx-card:hover{border-color:var(--amber)}
+.tedx-accent-bar{width:4px;background:linear-gradient(to bottom,var(--amber),var(--red));flex-shrink:0}
+.tedx-inner{padding:2rem 2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start}
+.tedx-left{}
+.tedx-eyebrow{font-family:var(--M);font-size:.48rem;color:var(--amber);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+.tedx-eyebrow-badge{background:var(--amber3);border:1px solid var(--amber2);color:var(--amber2);
+  font-family:var(--M);font-size:.4rem;letter-spacing:.12em;padding:.12rem .5rem}
+.tedx-title{font-family:var(--H);font-size:2.6rem;color:var(--chalk);line-height:.92;letter-spacing:.02em;margin-bottom:.3rem}
+.tedx-sub{font-family:var(--M);font-size:.5rem;color:var(--ash);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+.tedx-body{font-family:var(--P);font-size:.98rem;font-weight:300;color:var(--paper);line-height:1.78;margin-bottom:1rem;max-width:600px}
+.tedx-body em{color:var(--chalk);font-style:normal;font-weight:400}
+.tedx-ctas{display:flex;gap:.7rem;flex-wrap:wrap}
+.tedx-right{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;
+  padding:1.5rem;border-left:1px solid var(--line);min-width:120px}
+.tedx-mic{font-size:2.4rem;opacity:.5;line-height:1}
+.tedx-badge{font-family:var(--M);font-size:.42rem;color:var(--ash);letter-spacing:.1em;text-transform:uppercase;text-align:center;line-height:1.5}
+/* TEDx stage photo */
+.tedx-photo-wrap{margin-top:1.8rem;position:relative;overflow:hidden;border:1px solid var(--line2)}
+.tedx-photo-wrap img{width:100%;display:block;object-fit:cover;max-height:420px;
+  filter:brightness(.88) contrast(1.06);transition:filter .4s}
+.tedx-photo-wrap:hover img{filter:brightness(.95) contrast(1.04)}
+.tedx-photo-caption{position:absolute;bottom:0;left:0;right:0;
+  padding:.5rem .9rem;
+  background:linear-gradient(to top,rgba(7,7,6,.85) 0%,transparent 100%);
+  font-family:var(--M);font-size:.44rem;color:var(--paper);letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:768px){
+  .tedx-photo-wrap img{max-height:260px}
+}
+
+/* ── CTA FOOTER ── */
 #cta-footer{background:var(--void);padding:6rem 0;text-align:center;position:relative;overflow:hidden}
 #cta-footer::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   width:600px;height:600px;border-radius:50%;
@@ -206,7 +239,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .ctaf-val{font-family:var(--M);font-size:.68rem;color:var(--chalk)}
 .ctaf-arr{margin-left:auto;color:var(--amber)}
 
-/* FOOTER */
+/* ── FOOTER ── */
 footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3rem;
   display:flex;align-items:center;justify-content:space-between}
 .fl{font-family:var(--M);font-size:.51rem;color:var(--ash);letter-spacing:.07em}
@@ -214,12 +247,10 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
 .fr a{font-family:var(--M);font-size:.51rem;color:var(--ash);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
 .fr a:hover{color:var(--amber)}
 
-@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fIn{from{opacity:0}to{opacity:1}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
-/* ACCESSIBILITY */
+/* ── ACCESSIBILITY ── */
 :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 .skip-link{position:absolute;top:-40px;left:1rem;background:var(--amber);color:var(--void);
   font-family:var(--M);font-size:.6rem;padding:.5rem 1rem;text-decoration:none;z-index:9999;transition:top .2s}
 .skip-link:focus{top:1rem}
@@ -228,12 +259,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   .film-inner{animation:none !important}
 }
 
-/* TABLET ≤960px */
+/* ══ TABLET ≤960px ══ */
 @media(max-width:960px){
   nav{padding:0 1.5rem}
   .nav-links{display:none}
   .W{padding:0 1.5rem}
-  .h-inner{padding:5rem 1.5rem 2.5rem}
+  .h-inner{padding:4.5rem 1.5rem 2.5rem}
   .h-layout{grid-template-columns:1fr;gap:0}
   .h-right{flex-direction:row;align-items:center;gap:1rem;margin-bottom:1.2rem;order:-1;opacity:1;animation:none}
   .h-photo{width:80px;height:80px;border-width:1.5px}
@@ -242,75 +273,114 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   .impact-grid{grid-template-columns:1fr 1fr}
   .cs-grid{grid-template-columns:1fr}
   .exp-card{grid-template-columns:1fr;gap:.6rem}
+  .tedx-inner{grid-template-columns:1fr;gap:1rem}
+  .tedx-right{display:none}
   footer{flex-direction:column;gap:.6rem;text-align:center}
   .ctaf-links{flex-direction:column;align-items:center}
 }
 
-/* MOBILE ≤768px */
+/* ══ MOBILE ≤768px ══ */
 @media(max-width:768px){
   nav{padding:0 1rem;height:48px}
   .nav-cta{font-size:.52rem;padding:.42rem .8rem}
-  .h-inner{padding:4rem 1rem 2rem}
+  .h-inner{padding:4rem 1.1rem 2rem}
   #home{min-height:auto}
 
-  /* Mobile hero: compact photo+name row */
+  /* Mobile hero layout */
   .h-layout{grid-template-columns:1fr}
   .h-right{display:none !important}
   .h-name{display:none !important}
-  .h-mobile-top{display:flex;align-items:center;gap:.85rem;margin-bottom:.9rem}
-  .h-photo-m{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;border:1.5px solid var(--amber);flex-shrink:0}
-  .h-mobile-name{font-family:var(--H);font-size:1rem;line-height:.95;color:var(--chalk)}
+  .h-mobile-top{display:flex;align-items:center;gap:1rem;margin-bottom:.85rem}
+  /* Mobile photo — larger, more breathing room */
+  .h-photo-m{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:center top;
+    border:2px solid var(--amber);flex-shrink:0;
+    box-shadow:0 0 0 3px rgba(232,146,42,.08),0 0 16px rgba(232,146,42,.12)}
+  /* Mobile name — 20–30% larger than previous */
+  .h-mobile-name{font-family:var(--H);font-size:1.35rem;line-height:.93;color:var(--chalk);letter-spacing:.01em}
 
-  .h-tags{gap:.3rem .5rem;margin-bottom:.6rem}
-  .h-tag{font-size:.44rem;padding:.18rem .48rem}
-  .h-cred{font-size:.42rem;line-height:1.6}
-  .h-role{font-size:.52rem;margin-bottom:.9rem}
-  .h-stmt{font-size:.95rem;margin-bottom:1.1rem}
-  .h-strip{grid-template-columns:1fr 1fr;margin-bottom:1.2rem}
-  .hs{padding:.6rem .8rem}
-  .hs-n{font-size:1.6rem}
-  .hs-l{font-size:.41rem}
-  .hs-s{font-size:.39rem}
-  .hs-badge{padding:.6rem .8rem}
-  .hs-bv{font-size:1.3rem !important}
+  /* Credibility chips */
+  .h-cred-row{gap:.3rem .45rem;margin-bottom:.55rem}
+  .h-chip{font-size:.4rem;padding:.14rem .44rem;letter-spacing:.09em}
+  .h-chip-sep{font-size:.4rem}
+
+  .h-role{font-size:.5rem;margin-bottom:.8rem;letter-spacing:.06em}
+  .h-stmt{font-size:.93rem;line-height:1.72;margin-bottom:1rem}
+
+  /* Metrics strip mobile */
+  .h-strip{grid-template-columns:1fr 1fr;margin-bottom:1.1rem}
+  .hs{padding:.55rem .7rem}
+  .hs-n{font-size:1.55rem}
+  .hs-l{font-size:.4rem}
+  .hs-s{font-size:.37rem}
+  .hs-badge{padding:.55rem .7rem;grid-column:span 2}
+  .hs-bv{font-size:1.2rem !important}
+
+  /* CTAs */
   .h-ctas{flex-direction:column;gap:.5rem;width:100%;opacity:1;animation:none}
   .h-ctas .btn{width:100%;min-height:48px;font-size:.56rem}
-  .h-ctas .btn:nth-child(1){order:1}
-  .h-ctas .btn:nth-child(2){order:2}
+  /* Show only first 2 on mobile */
   .h-ctas .btn:nth-child(3),.h-ctas .btn:nth-child(4){display:none}
 
+  /* Sections */
   .S{padding:2.8rem 0}
-  .W{padding:0 1rem}
-  .BIG{font-size:1.9rem;line-height:.92}
+  .W{padding:0 1.1rem}
+  .BIG{font-size:1.85rem;line-height:.92}
   .TR{margin-bottom:.7rem}
   .TT{font-size:.46rem}
 
+  /* Impact */
   .impact-grid{grid-template-columns:1fr 1fr;gap:.6rem}
   .ic{padding:1.2rem .9rem}
   .ic-n{font-size:2.8rem}
-  .ic-l{font-size:.48rem}
-  .ic-c{font-size:.43rem}
+  .ic-l{font-size:.47rem}
+  .ic-c{font-size:.42rem}
 
+  /* Case study cards */
   .cs-grid{grid-template-columns:1fr;gap:.8rem}
   .cs-body{padding:1.3rem}
   .cs-title{font-size:1.8rem}
 
+  /* Experience */
   .exp-card{grid-template-columns:1fr;gap:.5rem;padding:1.3rem}
   .exp-card:hover{background:var(--panel)}
+  .ex-role{font-size:1.4rem}
+  .ex-wins li{font-size:.6rem}
 
-  .ctaf-head{font-size:2.2rem}
-  .ctaf-sub{font-size:.97rem}
-  .ctaf-links{gap:.6rem}
+  /* TEDx */
+  .tedx-accent-bar{display:none}
+  .tedx-inner{padding:1.4rem 1.3rem;grid-template-columns:1fr;gap:0}
+  .tedx-title{font-size:2rem}
+  .tedx-body{font-size:.9rem;line-height:1.72}
+  .tedx-ctas{flex-direction:column;gap:.5rem}
+  .tedx-ctas .btn{width:100%;min-height:48px;font-size:.54rem}
+  .tedx-right{display:none}
+
+  /* CTA footer */
+  .ctaf-head{font-size:2rem;line-height:.94}
+  .ctaf-sub{font-size:.95rem}
+  .ctaf-links{gap:.55rem}
   .ctaf-link{min-width:auto;width:100%}
 
   footer{padding:1rem;font-size:.46rem}
   .fr{gap:.8rem;flex-wrap:wrap;justify-content:center}
 }
-@media(max-width:390px){
-  .h-mobile-name{font-size:.88rem}
+
+/* ══ NARROW PHONES ≤414px ══ */
+@media(max-width:414px){
+  .h-inner{padding:3.5rem .9rem 1.8rem}
+  .h-mobile-name{font-size:1.22rem}
+  .h-photo-m{width:52px;height:52px}
+  .h-chip{font-size:.38rem;padding:.12rem .38rem}
+  .h-role{font-size:.46rem}
+  .h-stmt{font-size:.88rem}
+  .hs-n{font-size:1.4rem}
   .BIG{font-size:1.7rem}
   .ic-n{font-size:2.4rem}
+  .exp-card{padding:1.1rem}
+  .ctaf-head{font-size:1.8rem}
 }
+
+/* ══ WIDE SCREENS ══ */
 @media(min-width:1600px){.W{max-width:1400px}.h-inner{max-width:1400px}}
 </style>
 </head>
@@ -326,6 +396,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   <div class="nav-links">
     <a href="#casestudies">Work</a>
     <a href="#experience">Experience</a>
+    <a href="#tedx">TEDx</a>
     <a href="campus-atlas.html">Campus Atlas</a>
     <a href="trustshield.html">TrustShield</a>
     <a href="cross-continental-pipeline.html">Pipeline</a>
@@ -333,32 +404,40 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   <a href="AI_PM_FINALV3.pdf" target="_blank" rel="noopener noreferrer" class="nav-cta">Resume ↗</a>
 </nav>
 
-<!-- HERO -->
+<!-- ════ HERO ════ -->
 <section id="home" role="main">
   <div class="h-grid" aria-hidden="true"></div>
   <div class="h-streak" aria-hidden="true"></div>
-  <div class="h-ledge" aria-hidden="true"></div>
   <div class="h-inner">
     <div class="h-layout">
+
+      <!-- Left: all copy -->
       <div class="h-left">
 
-        <!-- Mobile: compact photo + name row -->
+        <!-- Mobile: compact photo + large name row -->
         <div class="h-mobile-top">
           <img class="h-photo-m" alt="Devothama GN" src="photo.jpg" loading="eager">
           <div class="h-mobile-name">Devothama<br>Gundugurki<br>Narasimhamurthy</div>
         </div>
 
-        <!-- Credibility row — one clean line, no duplication -->
-        <div class="h-tags">
-          <span class="h-cred"><b>Ex-Mercedes-Benz R&D</b> &nbsp;·&nbsp; Johns Hopkins MSEM &nbsp;·&nbsp; TEDxJHU Speaker &nbsp;·&nbsp; Open to Work · USA</span>
+        <!-- Credibility chips — nowrap per chip, wraps between chips only -->
+        <div class="h-cred-row" aria-label="Credentials">
+          <span class="h-chip"><b style="color:var(--amber2)">Ex-Mercedes-Benz R&amp;D</b></span>
+          <span class="h-chip-sep">·</span>
+          <span class="h-chip">Johns Hopkins MSEM</span>
+          <span class="h-chip-sep">·</span>
+          <span class="h-chip amber">TEDxJHU Speaker</span>
+          <span class="h-chip-sep">·</span>
+          <span class="h-chip">Open to US Opportunities</span>
         </div>
 
+        <!-- Name — primary visual anchor (desktop only; mobile uses h-mobile-name) -->
         <h1 class="h-name">
           <span class="h-nick">Framing Problems. Building Products.</span>
           Devothama<br>Gundugurki<br>Narasimhamurthy
         </h1>
 
-        <!-- Primary positioning — once only -->
+        <!-- Positioning — one line, no repetition -->
         <div class="h-role">
           <b>AI Product Manager</b> &nbsp;·&nbsp; Platform Products &nbsp;·&nbsp; Technical PM
         </div>
@@ -367,7 +446,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
           I build <em>AI-powered products</em> that turn complex systems into scalable, usable platforms.
         </p>
 
-        <div class="h-strip">
+        <!-- Metrics strip — only here, not repeated below -->
+        <div class="h-strip" aria-label="Key metrics">
           <div class="hs">
             <div class="hs-n" data-target="26" data-suffix="%">26%</div>
             <div class="hs-l">Defect Reduction</div>
@@ -384,8 +464,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
             <div class="hs-s">News Corp · 1 month</div>
           </div>
           <div class="hs-badge">
-            <div class="hs-bl" style="color:var(--amber);letter-spacing:.14em">JHU GPA</div>
-            <div class="hs-bv" style="color:var(--amber)">3.82</div>
+            <div class="hs-bl" style="color:var(--amber)">JHU GPA</div>
+            <div class="hs-bv">3.82</div>
           </div>
         </div>
 
@@ -397,10 +477,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
         </div>
 
       </div>
+
+      <!-- Right: photo -->
       <div class="h-right">
         <img class="h-photo" alt="Devothama GN — AI Product Manager" src="photo.jpg" loading="eager" fetchpriority="high">
         <div class="h-photo-caption">Builder · Systems Thinker · Photographer</div>
       </div>
+
     </div>
   </div>
 </section>
@@ -409,29 +492,80 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
 <div class="film" aria-hidden="true">
   <div class="film-inner">
     <span class="ff on">Campus Atlas</span><span class="ff">RAG · EdTech</span>
-    <span class="ff on">TrustShield AI</span><span class="ff">Trust & Safety</span>
+    <span class="ff on">TrustShield AI</span><span class="ff">Trust &amp; Safety</span>
     <span class="ff on">Data Pipeline</span><span class="ff">5 Countries · 4 APIs</span>
-    <span class="ff">Ex-Mercedes-Benz R&D</span><span class="ff on">TEDxJHU Speaker</span>
+    <span class="ff">Ex-Mercedes-Benz R&amp;D</span><span class="ff on">TEDxJHU Speaker</span>
     <span class="ff">Johns Hopkins MSEM</span><span class="ff on">AI Product Manager</span>
     <span class="ff">Platform Products</span><span class="ff">Technical PM</span>
-    <span class="ff on">Open to Work · USA</span><span class="ff">GPA 3.82</span>
-    <!-- duplicate for seamless loop -->
+    <span class="ff on">Open to US Opportunities</span><span class="ff">GPA 3.82</span>
     <span class="ff on">Campus Atlas</span><span class="ff">RAG · EdTech</span>
-    <span class="ff on">TrustShield AI</span><span class="ff">Trust & Safety</span>
+    <span class="ff on">TrustShield AI</span><span class="ff">Trust &amp; Safety</span>
     <span class="ff on">Data Pipeline</span><span class="ff">5 Countries · 4 APIs</span>
-    <span class="ff">Ex-Mercedes-Benz R&D</span><span class="ff on">TEDxJHU Speaker</span>
+    <span class="ff">Ex-Mercedes-Benz R&amp;D</span><span class="ff on">TEDxJHU Speaker</span>
     <span class="ff">Johns Hopkins MSEM</span><span class="ff on">AI Product Manager</span>
     <span class="ff">Platform Products</span><span class="ff">Technical PM</span>
-    <span class="ff on">Open to Work · USA</span><span class="ff">GPA 3.82</span>
+    <span class="ff on">Open to US Opportunities</span><span class="ff">GPA 3.82</span>
   </div>
 </div>
 <div class="sep"></div>
 
-<!-- IMPACT METRICS -->
+<!-- ════ FEATURED WORK ════ -->
+<section id="casestudies" class="S">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Featured Work</div><div class="TN">01</div></div>
+    <h2 class="BIG"><span class="sub">Three case studies —</span>Built.</h2>
+    <div class="cs-grid">
+
+      <div class="cs-card">
+        <div class="cs-accent" style="background:var(--amber)"></div>
+        <div class="cs-body">
+          <div class="cs-label" style="color:var(--amber)">AI PM Case Study · 01</div>
+          <div class="cs-title">Campus Atlas</div>
+          <p class="cs-desc">AI-native operating system for higher education — RAG copilot, evaluation framework, GTM roadmap, and working prototype. Full PM case study from 0→1.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">RAG</span><span class="cs-tag">Eval Framework</span><span class="cs-tag">GTM</span><span class="cs-tag">EdTech</span>
+          </div>
+          <a href="campus-atlas.html" class="cs-cta" style="background:var(--amber);color:var(--void)">View Case Study →</a>
+        </div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-accent" style="background:var(--red)"></div>
+        <div class="cs-body">
+          <div class="cs-label" style="color:var(--red)">AI Trust &amp; Safety · 02</div>
+          <div class="cs-title">TrustShield AI</div>
+          <p class="cs-desc">Responsible AI moderation platform — explainable signals, risk scoring, human-in-the-loop workflows, and configurable trust thresholds for high-stakes domains.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">AI Safety</span><span class="cs-tag">HITL</span><span class="cs-tag">Risk Scoring</span><span class="cs-tag">GAN</span>
+          </div>
+          <a href="trustshield.html" class="cs-cta" style="background:var(--red);color:var(--chalk)">View Case Study →</a>
+        </div>
+      </div>
+
+      <div class="cs-card">
+        <div class="cs-accent" style="background:var(--green)"></div>
+        <div class="cs-body">
+          <div class="cs-label" style="color:var(--green)">Data Platform · 03</div>
+          <div class="cs-title">Cross-Continental Eco-Economic Data Pipeline</div>
+          <p class="cs-desc">Analyst-facing intelligence platform spanning 5 countries and 4 APIs — designed around analytical questions, not raw data schemas.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Python</span><span class="cs-tag">Flask API</span><span class="cs-tag">PostgreSQL</span><span class="cs-tag">Docker</span>
+          </div>
+          <a href="cross-continental-pipeline.html" class="cs-cta" style="background:var(--green);color:var(--void)">View Case Study →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ════ IMPACT METRICS ════ -->
 <section id="impact" class="S">
   <div class="W">
-    <div class="TR"><div class="TL"></div><div class="TT">Impact at a Glance</div><div class="TN">01</div></div>
-    <h2 class="BIG"><span class="sub">Measured outcomes —</span>Impact.</h2>
+    <div class="TR"><div class="TL"></div><div class="TT">Measured Impact</div><div class="TN">02</div></div>
+    <h2 class="BIG"><span class="sub">Outcomes that shipped —</span>Impact.</h2>
     <div class="impact-grid">
       <div class="ic">
         <div class="ic-n" data-target="26" data-suffix="%">26%</div>
@@ -459,62 +593,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
 
 <div class="sep"></div>
 
-<!-- FEATURED WORK -->
-<section id="casestudies" class="S">
-  <div class="W">
-    <div class="TR"><div class="TL"></div><div class="TT">Featured Work</div><div class="TN">02</div></div>
-    <h2 class="BIG"><span class="sub">Three case studies —</span>Built.</h2>
-    <div class="cs-grid">
-
-      <!-- Campus Atlas -->
-      <div class="cs-card">
-        <div class="cs-accent" style="background:var(--amber)"></div>
-        <div class="cs-body">
-          <div class="cs-label" style="color:var(--amber)">AI PM Case Study · 01</div>
-          <div class="cs-title">Campus Atlas</div>
-          <p class="cs-desc">AI-native operating system for higher education — RAG copilot, evaluation framework, GTM roadmap, and working prototype. Full PM case study from 0→1.</p>
-          <div class="cs-tags">
-            <span class="cs-tag">RAG</span><span class="cs-tag">Eval Framework</span><span class="cs-tag">GTM</span><span class="cs-tag">EdTech</span>
-          </div>
-          <a href="campus-atlas.html" class="cs-cta" style="background:var(--amber);color:var(--void)">View Case Study →</a>
-        </div>
-      </div>
-
-      <!-- TrustShield -->
-      <div class="cs-card">
-        <div class="cs-accent" style="background:var(--red)"></div>
-        <div class="cs-body">
-          <div class="cs-label" style="color:var(--red)">AI Trust & Safety · 02</div>
-          <div class="cs-title">TrustShield AI</div>
-          <p class="cs-desc">Responsible AI moderation platform — explainable signals, risk scoring, human-in-the-loop workflows, and configurable trust thresholds for high-stakes domains.</p>
-          <div class="cs-tags">
-            <span class="cs-tag">AI Safety</span><span class="cs-tag">HITL</span><span class="cs-tag">Risk Scoring</span><span class="cs-tag">GAN</span>
-          </div>
-          <a href="trustshield.html" class="cs-cta" style="background:var(--red);color:var(--chalk)">View Case Study →</a>
-        </div>
-      </div>
-
-      <!-- Pipeline -->
-      <div class="cs-card">
-        <div class="cs-accent" style="background:var(--green)"></div>
-        <div class="cs-body">
-          <div class="cs-label" style="color:var(--green)">Data Platform · PM Case Study · 03</div>
-          <div class="cs-title">Cross-Continental Eco-Economic Data Pipeline</div>
-          <p class="cs-desc">Analyst-facing intelligence platform spanning 5 countries and 4 APIs — designed around analytical questions, not raw data schemas. PM case study in platform product.</p>
-          <div class="cs-tags">
-            <span class="cs-tag">Python</span><span class="cs-tag">Flask API</span><span class="cs-tag">PostgreSQL</span><span class="cs-tag">Docker</span>
-          </div>
-          <a href="cross-continental-pipeline.html" class="cs-cta" style="background:var(--green);color:var(--void)">View Case Study →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="sep"></div>
-
-<!-- EXPERIENCE -->
+<!-- ════ EXPERIENCE ════ -->
 <section id="experience" class="S">
   <div class="W">
     <div class="TR"><div class="TL"></div><div class="TT">Experience</div><div class="TN">03</div></div>
@@ -532,13 +611,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
             <li>Mapping JHU research capabilities to industry priorities across emerging life sciences — market analysis, technology commercialization, and partnership strategy</li>
             <li>Translating research strengths into business-facing insights for corporate partnership and commercialization opportunities</li>
           </ul>
-          <a href="#" class="ex-link">Technology Commercialization · Market Research · Business Development</a>
+          <span class="ex-link">Technology Commercialization · Market Research · Business Development</span>
         </div>
       </div>
 
       <div class="exp-card">
         <div>
-          <div class="ex-co">Mercedes-Benz R&D India</div>
+          <div class="ex-co">Mercedes-Benz R&amp;D India</div>
           <div class="ex-period">Aug 2023 – Feb 2025</div>
         </div>
         <div>
@@ -547,7 +626,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
             <li>Drove validation coverage to <strong>84%</strong> and reduced post-release defects by <strong>26%</strong> across the IDC6 ADAS program on AURIX platform</li>
             <li>Improved release cadence by <strong>2 days/cycle</strong> through structured defect triage and cross-geo alignment with German engineering teams</li>
           </ul>
-          <a href="#" class="ex-link">ADAS · AUTOSAR · CANoe · HIL Validation · ECU Integration</a>
+          <span class="ex-link">ADAS · AUTOSAR · CANoe · HIL Validation · ECU Integration</span>
         </div>
       </div>
 
@@ -557,12 +636,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
           <div class="ex-period">Jan 2026</div>
         </div>
         <div>
-          <div class="ex-role">Product Strategist & Analyst</div>
+          <div class="ex-role">Product Strategist &amp; Analyst</div>
           <ul class="ex-wins">
             <li>Mapped the U.S. soccer technology ecosystem across <strong>6 competitive levels</strong>, evaluated 15+ tools, and defined 3 core user personas with full workflow documentation</li>
             <li>Delivered executive-ready GTM report that directly influenced product direction and partner outreach</li>
           </ul>
-          <a href="#" class="ex-link">Product Strategy · Market Research · Customer Discovery · GTM</a>
+          <span class="ex-link">Product Strategy · Market Research · Customer Discovery · GTM</span>
         </div>
       </div>
 
@@ -577,7 +656,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
             <li>Built CSV-to-database pipeline for <strong>75+ users</strong>, cutting data retrieval errors by <strong>30%</strong></li>
             <li>Shipped 5+ prioritized enhancements based on user feedback, reaching <strong>95% adoption within 1 month</strong></li>
           </ul>
-          <a href="#" class="ex-link">Python · Flask · ETL · Product Requirements · Backlog Prioritization</a>
+          <span class="ex-link">Python · Flask · ETL · Product Requirements · Backlog Prioritization</span>
         </div>
       </div>
 
@@ -587,7 +666,44 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
 
 <div class="sep"></div>
 
-<!-- CTA FOOTER -->
+<!-- ════ TEDxJHU FEATURE ════ -->
+<section id="tedx" class="S" style="background:var(--carbon)">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Featured Speaker</div><div class="TN">04</div></div>
+    <div class="tedx-card">
+      <div class="tedx-accent-bar"></div>
+      <div class="tedx-inner">
+        <div class="tedx-left">
+          <div class="tedx-eyebrow">
+            TEDxJHU · Johns Hopkins University · November 2025
+            <span class="tedx-eyebrow-badge">Featured by JHU</span>
+          </div>
+          <div class="tedx-title">Life Is Not a<br>Straight Line</div>
+          <div class="tedx-sub">Key Speaker · TEDxJHU 2025</div>
+          <p class="tedx-body">
+            Selected as a TEDxJHU speaker, where I delivered a talk on navigating uncertainty, embracing nonlinear careers, and finding purpose beyond conventional definitions of success. Drawing from my transition from <em>Mercedes-Benz R&amp;D to product management</em>, the talk reflects the mindset that now shapes my work: questioning assumptions, embracing ambiguity, and making thoughtful decisions under uncertainty — qualities equally essential in building AI products.
+          </p>
+          <div class="tedx-ctas">
+            <a href="https://msem.engineering.jhu.edu/news/tedx-talk-narasimhamurthy/" target="_blank" rel="noopener noreferrer" class="btn bA">Read the JHU Feature ↗</a>
+            <a href="https://youtu.be/wh8xLshLK2E" target="_blank" rel="noopener noreferrer" class="btn bO">Watch the TEDx Talk ↗</a>
+          </div>
+          <div class="tedx-photo-wrap">
+            <img src="tedx-stage.jpg" alt="Devothama GN speaking on stage at TEDxJHU — The Carousel of Ideas, Johns Hopkins University 2025" loading="lazy">
+            <div class="tedx-photo-caption">TEDxJHU · The Carousel of Ideas · Johns Hopkins University · 2025</div>
+          </div>
+        </div>
+        <div class="tedx-right">
+          <div class="tedx-mic">🎙️</div>
+          <div class="tedx-badge">TEDx<br>JHU<br>2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ════ CTA FOOTER ════ -->
 <section id="cta-footer">
   <div class="W">
     <div class="ctaf-eyebrow">Let's build something</div>
@@ -624,18 +740,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
 </footer>
 
 <script>
-/* Counter animation */
 document.querySelectorAll('[data-target]').forEach(el=>{
-  const target=+el.dataset.target, suffix=el.dataset.suffix||'';
+  const target=+el.dataset.target,suffix=el.dataset.suffix||'';
   let start=null;
   const obs=new IntersectionObserver(entries=>{
-    if(!entries[0].isIntersecting) return;
+    if(!entries[0].isIntersecting)return;
     obs.disconnect();
     const step=ts=>{
-      if(!start) start=ts;
+      if(!start)start=ts;
       const p=Math.min((ts-start)/1200,1);
       el.textContent=Math.round(p*target)+suffix;
-      if(p<1) requestAnimationFrame(step);
+      if(p<1)requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
   },{threshold:.3});
