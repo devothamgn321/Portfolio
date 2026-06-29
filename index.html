@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://devothamagn.netlify.app">
+<meta property="og:title" content="Devothama GN — AI Product Manager | Platform Products">
+<meta property="og:description" content="AI PM with engineering background. Campus Atlas · Eco-Economic Data Pipeline · TrustShield AI. MS Engineering Management, Johns Hopkins. Ex-Mercedes-Benz ADAS. TEDxJHU Speaker.">
+<meta property="og:image" content="https://devothamagn.netlify.app/photo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Devothama GN — AI Product Manager">
+<meta name="twitter:description" content="AI PM · Platform Products · Ex-Mercedes-Benz ADAS · TEDxJHU Speaker · Johns Hopkins MSEM">
+<meta name="twitter:image" content="https://devothamagn.netlify.app/photo.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Devothama GN — AI Product Manager | Platform Products</title>
+<meta name="description" content="AI Product Manager with engineering background. Built Campus Atlas (RAG-based campus AI), eco-economic data platform (5 countries, 4 APIs), and TrustShield AI (trust & safety). MS Engineering Management, Johns Hopkins. Ex-Mercedes-Benz ADAS. TEDxJHU Speaker.">
+<meta name="author" content="Devothama Gundugurki Narasimhamurthy">
+<link rel="canonical" href="https://devothamagn.netlify.app">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://github.com">
+<link rel="dns-prefetch" href="https://linkedin.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void:   #070706;
+  --carbon: #0e0e0d;
+  --panel:  #141412;
+  --surface:#1a1a18;
+  --lift:   #202020;
+  --chalk:  #eeeadf;
+  --paper:  #c4bfb4;
+  --smoke:  #787470;
+  --ash:    #6b6860;
+  --amber:  #e8922a;
+  --amber2: #f4ae55;
+  --amber3: rgba(232,146,42,.11);
+  --red:    #d93030;
+  --green:  #4caf7d;
+  --line:   rgba(232,146,42,.13);
+  --line2:  rgba(232,146,42,.28);
+  --H: 'Bebas Neue', sans-serif;
+  --P: 'Inter', system-ui, sans-serif;
+  --M: 'JetBrains Mono', monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--chalk);font-family:var(--P);overflow-x:hidden;cursor:crosshair}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity:.45;mix-blend-mode:overlay}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;
+  justify-content:space-between;padding:0 3rem;height:54px;
+  background:rgba(7,7,6,.93);backdrop-filter:blur(22px) saturate(1.3);
+  border-bottom:1px solid var(--line)}
+.nav-id{display:flex;align-items:center;gap:.7rem}
+.nav-pip{width:7px;height:7px;background:var(--amber);border-radius:50%;
+  box-shadow:0 0 8px var(--amber);animation:pip 2.4s ease-in-out infinite}
+@keyframes pip{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.6)}}
+.nav-wm{font-family:var(--M);font-size:.6rem;color:var(--amber);letter-spacing:.18em;text-transform:uppercase}
+.nav-links{display:flex;gap:.1rem}
+.nav-links a{font-family:var(--M);font-size:.56rem;color:var(--smoke);text-decoration:none;
+  letter-spacing:.1em;text-transform:uppercase;padding:.38rem .72rem;
+  transition:color .2s,background .2s;border-radius:2px}
+.nav-links a:hover{color:var(--amber);background:var(--amber3)}
+.nav-cta{font-family:var(--M);font-size:.56rem;color:var(--void);background:var(--amber);
+  padding:.4rem 1.1rem;text-decoration:none;letter-spacing:.12em;text-transform:uppercase;
+  transition:background .2s}
+.nav-cta:hover{background:var(--amber2)}
+
+/* ─── LAYOUT ─── */
+.S{padding:7rem 0}
+.W{max-width:1160px;margin:0 auto;padding:0 3rem}
+
+/* tag row */
+.TR{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.TL{height:1px;flex:0 0 34px;background:var(--amber)}
+.TT{font-family:var(--M);font-size:.56rem;color:var(--amber);letter-spacing:.2em;text-transform:uppercase}
+.TN{font-family:var(--M);font-size:.5rem;color:var(--ash);letter-spacing:.1em}
+
+/* display headline */
+.BIG{font-family:var(--H);font-size:clamp(3rem,6vw,6.5rem);line-height:.9;
+  letter-spacing:.02em;color:var(--chalk)}
+.BIG .sub{font-family:var(--P);font-style:italic;font-weight:300;font-size:.3em;
+  display:block;color:var(--amber2);letter-spacing:0;line-height:1.3;margin-bottom:.3em}
+
+/* sep */
+.sep{height:1px;background:var(--line);position:relative;overflow:hidden}
+.sep::after{content:'';position:absolute;top:0;left:-100%;width:200%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--amber),var(--red),transparent);
+  animation:sepSlide 5s linear infinite}
+@keyframes sepSlide{to{left:100%}}
+
+/* film strip */
+.film{display:flex;height:33px;overflow:hidden;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
+.film-inner{will-change:transform;display:flex;animation:roll 22s linear infinite;white-space:nowrap}
+@keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ff{font-family:var(--M);font-size:.49rem;color:var(--ash);padding:0 1.3rem;
+  letter-spacing:.13em;text-transform:uppercase;border-right:1px solid var(--ash);
+  line-height:33px;white-space:nowrap}
+.ff.on{color:var(--amber)}
+
+/* telem card */
+.TC{background:var(--panel);border:1px solid var(--line);padding:1.2rem 1.4rem;
+  position:relative;overflow:hidden;transition:border-color .25s,transform .2s}
+.TC:hover{border-color:var(--line2);transform:translateY(-2px)}
+.TC::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--amber),var(--red))}
+.TC-n{font-family:var(--H);font-size:2.6rem;color:var(--amber2);line-height:1;margin-bottom:.28rem;letter-spacing:.03em}
+.TC-l{font-family:var(--M);font-size:.52rem;color:var(--smoke);letter-spacing:.09em;text-transform:uppercase;line-height:1.4}
+
+/* buttons */
+.btn{display:inline-block;font-family:var(--M);font-size:.62rem;letter-spacing:.13em;
+  text-transform:uppercase;text-decoration:none;padding:.8rem 1.9rem;
+  transition:transform .18s,background .2s,color .2s;cursor:pointer}
+.bA{background:var(--amber);color:var(--void)}.bA:hover{background:var(--amber2);transform:translateY(-2px)}
+.bO{background:transparent;color:var(--paper);border:1px solid var(--line2)}.bO:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
+
+/* ═══════════ HERO ═══════════ */
+#home{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center}
+.h-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:55px 55px;
+  mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 0%,transparent 80%);opacity:.45}
+.h-streak{position:absolute;top:0;right:0;bottom:0;width:40%;pointer-events:none;
+  background:repeating-linear-gradient(108deg,transparent,transparent 2px,
+    rgba(232,146,42,.025) 2px,rgba(232,146,42,.025) 4px);
+  mask-image:linear-gradient(to left,black 0%,transparent 100%)}
+.h-ledge{position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(to bottom,transparent,var(--red),var(--amber),transparent)}
+.h-inner{position:relative;z-index:1;padding:0 3rem;max-width:1160px;
+  margin:0 auto;width:100%;padding-top:5rem}
+
+.h-meta{display:flex;align-items:flex-start;flex-wrap:wrap;gap:.6rem 1rem;margin-bottom:2.5rem;
+  opacity:0;animation:rise .7s .2s forwards}
+.h-tag{font-family:var(--M);font-size:.51rem;letter-spacing:.13em;text-transform:uppercase;
+  padding:.25rem .72rem;border:1px solid var(--ash);color:var(--smoke)}
+.h-loc{font-family:var(--M);font-size:.51rem;color:var(--ash);letter-spacing:.1em;text-transform:uppercase}
+.h-loc b{color:var(--smoke)}
+
+.h-name{font-family:var(--H);font-size:clamp(3.2rem,7.5vw,8.2rem);line-height:.88;
+  letter-spacing:.02em;margin-bottom:.55rem;opacity:0;animation:rise .85s .35s forwards}
+.h-nick{font-family:var(--M);font-style:normal;font-weight:400;font-size:.13em;
+  display:block;color:var(--amber);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.55em;opacity:.85}
+
+.h-role{font-family:var(--M);font-size:.68rem;color:var(--smoke);letter-spacing:.07em;
+  text-transform:uppercase;margin-bottom:2rem;opacity:0;animation:rise .85s .5s forwards;line-height:1.65}
+.h-role b{color:var(--amber)}
+
+.h-stmt{font-family:var(--P);font-size:1.16rem;font-weight:300;font-style:italic;
+  color:var(--paper);line-height:1.8;max-width:580px;margin-bottom:3rem;
+  opacity:0;animation:rise .85s .65s forwards}
+.h-stmt em{color:var(--chalk);font-style:normal;font-weight:400}
+
+.h-strip{display:grid;grid-template-columns:repeat(3,1fr) auto;
+  border:1px solid var(--line);margin-bottom:3rem;
+  opacity:0;animation:rise .85s .8s forwards}
+.hs{padding:.88rem 1.35rem;border-right:1px solid var(--line)}
+.hs:last-child{border-right:none}
+.hs-n{font-family:var(--H);font-size:2.1rem;color:var(--amber2);line-height:1}
+.hs-l{font-family:var(--M);font-size:.49rem;color:var(--smoke);letter-spacing:.09em;text-transform:uppercase;margin-top:.17rem}
+.hs-s{font-family:var(--M);font-size:.46rem;color:var(--paper);letter-spacing:.07em}
+.hs-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.25rem;padding:.88rem 2rem;background:var(--panel)}
+.hs-bv{font-family:var(--H);font-size:1.5rem;color:var(--amber2);letter-spacing:.04em}
+.hs-bl{font-family:var(--M);font-size:.45rem;color:var(--paper);letter-spacing:.12em;text-transform:uppercase}
+
+.h-ctas{display:flex;gap:.8rem;flex-wrap:wrap;opacity:0;animation:rise .85s .95s forwards}
+.h-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.42rem;
+  opacity:0;animation:fIn 1s 1.6s forwards}
+.h-scroll span{font-family:var(--M);font-size:.47rem;color:var(--ash);letter-spacing:.18em;text-transform:uppercase}
+.sbar{width:1px;height:40px;background:linear-gradient(to bottom,var(--amber),transparent);animation:sb 2s infinite}
+@keyframes sb{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* ═══════════ ABOUT ═══════════ */
+#about{background:var(--carbon)}
+.ab-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:start;max-width:800px}
+.ab-id{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--line)}
+.ab-alias{font-family:var(--M);font-size:.55rem;color:var(--amber);letter-spacing:.17em;text-transform:uppercase;margin-bottom:.5rem}
+.ab-nn{font-family:var(--H);font-size:3.5rem;line-height:.9;color:var(--chalk);margin-bottom:.32rem}
+.ab-nn em{color:var(--amber2);font-style:italic;font-family:var(--P);font-weight:300;font-size:.58em}
+.ab-rtags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.65rem}
+.ab-rt{font-family:var(--M);font-size:.49rem;color:var(--smoke);border:1px solid var(--ash);
+  padding:.16rem .48rem;letter-spacing:.06em;text-transform:uppercase}
+.ab-body p{font-family:var(--P);font-size:1.1rem;font-weight:300;color:var(--paper);line-height:1.85;margin-bottom:1.25rem}
+.ab-body p:last-child{margin-bottom:0}
+.ab-body strong{color:var(--chalk);font-weight:600}
+.ab-body em{color:var(--amber2);font-style:italic}
+.photo-note{margin-top:2.2rem;padding:1.4rem 1.7rem;background:var(--panel);border-left:3px solid var(--amber)}
+.photo-note p{font-family:var(--P);font-size:1.05rem;font-style:italic;font-weight:300;color:var(--paper);line-height:1.72;margin:0}
+.photo-note p em{color:var(--amber2)}
+
+/* ═══════════ EXPERIENCE ═══════════ */
+#experience{background:var(--void)}
+.exp-row{display:grid;grid-template-columns:195px 1fr;gap:2.7rem;
+  padding:3rem 0;border-bottom:1px solid var(--line);
+  opacity:1;transform:none;transition:opacity .65s,transform .65s}
+.exp-row.visible{opacity:1;transform:translateY(0)}
+.exp-row:first-child{padding-top:0}
+.exp-row:last-child{border-bottom:none}
+.ex-co{font-family:var(--M);font-size:.57rem;color:var(--amber);letter-spacing:.11em;text-transform:uppercase;margin-bottom:.28rem}
+.ex-period{font-family:var(--M);font-size:.52rem;color:var(--ash);letter-spacing:.06em;line-height:1.55}
+.ex-kind{font-family:var(--M);font-size:.5rem;color:var(--ash);font-style:italic;margin-top:.17rem}
+.ex-role{font-family:var(--H);font-size:1.85rem;color:var(--chalk);line-height:1;letter-spacing:.03em;margin-bottom:.7rem}
+.ex-ctx{font-family:var(--M);font-size:.58rem;color:var(--smoke);letter-spacing:.06em;margin-bottom:1.2rem;line-height:1.6}
+.ex-pts{list-style:none;margin-bottom:1.05rem}
+.ex-pts li{font-family:var(--M);font-size:.72rem;font-weight:400;color:var(--paper);
+  line-height:1.85;padding:.3rem 0 .3rem 1.2rem;position:relative;letter-spacing:.02em}
+.ex-pts li::before{content:'▸';position:absolute;left:0;color:var(--amber);font-size:.7em;top:.45rem}
+.ex-pts li strong{color:var(--chalk);font-weight:700}
+.ex-pts li em{color:var(--smoke);font-style:italic}
+.mini{display:grid;gap:.7rem;margin-top:1.05rem}
+.m3{grid-template-columns:repeat(3,1fr)}.m2{grid-template-columns:repeat(2,1fr)}
+.mc{background:var(--panel);border:1px solid var(--line);padding:.8rem 1rem;position:relative;overflow:hidden}
+.mc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent)}
+.mc-n{font-family:var(--H);font-size:1.65rem;color:var(--amber2);line-height:1}
+.mc-l{font-family:var(--M);font-size:.48rem;color:var(--smoke);letter-spacing:.06em;text-transform:uppercase}
+.chips{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.85rem}
+.chip{font-family:var(--M);font-size:.48rem;color:var(--ash);border:1px solid var(--ash);
+  padding:.15rem .44rem;letter-spacing:.05em;text-transform:uppercase}
+
+/* ═══════════ PROJECTS ═══════════ */
+#projects{background:var(--carbon)}
+.pj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem;margin-top:3.5rem}
+.pjc{background:var(--panel);border:1px solid var(--line);
+  position:relative;overflow:hidden;display:flex;flex-direction:column;
+  transition:border-color .25s,transform .2s}
+.pjc:hover{border-color:var(--line2);transform:translateY(-3px)}
+.pjc.feat{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr}
+.pj-acc{height:2px;background:linear-gradient(90deg,var(--amber),var(--red))}
+.pj-badge{font-family:var(--M);font-size:.48rem;color:var(--void);background:var(--amber);
+  padding:.19rem .62rem;letter-spacing:.1em;text-transform:uppercase;
+  align-self:flex-start;margin:1.4rem 1.4rem 0}
+.pjc.feat .pj-badge{margin:1.7rem 0 0 1.9rem}
+.pj-body{padding:1.2rem 1.4rem 1.7rem;flex:1}
+.pjc.feat .pj-body{padding:1.2rem 1.9rem 2rem}
+.pj-title{font-family:var(--H);font-size:1.9rem;color:var(--chalk);letter-spacing:.03em;line-height:1;margin-bottom:.25rem}
+.pjc.feat .pj-title{font-size:2.6rem}
+.pj-sub{font-family:var(--P);font-size:.88rem;font-style:italic;color:var(--smoke);margin-bottom:.85rem}
+.pj-desc{font-family:var(--P);font-size:.98rem;font-weight:300;color:var(--paper);line-height:1.72;margin-bottom:.95rem}
+.pj-desc strong{color:var(--chalk);font-weight:600}
+.pj-ms{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:.7rem}
+.pm{font-family:var(--M);font-size:.51rem;background:var(--surface);
+  border:1px solid var(--line);padding:.24rem .62rem;letter-spacing:.06em;color:var(--amber2)}
+.pj-tech{display:flex;flex-wrap:wrap;gap:.28rem}
+.pt{font-family:var(--M);font-size:.47rem;color:var(--ash);background:var(--lift);padding:.15rem .42rem}
+.pj-vis{background:var(--surface);display:flex;align-items:center;justify-content:center;
+  position:relative;min-height:250px}
+.pj-vis .gl{position:absolute;inset:0;background:radial-gradient(circle at center,rgba(232,146,42,.09) 0%,transparent 65%)}
+.pj-vis-in{text-align:center;position:relative;z-index:1}
+.pj-vis-ico{font-size:3.2rem;display:block;margin-bottom:.4rem}
+.pj-vis-lbl{font-family:var(--M);font-size:.54rem;color:var(--smoke);letter-spacing:.14em;text-transform:uppercase}
+
+/* ═══════════ TECH PROJECTS ═══════════ */
+#tech{background:var(--void)}
+.tp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem;margin-top:3.5rem}
+.tpc{background:var(--panel);border:1px solid var(--line);padding:1.7rem;
+  position:relative;overflow:hidden;transition:border-color .25s}
+.tpc:hover{border-color:var(--line2)}
+.tpc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--red),transparent)}
+.tp-type{font-family:var(--M);font-size:.51rem;color:var(--red);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.7rem}
+.tp-title{font-family:var(--H);font-size:1.75rem;color:var(--chalk);letter-spacing:.03em;margin-bottom:.25rem;line-height:1}
+.tp-sub{font-family:var(--P);font-size:.87rem;font-style:italic;color:var(--smoke);margin-bottom:.82rem}
+.tp-desc{font-family:var(--P);font-size:.97rem;font-weight:300;color:var(--paper);line-height:1.7;margin-bottom:.85rem}
+.tp-desc strong{color:var(--chalk);font-weight:600}
+.tp-ms{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.65rem}
+.tpm{font-family:var(--M);font-size:.49rem;background:var(--surface);border:1px solid var(--line);padding:.21rem .52rem;letter-spacing:.06em;color:var(--paper)}
+.tp-tech{display:flex;flex-wrap:wrap;gap:.28rem}
+.tpt{font-family:var(--M);font-size:.46rem;color:var(--ash);background:var(--lift);padding:.14rem .4rem}
+
+/* ═══════════ CAPABILITIES ═══════════ */
+#capabilities{background:var(--carbon)}
+.cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:3.5rem}
+.capcard{background:var(--panel);border:1px solid var(--line);padding:1.65rem;
+  position:relative;transition:border-color .25s}
+.capcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--amber),transparent);
+  transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.capcard:hover{border-color:var(--line2)}
+.capcard:hover::before{transform:scaleX(1)}
+.cap-lbl{font-family:var(--M);font-size:.54rem;color:var(--amber);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.85rem}
+.cap-h{font-family:var(--H);font-size:1.45rem;color:var(--chalk);letter-spacing:.03em;margin-bottom:.95rem;line-height:1}
+.pills{display:flex;flex-wrap:wrap;gap:.33rem}
+.pill{font-family:var(--M);font-size:.54rem;color:var(--smoke);background:var(--lift);
+  border:1px solid var(--ash);padding:.25rem .52rem;letter-spacing:.04em;transition:color .2s,border-color .2s}
+.pill:hover{color:var(--amber2);border-color:rgba(232,146,42,.28)}
+
+/* ═══════════ EDUCATION ═══════════ */
+#education{background:var(--void)}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem;margin-top:3.5rem}
+.edu-card{background:var(--panel);border:1px solid var(--line);padding:2.2rem;
+  position:relative;overflow:hidden}
+.edu-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--amber),transparent)}
+.edu-inst{font-family:var(--M);font-size:.57rem;color:var(--amber);letter-spacing:.1em;
+  text-transform:uppercase;margin-bottom:.5rem}
+.edu-deg{font-family:var(--H);font-size:1.7rem;color:var(--chalk);letter-spacing:.03em;line-height:1.05;margin-bottom:.4rem}
+.edu-detail{font-family:var(--M);font-size:.54rem;color:var(--smoke);letter-spacing:.05em;line-height:1.55}
+.edu-gpa{font-family:var(--H);font-size:2rem;color:var(--amber2);margin-top:.75rem;letter-spacing:.03em}
+.edu-gpa-l{font-family:var(--M);font-size:.48rem;color:var(--ash);letter-spacing:.08em;display:inline}
+.edu-sub{margin-top:1.3rem;padding-top:1.3rem;border-top:1px solid var(--line)}
+.edu-sub-hdr{font-family:var(--M);font-size:.52rem;color:var(--amber);letter-spacing:.13em;
+  text-transform:uppercase;margin-bottom:.8rem}
+.edu-roles{display:flex;flex-direction:column;gap:.6rem}
+.edu-role-item{display:flex;align-items:flex-start;gap:.7rem}
+.edu-role-dot{width:5px;height:5px;background:var(--amber);border-radius:50%;
+  flex-shrink:0;margin-top:.4rem}
+.edu-role-text{font-family:var(--P);font-size:.95rem;font-weight:300;color:var(--paper);line-height:1.55}
+.edu-role-text strong{color:var(--chalk);font-weight:600}
+.edu-role-text span{font-family:var(--M);font-size:.48rem;color:var(--smoke);
+  letter-spacing:.06em;display:block;margin-top:.18rem}
+
+/* ═══════════ HONORS ═══════════ */
+#honors{background:var(--carbon)}
+.ted-card{background:var(--panel);border:1px solid var(--amber);
+  padding:2.5rem 3rem;position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.ted-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--amber),var(--red))}
+.ted-left{}
+.ted-badge{font-family:var(--M);font-size:.5rem;color:var(--void);background:var(--amber);
+  padding:.2rem .65rem;letter-spacing:.12em;text-transform:uppercase;display:inline-block;margin-bottom:1rem}
+.ted-title{font-family:var(--H);font-size:3.5rem;color:var(--chalk);line-height:.92;letter-spacing:.02em;margin-bottom:.5rem}
+.ted-org{font-family:var(--M);font-size:.57rem;color:var(--amber);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+.ted-desc{font-family:var(--P);font-size:1.05rem;font-weight:300;color:var(--paper);line-height:1.75}
+.ted-desc strong{color:var(--chalk);font-weight:600}
+.ted-desc em{color:var(--amber2);font-style:italic}
+.ted-right{text-align:right}
+.ted-stat-n{font-family:var(--H);font-size:5rem;color:var(--amber2);line-height:1;letter-spacing:.02em}
+.ted-stat-l{font-family:var(--M);font-size:.52rem;color:var(--smoke);letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem}
+.ted-quote{margin-top:1.8rem;padding:1.4rem 1.7rem;border-left:3px solid var(--amber);background:rgba(232,146,42,.05)}
+.ted-quote p{font-family:var(--P);font-size:1.05rem;font-style:italic;font-weight:300;color:var(--paper);line-height:1.65;margin:0}
+
+/* ═══════════ CONTACT ═══════════ */
+#contact{background:var(--void);position:relative;overflow:hidden}
+.ct-glow{position:absolute;left:-120px;bottom:-120px;width:480px;height:480px;
+  border-radius:50%;background:radial-gradient(circle,rgba(232,146,42,.06) 0%,transparent 65%);pointer-events:none}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;position:relative;z-index:1}
+.ct-left p{font-family:var(--P);font-size:1.07rem;font-weight:300;color:var(--paper);line-height:1.82;margin-top:1.2rem}
+.ct-links{margin-top:2.3rem;display:flex;flex-direction:column;gap:.72rem}
+.ct-link{display:flex;align-items:center;gap:1rem;text-decoration:none;
+  padding:.92rem 1.2rem;border:1px solid var(--line);background:var(--panel);
+  transition:border-color .2s,background .2s}
+.ct-link:hover{border-color:var(--amber);background:var(--amber3)}
+.ct-lbl{font-family:var(--M);font-size:.49rem;color:var(--ash);letter-spacing:.1em;
+  text-transform:uppercase;display:block;margin-bottom:.15rem}
+.ct-val{font-family:var(--M);font-size:.73rem;color:var(--chalk)}
+.ct-arr{margin-left:auto;color:var(--amber);font-size:.9rem}
+.ct-right blockquote{font-family:var(--P);font-size:1.45rem;font-weight:300;font-style:italic;
+  color:var(--paper);line-height:1.55;border-left:3px solid var(--amber);
+  padding-left:1.65rem;margin-bottom:.72rem}
+.ct-right cite{font-family:var(--M);font-size:.5rem;color:var(--ash);letter-spacing:.1em;
+  text-transform:uppercase;font-style:normal;padding-left:1.65rem}
+.sys-card{margin-top:2.5rem;border:1px solid var(--line);background:var(--panel);padding:1.35rem}
+.sc-hdr{font-family:var(--M);font-size:.49rem;color:var(--amber);letter-spacing:.17em;
+  text-transform:uppercase;margin-bottom:.85rem;padding-bottom:.52rem;border-bottom:1px solid var(--line)}
+.sc-row{display:flex;justify-content:space-between;padding:.23rem 0;
+  border-bottom:1px solid rgba(255,255,255,.02)}
+.sc-row:last-child{border-bottom:none}
+.sc-k{font-family:var(--M);font-size:.51rem;color:var(--ash);letter-spacing:.07em}
+.sc-v{font-family:var(--M);font-size:.51rem;color:var(--smoke);letter-spacing:.06em}
+.sc-v.hot{color:var(--amber)}
+
+/* footer */
+footer{background:var(--void);border-top:1px solid var(--line);padding:1.3rem 3rem;
+  display:flex;align-items:center;justify-content:space-between}
+.fl{font-family:var(--M);font-size:.51rem;color:var(--ash);letter-spacing:.07em}
+.fr{display:flex;gap:1.3rem}
+.fr a{font-family:var(--M);font-size:.51rem;color:var(--ash);text-decoration:none;
+  letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.fr a:hover{color:var(--amber)}
+
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fIn{from{opacity:0}to{opacity:1}}
+
+/* ═══════ PROJECT STRUCTURE LABELS ═══════ */
+.pj-struct{display:flex;flex-direction:column;gap:.9rem;margin-bottom:1rem}
+.pj-s-row{display:grid;grid-template-columns:76px 1fr;gap:.6rem;align-items:baseline}
+.pj-s-lbl{font-family:var(--M);font-size:.48rem;color:var(--amber);letter-spacing:.14em;text-transform:uppercase;padding-top:.1rem}
+.pj-s-txt{font-family:var(--M);font-size:.65rem;color:var(--paper);line-height:1.68;letter-spacing:.02em}
+.pj-s-txt strong{color:var(--chalk);font-weight:700}
+
+/* ═══════ FEATURED SPOTLIGHT ═══════ */
+#featured{background:var(--panel);position:relative;overflow:hidden;border-top:1px solid rgba(232,146,42,.2);border-bottom:1px solid rgba(232,146,42,.2)}
+#featured::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 55% 60% at 90% 50%,rgba(232,146,42,.055) 0%,transparent 70%);
+  pointer-events:none}
+.feat-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start;position:relative;z-index:1}
+.feat-launch-badge{display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--M);font-size:.5rem;color:var(--void);background:var(--amber);
+  padding:.28rem .9rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.4rem}
+.feat-title{font-family:var(--H);font-size:clamp(2.8rem,5vw,5rem);color:var(--chalk);
+  line-height:.9;letter-spacing:.02em;margin-bottom:.3rem}
+.feat-sub{font-family:var(--P);font-size:1.1rem;font-style:italic;color:var(--amber2);margin-bottom:2rem}
+.feat-block{margin-bottom:1.4rem;padding:1.1rem 1.4rem;background:var(--panel)}
+.feat-block.red-left{border-left:3px solid var(--red)}
+.feat-block.amber-left{border-left:3px solid var(--amber)}
+.feat-blbl{font-family:var(--M);font-size:.49rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem}
+.feat-blbl.red{color:var(--red)}.feat-blbl.amber{color:var(--amber)}
+.feat-btxt{font-family:var(--M);font-size:.66rem;color:var(--chalk);line-height:1.68;letter-spacing:.02em}
+.feat-btxt strong{color:var(--chalk);font-weight:700}
+.feat-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.5rem}
+.feat-tag{font-family:var(--M);font-size:.52rem;color:var(--amber2);
+  background:rgba(232,146,42,.09);border:1px solid rgba(232,146,42,.22);
+  padding:.28rem .72rem;letter-spacing:.07em}
+.feat-right{display:flex;flex-direction:column;gap:1rem}
+.feat-panel{background:var(--panel);border:1px solid var(--line);padding:1.5rem;position:relative;overflow:hidden}
+.feat-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),var(--red))}
+.feat-panel-lbl{font-family:var(--M);font-size:.5rem;color:var(--amber);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.75rem}
+.feat-panel-items{display:flex;flex-direction:column;gap:.8rem}
+.feat-panel-item{font-family:var(--M);font-size:.63rem;color:var(--chalk);letter-spacing:.02em;
+  display:flex;align-items:flex-start;gap:.5rem;line-height:1.55}
+.feat-panel-item::before{content:'▸';color:var(--amber);font-size:.68em;flex-shrink:0;margin-top:.1rem}
+.feat-panel-item strong{color:var(--amber2)}
+.feat-cta{margin-top:1.5rem;display:flex;gap:.7rem;flex-wrap:wrap}
+
+/* ═══════ PRODUCT THINKING ═══════ */
+#thinking{background:var(--carbon)}
+.thinking-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin-top:3.5rem}.thinking-grid .think-card:last-child:nth-child(odd){grid-column:1/-1}
+.think-card{background:var(--panel);border:1px solid var(--line);padding:1.8rem;
+  position:relative;overflow:hidden;transition:border-color .25s,transform .2s}
+.think-card:hover{border-color:var(--line2);transform:translateY(-2px)}
+.think-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--amber),transparent);transform:scaleX(0);
+  transform-origin:left;transition:transform .3s}
+.think-card:hover::before{transform:scaleX(1)}
+.think-num{font-family:var(--H);font-size:2rem;color:rgba(232,146,42,.12);
+  position:absolute;bottom:.6rem;right:1rem;letter-spacing:.05em;pointer-events:none;line-height:1}
+.think-title{font-family:var(--H);font-size:1.3rem;color:var(--chalk);letter-spacing:.03em;
+  line-height:1.1;margin-bottom:.7rem}
+.think-body{font-family:var(--M);font-size:.64rem;color:var(--paper);line-height:1.78;letter-spacing:.02em}
+.think-body strong{color:var(--amber2)}
+
+/* ═══════ CERTIFICATIONS ═══════ */
+#certifications{background:var(--void)}
+.cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3.5rem}
+.cert-card{background:var(--panel);border:1px solid var(--line);padding:1.6rem 1.3rem;
+  position:relative;text-align:center;transition:border-color .25s,transform .2s;overflow:hidden}
+.cert-card:hover{border-color:var(--line2);transform:translateY(-2px)}
+.cert-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--amber),transparent)}
+.cert-ico{font-size:1.7rem;display:block;margin-bottom:.65rem}
+.cert-title{font-family:var(--H);font-size:1.05rem;color:var(--chalk);letter-spacing:.04em;
+  line-height:1.1;margin-bottom:.38rem}
+.cert-area{font-family:var(--M);font-size:.5rem;color:var(--smoke);letter-spacing:.08em;
+  text-transform:uppercase;line-height:1.55}
+
+
+/* ═══════ IMPACT METRICS SECTION ═══════ */
+#impact{background:var(--void)}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:3rem}
+.impact-card{background:var(--panel);border:1px solid var(--line);padding:1.8rem 1.5rem;
+  position:relative;overflow:hidden;text-align:center;
+  transition:border-color .25s,transform .2s}
+.impact-card:hover{border-color:var(--line2);transform:translateY(-3px)}
+.impact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--amber),var(--red))}
+.impact-card::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:40%;height:1px;background:var(--amber);opacity:.3}
+.impact-n{font-family:var(--H);font-size:3.8rem;color:var(--amber2);line-height:1;
+  letter-spacing:.02em;margin-bottom:.3rem}
+.impact-label{font-family:var(--M);font-size:.56rem;color:var(--chalk);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem;font-weight:700}
+.impact-ctx{font-family:var(--M);font-size:.5rem;color:var(--paper);
+  letter-spacing:.07em;text-transform:uppercase;line-height:1.45}
+
+/* ═══════ ABOUT UPGRADE ═══════ */
+.about-highlights{margin-top:2rem;display:flex;flex-direction:column;gap:1rem}
+.ab-hl{display:flex;align-items:flex-start;gap:.75rem;
+  font-family:var(--M);font-size:.72rem;font-weight:400;color:var(--chalk);line-height:1.75;letter-spacing:.01em}
+.ab-hl::before{content:'▸';color:var(--amber);font-size:.7em;flex-shrink:0;margin-top:.18rem}
+.ab-hl strong{color:var(--amber2);font-weight:600}
+
+/* ═══════ FEATURED UPGRADE ═══════ */
+.feat-vision{padding:1.4rem 1.8rem;background:rgba(232,146,42,.07);
+  border:1px solid rgba(232,146,42,.2);margin-bottom:1.6rem}
+.feat-vision-lbl{font-family:var(--M);font-size:.5rem;color:var(--amber);
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem}
+.feat-vision-txt{font-family:var(--P);font-size:1.05rem;font-style:italic;font-weight:300;
+  color:var(--chalk);line-height:1.68}
+
+
+/* ═══════════ HERO PHOTO ═══════════ */
+.h-layout{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:center;width:100%}
+.h-left{}
+.h-right{display:flex;flex-direction:column;align-items:center;gap:1rem;
+  opacity:0;animation:rise .9s .6s forwards}
+.h-photo-wrap{position:relative}
+.h-photo{width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:center top;
+  border:2px solid var(--amber);
+  box-shadow:0 0 0 6px rgba(232,146,42,.08), 0 0 40px rgba(232,146,42,.12)}
+.h-photo-caption{font-family:var(--M);font-size:.52rem;color:var(--smoke);
+  letter-spacing:.14em;text-transform:uppercase;text-align:center}
+@media(max-width:960px){
+  .h-layout{grid-template-columns:1fr}
+  .h-right{flex-direction:row;justify-content:flex-start;margin-bottom:1.5rem;order:-1}
+  .h-photo{width:100px;height:100px}
+}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px){
+  nav{padding:0 1.5rem}.nav-links{display:none}
+  .W{padding:0 1.5rem}
+  .h-inner{padding:5rem 1.5rem 2rem}
+  .h-strip{grid-template-columns:1fr 1fr}
+  .h-streak{display:none}
+  .ab-grid{grid-template-columns:1fr;gap:3rem}
+  .ab-stats{display:grid;grid-template-columns:1fr 1fr}
+  .exp-row{grid-template-columns:1fr;gap:.45rem}
+  .mini.m3{grid-template-columns:1fr 1fr}
+  .pj-grid{grid-template-columns:1fr}.pjc.feat{grid-template-columns:1fr}
+  .pj-vis{min-height:140px}
+  .tp-grid{grid-template-columns:1fr 1fr}
+  .cap-grid{grid-template-columns:1fr 1fr}
+  .edu-grid{grid-template-columns:1fr}
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .feat-wrap{grid-template-columns:1fr}
+  .thinking-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr 1fr}
+  .ted-card{grid-template-columns:1fr;gap:1.5rem}
+  .ted-right{text-align:left}
+  .ct-grid{grid-template-columns:1fr;gap:3rem}
+  footer{flex-direction:column;gap:.75rem;text-align:center}
+}
+@media(max-width:600px){
+  .h-name{font-size:3.1rem}
+  .ab-stats{grid-template-columns:1fr}
+  .tp-grid,.cap-grid,.cert-grid{grid-template-columns:1fr 1fr}
+  .h-strip{grid-template-columns:1fr 1fr}
+}
+
+/* ═══ ACCESSIBILITY: Focus states ═══ */
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:1px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+/* ═══ BUTTON HOVER / ACTIVE ═══ */
+.btn{transition:background .18s,color .18s,border-color .18s,opacity .18s,transform .12s}
+.btn:hover{opacity:.88;transform:translateY(-1px)}
+.btn:active{transform:translateY(0);opacity:1}
+.bA:hover{background:var(--amber2)}
+.bO:hover{background:var(--amber3);border-color:var(--amber2);color:var(--amber2)}
+
+/* ═══ NAV CTA hover ═══ */
+.nav-cta{transition:background .18s,color .18s}
+.nav-cta:hover{background:var(--amber2)}
+
+/* ═══ REDUCED MOTION ═══ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .film-inner{animation:none !important}
+}
+
+/* ═══ MOBILE: 480px breakpoint ═══ */
+@media(max-width:480px){
+  .h-name{font-size:2.6rem;line-height:.88}
+  .h-ctas{flex-wrap:wrap;gap:.5rem}
+  .h-ctas .btn{font-size:.5rem;padding:.65rem 1rem}
+  .h-strip{grid-template-columns:1fr;gap:1rem}
+  .hs-badge{display:none}
+  .BIG{font-size:2.4rem}
+  .proj-carousel > div{grid-template-columns:1fr !important}
+  .W{padding:0 1rem}
+  .h-inner{padding:4.5rem 1rem 2rem}
+  .exp-row > div:first-child{padding-bottom:.75rem;border-bottom:1px solid var(--line)}
+  .edu-grid{gap:2rem}
+}
+
+/* ═══ LARGE MONITOR: cap max content width ═══ */
+@media(min-width:1600px){
+  .W{max-width:1400px}
+  .h-inner{max-width:1400px}
+}
+
+/* ═══ PROJECT CAROUSEL: responsive ═══ */
+@media(max-width:840px){
+  .proj-carousel{grid-template-columns:1fr !important}
+}
+@media(min-width:841px) and (max-width:1100px){
+  .proj-carousel{grid-template-columns:1fr 1fr !important}
+}
+
+/* ═══ SCROLL TRANSITIONS between sections ═══ */
+.S{scroll-margin-top:4rem}
+
+/* ═══ EXPERIENCE: visual separator between cards ═══ */
+.exp-row + .exp-row{border-top:1px solid var(--line);padding-top:3rem;margin-top:1rem}
+
+/* ═══ SKIP TO MAIN CONTENT (accessibility) ═══ */
+.skip-link{position:absolute;top:-40px;left:1rem;background:var(--amber);color:var(--void);
+  font-family:var(--M);font-size:.6rem;letter-spacing:.1em;padding:.5rem 1rem;
+  text-decoration:none;z-index:9999;transition:top .2s}
+.skip-link:focus{top:1rem}
+
+</style>
+</head>
+<body>
+
+<a href="#home" class="skip-link">Skip to main content</a>
+
+<!-- NAV -->
+<nav aria-label="Primary navigation">
+  <div class="nav-id">
+    <div class="nav-pip"></div>
+    <span class="nav-wm">DGN · Ruby</span>
+  </div>
+  <a href="AI_PM_FINALV3.pdf" target="_blank" rel="noopener noreferrer" class="nav-cta">Resume ↗</a>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section id="home" role="main">
+  <div class="h-grid" aria-hidden="true"></div>
+  <div class="h-streak" aria-hidden="true"></div>
+  <div class="h-ledge" aria-hidden="true"></div>
+  <div class="h-inner">
+    <div class="h-layout">
+      <div class="h-left">
+
+        <div class="h-meta">
+          <span class="h-tag">Product Manager</span>
+          <span class="h-tag">AI Products</span>
+          <span class="h-tag">Technical PM · Platform PM</span>
+          <span class="h-tag" style="color:var(--amber);border-color:var(--amber)">TEDxJHU Speaker</span>
+          <div class="h-loc" style="margin-top:.3rem;flex-basis:100%;font-size:.55rem;color:var(--amber2);letter-spacing:.18em"><b>· United States of America &nbsp;·&nbsp; Open to Work</b></div>
+        </div>
+
+        <h1 class="h-name">
+          <span class="h-nick">Framing Problems. Building Products.</span>
+          Devothama<br>Gundugurki<br>Narasimhamurthy
+        </h1>
+
+        <div class="h-role">
+          <b>Product Manager</b> &nbsp;·&nbsp; AI Products · Platform Systems · Data Platforms
+        </div>
+        <div style="font-family:var(--M);font-size:.58rem;color:var(--smoke);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:rise .85s .55s forwards">
+          Ex-Mercedes-Benz R&amp;D &nbsp;·&nbsp; Enterprise AI &nbsp;·&nbsp; Product Strategy &nbsp;·&nbsp; Systems Thinking
+        </div>
+
+        <p class="h-stmt">
+          I build <em>AI-powered products</em> that turn complex systems into scalable, usable platforms.
+        </p>
+
+        <div class="h-strip">
+          <div class="hs">
+            <div class="hs-n" data-target="26" data-suffix="%">26%</div>
+            <div class="hs-l">Post-release defect reduction</div>
+            <div class="hs-s">MBRDI · ADAS platform</div>
+          </div>
+          <div class="hs">
+            <div class="hs-n" data-target="84" data-suffix="%">84%</div>
+            <div class="hs-l">Validation coverage</div>
+            <div class="hs-s">Automotive systems · MBRDI</div>
+          </div>
+          <div class="hs">
+            <div class="hs-n" data-target="95" data-suffix="%">95%</div>
+            <div class="hs-l">Internal tool adoption</div>
+            <div class="hs-s">News Corp · within 1 month</div>
+          </div>
+          <div class="hs-badge">
+            <div class="hs-bl" style="color:var(--amber);letter-spacing:.16em">JHU MSEM GPA</div>
+            <div class="hs-bv" style="color:var(--amber);font-size:2rem">3.82</div>
+          </div>
+        </div>
+
+        <div class="h-ctas">
+          <a href="#casestudies" class="btn bA">Featured Work</a>
+          <a href="AI_PM_FINALV3.pdf" target="_blank" rel="noopener noreferrer" class="btn bA" style="background:var(--surface);color:var(--amber);border:1px solid var(--amber2)">Resume ↗</a>
+          <a href="https://github.com/devothamgn321" target="_blank" rel="noopener noreferrer" class="btn bO">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/devothamagn/" target="_blank" rel="noopener noreferrer" class="btn bO">LinkedIn ↗</a>
+          <a href="#contact" class="btn bO">Contact</a>
+        </div>
+
+        <div style="margin-top:2.5rem;font-family:var(--M);font-size:.48rem;color:var(--ash);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem">
+          <span style="display:inline-block;width:24px;height:1px;background:var(--ash)"></span>
+          Scroll to explore
+          <span style="display:inline-block;width:24px;height:1px;background:var(--ash)"></span>
+        </div>
+
+      </div>
+      <div class="h-right">
+        <div class="h-photo-wrap">
+          <img class="h-photo" alt="Devothama GN — AI Product Manager" src="photo.jpg" loading="eager" fetchpriority="high" />
+        </div>
+        <div class="h-photo-caption">Builder · Systems Thinker · Photographer</div>
+      </div>
+    </div>
+  </div>
+  <div class="h-scroll"><div class="sbar"></div><span>Scroll</span></div>
+</section>
+
+<!-- FILM STRIP -->
+<div class="film" aria-hidden="true">
+  <div class="film-inner">
+    <div class="ff on">Ex-Mercedes-Benz R&amp;D</div><div class="ff">TEDxJHU Speaker</div>
+    <div class="ff on">Johns Hopkins MSEM</div><div class="ff">AI Products</div>
+    <div class="ff on">Available for Fall 2026</div><div class="ff">Enterprise AI</div>
+    <div class="ff on">Product Strategy</div><div class="ff">Systems Thinking</div>
+    <div class="ff on">Platform PM · Technical PM</div><div class="ff">Data Platforms</div>
+    <div class="ff on">Ex-Mercedes-Benz R&amp;D</div><div class="ff">TEDxJHU Speaker</div>
+    <div class="ff on">Johns Hopkins MSEM</div><div class="ff">AI Products</div>
+    <div class="ff on">Available for Fall 2026</div><div class="ff">Enterprise AI</div>
+    <div class="ff on">Product Strategy</div><div class="ff">Systems Thinking</div>
+    <div class="ff on">Platform PM · Technical PM</div><div class="ff">Data Platforms</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section id="about" class="S">
+  <div class="W">
+    <div class="ab-grid">
+      <div class="ab-body">
+        <div class="TR"><div class="TL"></div><div class="TT">Framing the Problem</div><div class="TN">01</div></div>
+        <h2 class="BIG" style="margin-bottom:1.5rem">
+          <span class="sub">Engineer by training —</span>
+          PM<br>by choice.
+        </h2>
+        <p>Started at <strong>Mercedes-Benz R&amp;D India</strong> as an ADAS integration engineer. Worked on ECU software, CANoe validation, and cross-geo coordination with German engineering teams. Learned how safety-critical systems get built. Kept asking: <em>who is this for, and does it actually solve their problem?</em></p>
+        <p>That question became the compass. I started translating engineering signals into product decisions: coverage gaps into visibility tools, release friction into process improvements, misaligned priorities into stakeholder alignment. That shift from execution to <strong>product thinking</strong> defines how I work today.</p>
+        <p>At <strong>Johns Hopkins Whiting School of Engineering</strong> (MSEM, GPA 3.82), I formalized that practice — sizing a $3.5B market for an AI music platform, designing 9:1 LTV:CAC pricing frameworks, and presenting workflow redesigns to clinical leadership at Johns Hopkins Bloomberg Children's Center.</p>
+        <p>I also serve as Teaching Assistant for <strong>Oral Presentations</strong> and <strong>Negotiation &amp; Conflict Resolution</strong> at the Johns Hopkins University Center for Leadership Education. In November 2025, I was selected as a <strong>TEDxJHU Key Speaker</strong> — introduced on stage as "a logical mind with a creative lens."</p>
+        <div class="photo-note">
+          <p>Photography taught me to see patterns others walk past. Product management works the same way — it's about <em>finding the frame nobody else noticed</em>: the real bottleneck, the unarticulated user need, the product decision hiding inside an engineering problem.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ═══════ IMPACT METRICS ═══════ -->
+<section id="impact" class="S">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Impact at a Glance</div></div>
+    <h2 class="BIG" style="margin-bottom:.6rem">
+      <span class="sub">Measured outcomes across roles —</span>Impact.
+    </h2>
+    <p style="font-family:var(--M);font-size:.62rem;color:var(--smoke);letter-spacing:.06em;margin-bottom:0">Every metric tied to a real decision, a real system, a real outcome.</p>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-n" data-target="26" data-suffix="%">26%</div>
+        <div class="impact-label">Defect Reduction</div>
+        <div class="impact-ctx">Post-release defects cut<br>Mercedes-Benz ADAS · MBRDI</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-n" data-target="84" data-suffix="%">84%</div>
+        <div class="impact-label">Validation Coverage</div>
+        <div class="impact-ctx">Automotive systems coverage<br>IDC6 Program · AURIX Platform</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-n" data-target="95" data-suffix="%">95%</div>
+        <div class="impact-label">Tool Adoption</div>
+        <div class="impact-ctx">Internal automation adopted<br>News Corp · within 1 month</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-n" data-target="30" data-suffix="%">30%</div>
+        <div class="impact-label">Error Reduction</div>
+        <div class="impact-ctx">Data retrieval errors reduced<br>News Corp · NTS pipeline</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FILM STRIP -->
+<div class="film" aria-hidden="true">
+  <div class="film-inner">
+    <div class="ff on">Campus Atlas · AI PM Case Study</div><div class="ff">Eco-Economic Data Pipeline · 5 Countries</div>
+    <div class="ff on">TrustShield AI · Trust &amp; Safety</div><div class="ff">RAG · Eval Framework · GTM Strategy</div>
+    <div class="ff on">Ex-Mercedes-Benz R&amp;D</div><div class="ff">TEDxJHU Speaker · Nov 2025</div>
+    <div class="ff on">Available Fall 2026</div><div class="ff">AI PM · Platform PM · Technical PM</div>
+    <div class="ff on">Campus Atlas · AI PM Case Study</div><div class="ff">Eco-Economic Data Pipeline · 5 Countries</div>
+    <div class="ff on">NviGo · CAC &lt;$5 · NPS 50+</div><div class="ff">Johns Hopkins Hospital · 15% Delays ↓ · 22% Satisfaction +</div>
+    <div class="ff on">Student Link · 80% Accessibility +</div><div class="ff">Stroke Prediction · 85% ANN Accuracy</div>
+    <div class="ff on">Climate Shock · Docker · ETL · DBMS</div><div class="ff">Product Manager · AI PM · TPM</div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ═══════ FEATURED PRODUCT: TRUSTSHIELD AI ═══════ -->
+
+<!-- ═══════════════════ CASE STUDIES ANCHOR ════════════════════════════ -->
+
+
+
+<div class="sep"></div>
+
+<!-- ═══════════════════════ PROJECT POSTERS ═══════════════════════ -->
+<section id="casestudies" class="S" style="background:var(--carbon);padding-top:4rem;padding-bottom:4rem">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Featured Work</div><div class="TN">→</div></div>
+    <h2 class="BIG" style="margin-bottom:.5rem">
+      <span class="sub">Three case studies —</span>Built.
+    </h2>
+    <p style="font-family:var(--M);font-size:.6rem;color:var(--smoke);letter-spacing:.07em;margin-bottom:3rem">
+      AI product strategy · Platform data engineering · Trust & safety systems
+    </p>
+
+    <!-- Carousel -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;overflow:hidden" class="proj-carousel">
+      
+      <!-- Card 1: Campus Atlas -->
+      <div style="background:var(--panel);border:1px solid var(--line2);border-top:3px solid var(--amber);padding:2rem;border-radius:2px;display:flex;flex-direction:column;gap:1rem;cursor:pointer" onclick="document.getElementById('campusos').scrollIntoView({behavior:'smooth'})">
+        <div style="font-family:var(--M);font-size:.5rem;color:var(--amber);letter-spacing:.18em;text-transform:uppercase">AI PM Case Study · 01</div>
+        <div style="font-family:var(--H);font-size:2.4rem;color:var(--chalk);line-height:1">Campus<br>Atlas</div>
+        <div style="font-family:var(--M);font-size:.54rem;color:var(--smoke);line-height:1.7">
+          AI-native operating system for higher education. RAG copilot, eval harness, GTM roadmap — full PM case study with working prototype.
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto">
+          <span style="font-family:var(--M);font-size:.46rem;color:var(--amber2);border:1px solid var(--amber);padding:.25rem .55rem;letter-spacing:.08em">RAG</span>
+          <span style="font-family:var(--M);font-size:.46rem;color:var(--amber2);border:1px solid var(--amber);padding:.25rem .55rem;letter-spacing:.08em">Eval Framework</span>
+          <span style="font-family:var(--M);font-size:.46rem;color:var(--amber2);border:1px solid var(--amber);padding:.25rem .55rem;letter-spacing:.08em">GTM</span>
+          <span style="font-family:var(--M);font-size:.46rem;color:var(--amber2);border:1px solid var(--amber);padding:.25rem .55rem;letter-spacing:.08em">EdTech</span>
+        </div>
+        <div style="font-family:var(--M);font-size:.52rem;color:var(--amber);letter-spacing:.1em;margin-top:.5rem">View Case Study ↓</div>
+      </div>
+
+      <!-- Card 2: Data Pipeline -->
+      <div style="background:var(--panel);border:1px solid var(--line2);border-top:3px solid #4caf7d;padding:2rem;border-radius:2px;display:flex;flex-direction:column;gap:1rem;cursor:pointer" onclick="document.getElementById('pipeline').scrollIntoView({behavior:'smooth'})">
+        <div style="font-family:var(--M);font-size:.5rem;color:#4caf7d;letter-spacing:.18em;text-transform:uppercase">Data Platform · PM Case Study · 02</div>
+        <div style="font-family:var(--H);font-size:2.4rem;color:var(--chalk);line-height:1">Eco-Economic<br>Data Pipeline</div>
+        <div style="font-family:var(--M);font-size:.54rem;color:var(--smoke);line-height:1.7">
+          5 countries · 4 APIs. Unified eco-economic warehouse serving policy analysts, risk officers, and researchers — designed around analytical questions, not raw data schemas.
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto">
+          <span style="font-family:var(--M);font-size:.46rem;color:#4caf7d;border:1px solid #4caf7d;padding:.25rem .55rem;letter-spacing:.08em">Python</span>
+          <span style="font-family:var(--M);font-size:.46rem;color:#4caf7d;border:1px solid #4caf7d;padding:.25rem .55rem;letter-spacing:.08em">Flask API</span>
+          <span style="font-family:var(--M);font-size:.46rem;color:#4caf7d;border:1px solid #4caf7d;padding:.25rem .55rem;letter-spacing:.08em">PostgreSQL</span>
+          <span style="font-family:var(--M);font-size:.46rem;color:#4caf7d;border:1px solid #4caf7d;padding:.25rem .55rem;letter-spacing:.08em">Docker</span>
+        </div>
+        <a href="https://github.com/devothamgn321/cross-continental-eco-economic-data-pipeline" target="_blank" rel="noopener noreferrer" style="font-family:var(--M);font-size:.52rem;color:#4caf7d;letter-spacing:.1em;margin-top:.5rem;text-decoration:none">View on GitHub ↗</a>
+      </div>
+
+      <!-- Card 3: TrustShield AI -->
+      <div style="background:var(--panel);border:1px solid var(--line2);border-top:3px solid #d93030;padding:2rem;border-radius:2px;display:flex;flex-direction:column;gap:1rem;cursor:pointer" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})">
+        <div style="font-family:var(--M);font-size:.5rem;color:#d93030;letter-spacing:.18em;text-transform:uppercase">AI Trust &amp; Safety · 03</div>
+        <div style="font-family:var(--H);font-size:2.4rem;color:var(--chalk);line-height:1">TrustShield<br>AI</div>
+        <div style="font-family:var(--M);font-size:.54rem;color:var(--smoke);line-height:1.7">
+          Responsible AI product strategy — synthetic fraud detection, risk scoring, HITL escalation, and trust infrastructure for high-stakes domains.
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto">
+          <span style="font-family:var(--M);font-size:.46rem;color:#d93030;border:1px solid #d93030;padding:.25rem .55rem;letter-spacing:.08em">AI Safety</span>
+          <span style="font-family:var(--M);font-size:.46rem;color:#d93030;border:1px solid #d93030;padding:.25rem .55rem;letter-spacing:.08em">Risk Scoring</span>
+          <span style="font-family:var(--M);font-size:.46rem;color:#d93030;border:1px solid #d93030;padding:.25rem .55rem;letter-spacing:.08em">HITL</span>
+          <span style="font-family:var(--M);font-size:.46rem;color:#d93030;border:1px solid #d93030;padding:.25rem .55rem;letter-spacing:.08em">GAN</span>
+        </div>
+        <div style="font-family:var(--M);font-size:.52rem;color:#d93030;letter-spacing:.1em;margin-top:.5rem">View Case Study ↓</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CAMPUS ATLAS CASE STUDY ════════════════════════════ -->
+<section id="campusos" class="S" style="background:var(--void)">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Case Study · 01</div><div class="TN">AI PM</div></div>
+    <h2 class="BIG" style="margin-bottom:.8rem">
+      <span class="sub">AI Product Management Case Study</span>
+      Campus Atlas
+    </h2>
+    <p style="font-family:var(--M);font-size:.65rem;color:var(--smoke);letter-spacing:.07em;text-transform:uppercase;margin-bottom:3rem">
+      AI Product Strategy · Evaluation Framework · GTM Roadmap · Working Prototype &nbsp;·&nbsp; Higher Education AI Platform
+    </p>
+
+    <div class="feat-wrap">
+      <div class="feat-left">
+        <div class="feat-vision">
+          <div class="feat-vision-lbl">Product Vision</div>
+          <div class="feat-vision-txt">Universities run on 15+ disconnected systems. Students waste hours navigating registrar, library, dining, housing, and admin — each with its own portal, password, and queue. Campus Atlas replaces that friction with a single AI-native command center that understands what a student needs and routes them there instantly.</div>
+        </div>
+
+        <div class="feat-block red-left">
+          <div class="feat-blbl red">The Problem</div>
+          <div class="feat-btxt">Students interact with 8–12 separate university systems to complete basic tasks — course registration, library holds, dining plans, housing maintenance, financial aid queries. Each system is siloed. Admin teams receive thousands of repetitive support tickets that could be resolved instantly with the right information surfaced at the right moment. <strong>The university is not unintelligent — its intelligence is just inaccessible.</strong></div>
+        </div>
+
+        <div class="feat-block amber-left">
+          <div class="feat-blbl amber">PM Insight</div>
+          <div class="feat-btxt">The wedge is the question students ask most — "How do I...?" — not the answer. Every campus has knowledge; none have retrieval. A RAG-based copilot trained on official university documents gives students instant, citation-backed answers without burdening admin staff. <strong>That is the 0 to 1 product.</strong> The platform expands from there.</div>
+        </div>
+
+        <div class="pj-struct" style="margin-top:1.5rem">
+          <div class="pj-s-row"><div class="pj-s-lbl">Users</div><div class="pj-s-txt">Students (primary) · University admin teams · Service dept heads · Product/IT stakeholders</div></div>
+          <div class="pj-s-row"><div class="pj-s-lbl">Wedge</div><div class="pj-s-txt">AI Copilot — answers student questions from official university docs with citations and confidence scores</div></div>
+          <div class="pj-s-row"><div class="pj-s-lbl">Expand</div><div class="pj-s-txt">Student Command Center → Services Hub → Admin Dashboard → Escalation Workflows</div></div>
+          <div class="pj-s-row"><div class="pj-s-lbl">Moat</div><div class="pj-s-txt">University-specific RAG corpus + human escalation feedback loop improves accuracy over time per institution</div></div>
+        </div>
+
+        <div class="feat-tags">
+          <span class="feat-tag">RAG Architecture</span>
+          <span class="feat-tag">AI PM Case Study</span>
+          <span class="feat-tag">Higher Education</span>
+          <span class="feat-tag">Evaluation Framework</span>
+          <span class="feat-tag">GTM Strategy</span>
+          <span class="feat-tag">Human-in-the-Loop</span>
+          <span class="feat-tag">Platform Product</span>
+        </div>
+
+        <div class="feat-cta" style="margin-top:2rem">
+          <a href="https://devothamgn321.github.io/campus-atlas/" target="_blank" rel="noopener noreferrer" class="btn bA">Live Demo ↗</a>
+          <a href="https://github.com/devothamgn321/campus-atlas" target="_blank" rel="noopener noreferrer" class="btn bO">GitHub ↗</a>
+          <a href="#contact" class="btn bO">Discuss This Project</a>
+        </div>
+      </div>
+
+      <div class="feat-right">
+        <div class="feat-panel">
+          <div class="feat-panel-lbl">AI Architecture</div>
+          <div class="feat-panel-items">
+            <div class="feat-panel-item"><strong>Ingestion Layer</strong> — Official university docs chunked and embedded into a vector store</div>
+            <div class="feat-panel-item"><strong>RAG Retrieval</strong> — Semantic search returns top-K relevant passages per query</div>
+            <div class="feat-panel-item"><strong>Response Generation</strong> — LLM synthesizes answer with source citations</div>
+            <div class="feat-panel-item"><strong>Confidence Threshold</strong> — Low-confidence responses route to human escalation, not hallucination</div>
+            <div class="feat-panel-item"><strong>Groundedness Eval</strong> — Every response scored against source passages for factual grounding</div>
+            <div class="feat-panel-item"><strong>Active Learning</strong> — Escalation decisions feed back into corpus improvement</div>
+          </div>
+        </div>
+
+        <div class="feat-panel">
+          <div class="feat-panel-lbl">PM Thinking — Key Decisions</div>
+          <div class="feat-panel-items">
+            <div class="feat-panel-item"><strong>Chose citation-first UX</strong> over fluent summaries — students need to trust answers, not just receive them</div>
+            <div class="feat-panel-item"><strong>Escalation over hallucination</strong> — below 65% confidence, the copilot says "I'm not sure, here's who to ask" instead of guessing</div>
+            <div class="feat-panel-item"><strong>Admin dashboard scoped for Phase 2</strong> — wedge with students first; admin adoption follows when ticket volume drops visibly</div>
+            <div class="feat-panel-item"><strong>Institutional GTM</strong> — sell to VP of Student Affairs, not IT; they own the budget and the user pain</div>
+          </div>
+        </div>
+
+        <div class="feat-panel">
+          <div class="feat-panel-lbl">Metrics Framework</div>
+          <div class="feat-panel-items">
+            <div class="feat-panel-item"><strong>Groundedness Rate &gt;= 90%</strong> — answers tied to source documents</div>
+            <div class="feat-panel-item"><strong>Escalation Precision &gt;= 80%</strong> — escalations are genuinely ambiguous, not noise</div>
+            <div class="feat-panel-item"><strong>Admin Ticket Deflection</strong> — primary business impact metric, visible to VP-level buyers</div>
+            <div class="feat-panel-item"><strong>Student Resolution Time</strong> — time to answer drops from avg 2 days to under 30 seconds</div>
+          </div>
+        </div>
+
+        <div class="feat-panel">
+          <div class="feat-panel-lbl">Roadmap</div>
+          <div class="feat-panel-items">
+            <div class="feat-panel-item"><strong>MVP</strong> — RAG copilot, citation UI, escalation flow, groundedness eval</div>
+            <div class="feat-panel-item"><strong>Phase 2</strong> — Services Hub (dining, library, housing integrations)</div>
+            <div class="feat-panel-item"><strong>Phase 3</strong> — Admin dashboard, ticket analytics, corpus curation tools</div>
+            <div class="feat-panel-item"><strong>Phase 4</strong> — Multi-institution deployment, shared policy corpus</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<section id="featured" class="S">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Case Study · 02</div><div class="TN">AI</div></div>
+    <div class="feat-wrap">
+      <div>
+        <div class="feat-launch-badge">AI Product · Trust &amp; Safety · Flagship</div>
+        <div style="font-family:var(--M);font-size:.52rem;color:var(--smoke);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem">Introducing</div>
+        <div class="feat-title">TrustShield AI</div>
+        <div class="feat-sub">AI-Powered Trust &amp; Safety Moderation Platform</div>
+        <div class="feat-vision">
+          <div class="feat-vision-lbl">Product Vision</div>
+          <div class="feat-vision-txt">Modern content platforms must balance scale, safety, and transparency. TrustShield AI helps moderation teams detect harmful content faster — while keeping humans in control and decisions explainable.</div>
+        </div>
+        <div class="feat-block red-left">
+          <div class="feat-blbl red">The Problem</div>
+          <div class="feat-btxt">Short-form video platforms struggle to detect harmful content quickly while maintaining transparency in moderation decisions. Moderation teams act on flags they can't explain — eroding reviewer trust, slowing appeals, and creating legal risk for platforms.</div>
+        </div>
+        <div class="feat-block amber-left">
+          <div class="feat-blbl amber">The Solution</div>
+          <div class="feat-btxt">TrustShield AI is an <strong>AI-assisted moderation platform</strong> that helps trust and safety teams detect harmful content using explainable signals and human-in-the-loop workflows. The core insight: moderation teams don't just need a flag — they need to know <strong>why the model flagged it, how confident it is</strong>, and when to override. The product is built for trust, not just accuracy.</div>
+        </div>
+        <div class="feat-block amber-left" style="margin-top:1.4rem">
+          <div class="feat-blbl amber">System Architecture</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem .8rem;margin-top:.4rem">
+            <div style="font-family:var(--M);font-size:.62rem;color:var(--paper);letter-spacing:.03em;display:flex;align-items:center;gap:.4rem"><span style="color:var(--amber);font-size:.6em">▸</span>AI moderation signals</div>
+            <div style="font-family:var(--M);font-size:.62rem;color:var(--paper);letter-spacing:.03em;display:flex;align-items:center;gap:.4rem"><span style="color:var(--amber);font-size:.6em">▸</span>Risk scoring pipeline</div>
+            <div style="font-family:var(--M);font-size:.62rem;color:var(--paper);letter-spacing:.03em;display:flex;align-items:center;gap:.4rem"><span style="color:var(--amber);font-size:.6em">▸</span>Human review workflows</div>
+            <div style="font-family:var(--M);font-size:.62rem;color:var(--paper);letter-spacing:.03em;display:flex;align-items:center;gap:.4rem"><span style="color:var(--amber);font-size:.6em">▸</span>Explainable AI outputs</div>
+          </div>
+        </div>
+        <div class="feat-tags">
+          <span class="feat-tag">AI Product Design</span>
+          <span class="feat-tag">Trust &amp; Safety Infrastructure</span>
+          <span class="feat-tag">Moderation Systems</span>
+          <span class="feat-tag">Platform Safety</span>
+          <span class="feat-tag">Explainable AI</span>
+          <span class="feat-tag">Human-in-the-Loop</span>
+        </div>
+      </div>
+      <div class="feat-right">
+        <div class="feat-panel">
+          <div class="feat-panel-lbl">Product Design Decisions</div>
+          <div class="feat-panel-items">
+            <div class="feat-panel-item"><strong>Explainability layer</strong><br><span style="color:var(--smoke);font-size:.58rem">Surface why a signal fired, not just that it did</span></div>
+            <div class="feat-panel-item"><strong>Configurable thresholds</strong><br><span style="color:var(--smoke);font-size:.58rem">Operators tune precision vs recall per content category</span></div>
+            <div class="feat-panel-item"><strong>Queue prioritization</strong><br><span style="color:var(--smoke);font-size:.58rem">Severity + confidence score drives review order</span></div>
+            <div class="feat-panel-item"><strong>Human override workflow</strong><br><span style="color:var(--smoke);font-size:.58rem">Structured appeal loop improves the model over time</span></div>
+            <div class="feat-panel-item"><strong>Operator dashboard</strong><br><span style="color:var(--smoke);font-size:.58rem">Real-time health metrics, reviewer load, false-positive rate</span></div>
+          </div>
+        </div>
+        <div class="feat-panel">
+          <div class="feat-panel-lbl">Product Thinking</div>
+          <div class="feat-panel-items">
+            <div class="feat-panel-item"><strong>Balance automation with human trust</strong><br><span style="color:var(--smoke);font-size:.58rem">At every decision boundary</span></div>
+            <div class="feat-panel-item"><strong>Explainability is a feature</strong><br><span style="color:var(--smoke);font-size:.58rem">Not an afterthought</span></div>
+            <div class="feat-panel-item"><strong>Built for scale</strong><br><span style="color:var(--smoke);font-size:.58rem">Without sacrificing reviewer autonomy</span></div>
+          </div>
+        </div>
+        <div class="feat-panel">
+          <div class="feat-panel-lbl">Focus Areas</div>
+          <div class="feat-panel-items">
+            <div class="feat-panel-item">AI product strategy and system design</div>
+            <div class="feat-panel-item">Trust and safety infrastructure</div>
+            <div class="feat-panel-item">Human-centered AI workflows</div>
+            <div class="feat-panel-item">Explainable AI signals for non-technical reviewers</div>
+          </div>
+        </div>
+        <div class="feat-cta">
+          <a href="https://github.com/devothamgn321/TrustShield" target="_blank" rel="noopener noreferrer" class="btn bO" style="font-size:.56rem;padding:.7rem 1.4rem">View on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="sep"></div>
+
+<!-- ═══════════════════════ EXPERIENCE ═══════════════════════ -->
+<section id="experience" class="S" aria-label="Professional Experience">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Professional Experience</div><div class="TN">02</div></div>
+    <h2 class="BIG" style="margin-bottom:4rem">
+      <span class="sub">Where I've worked —</span>Building.
+    </h2>
+
+    <!-- JHTV -->
+    <div class="exp-row">
+      <div>
+        <div class="ex-co">Johns Hopkins Technology Ventures</div>
+        <div class="ex-period">Jun 2026 – Present</div>
+        <div class="ex-kind">Internship · On-site</div>
+      </div>
+      <div>
+        <div class="ex-role" role="heading" aria-level="3">Corporate Partnerships Intern</div>
+        <div class="ex-ctx">Technology Commercialization · Market Analysis · Business Development · Life Sciences</div>
+        <ul class="ex-pts">
+          <li>Working with the Corporate Partnerships team to connect Johns Hopkins research strengths with industry needs across emerging life sciences areas — market analysis, technology commercialization, and business development strategy</li>
+          <li>Mapping JHU research capabilities to external company priorities; supporting value proposition development for corporate partnership and commercialization opportunities</li>
+          <li>Analyzing emerging life sciences markets and translating research strengths into business-facing insights; contributing to internal briefing materials and partnership strategy recommendations</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Technology Commercialization</span><span class="chip">Market Research</span>
+          <span class="chip">Product Strategy</span><span class="chip">Business Development</span>
+          <span class="chip">Life Sciences</span><span class="chip">Value Proposition</span>
+        </div>
+      </div>
+    </div>
+
+        <!-- Present Technologies -->
+    <div class="exp-row">
+      <div>
+        <div class="ex-co">Present Technologies</div>
+        <div class="ex-period">Jan 2026</div>
+        <div class="ex-kind">Internship · On-site</div>
+      </div>
+      <div>
+        <div class="ex-role" role="heading" aria-level="3">Product Strategist &amp; Analyst</div>
+        <div class="ex-ctx">U.S. Soccer Technology Ecosystem · Market Research · GTM Strategy</div>
+        <ul class="ex-pts">
+          <li>No product existed for U.S. soccer coaching teams. Mapped the ecosystem across <strong>6 competitive levels</strong>, evaluated <strong>15+ digital tools</strong>, and identified where existing products failed their users</li>
+          <li>Ran customer discovery with coaches, technical directors, and club administrators. Defined <strong>3 core user personas</strong> with full workflow, tool stack, and buying behavior documentation</li>
+          <li>Synthesized all findings into an <strong>executive-ready product strategy and GTM report</strong>, directly influencing product direction and partner outreach</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Product Strategy</span><span class="chip">Market Research</span>
+          <span class="chip">Customer Discovery</span><span class="chip">GTM</span>
+          <span class="chip">Competitive Analysis</span><span class="chip">User Personas</span><span class="chip">Sports Tech</span>
+        </div>
+      </div>
+    </div>
+    <!-- News Corp -->
+    <div class="exp-row">
+      <div>
+        <div class="ex-co">News Corp (NTS)</div>
+        <div class="ex-period">Sep – Nov 2021</div>
+        <div class="ex-kind">Internship · Hybrid</div>
+      </div>
+      <div>
+        <div class="ex-role" role="heading" aria-level="3">Product Development Intern</div>
+        <div class="ex-ctx">Internal Data Platform · News &amp; Content Workflows · Python · Flask · Backend Automation</div>
+        <ul class="ex-pts">
+          <li>Internal teams were manually handling CSV data with no automation. Built a <strong>CSV-to-database pipeline</strong> for 75+ users, cutting data retrieval errors by <strong>30%</strong></li>
+          <li>Users were ignoring existing tools. Defined requirements, ran feedback loops, and shipped <strong>5+ prioritized enhancements</strong>, reaching <strong>95% adoption within one month</strong></li>
+          <li>First experience closing the full product loop: user problem, product decision, measurable outcome</li>
+        </ul>
+        <div class="mini m3">
+          <div class="mc"><div class="mc-n">95%</div><div class="mc-l">Adoption · 1 month</div></div>
+          <div class="mc"><div class="mc-n">30%</div><div class="mc-l">Error reduction</div></div>
+          <div class="mc"><div class="mc-n">75+</div><div class="mc-l">Users served</div></div>
+        </div>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">ETL Pipelines</span>
+          <span class="chip">Product Requirements</span><span class="chip">Backlog Prioritization</span><span class="chip">Backend Dev</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MBRDI -->
+    <div class="exp-row">
+      <div>
+        <div class="ex-co">Mercedes-Benz R&amp;D India</div>
+        <div class="ex-period">Aug 2023 – Feb 2025<br>Full-time</div>
+        <div class="ex-period" style="margin-top:.5rem;border-top:1px solid var(--line);padding-top:.5rem">Apr – Jul 2023<br>Intern · 4 mos</div>
+        <div class="ex-kind">On-site</div>
+      </div>
+      <div>
+        <div class="ex-role" role="heading" aria-level="3">ADAS Integration Engineer</div>
+        <div class="ex-ctx">Advanced Driver Assistance Systems · IDC6 Program · AURIX Platform · AUTOSAR · Safety-Critical Automotive Software</div>
+        <ul class="ex-pts">
+          <li>Validation pipelines lacked system-wide visibility. Contributed to integration and testing workflows across the <strong>IDC6 ADAS program on AURIX</strong>, helping drive coverage to <strong>84%</strong> and reduce post-release defects by <strong>26%</strong></li>
+          <li>Release cycles were slow due to fragmented defect tracking. Participated in triage and release readiness processes that improved shipment cadence by <strong>2 days per cycle</strong></li>
+          <li>Cross-geo teams had misaligned priorities. Collaborated across Indian and German engineering pods using <strong>CANoe, HIL rigs, and DaVinci Configurator</strong> to align on integration quality gates and delivery timelines</li>
+          <li>Developed systems-level thinking: how upstream integration decisions create downstream quality impact. This is the foundation of how I approach product problems today</li>
+          <li><em>Internship (Apr–Jul 2023):</em> AUTOSAR BSW configuration using DaVinci Configurator and EB Tresos; testing and validation of automotive software modules</li>
+        </ul>
+        <p style="font-family:var(--M);font-size:.6rem;color:var(--amber2);letter-spacing:.06em;
+          line-height:1.75;margin:1.2rem 0;padding:1rem 1.2rem;background:var(--panel);
+          border-left:2px solid var(--amber)">
+          Platform outcomes during this period — validation coverage: <strong>84%</strong> · post-release defect reduction: <strong>26%</strong> · release cadence improvement: <strong>2 days</strong> — achieved through cross-team integration, validation discipline, and structured engineering coordination.
+        </p>
+        <div class="chips">
+          <span class="chip">ADAS</span><span class="chip">AUTOSAR</span><span class="chip">CANoe</span>
+          <span class="chip">HIL Validation</span><span class="chip">ECU Integration</span>
+          <span class="chip">DaVinci Configurator</span><span class="chip">Cross-geo Coordination</span>
+          <span class="chip">Safety-Critical Systems</span><span class="chip">Embedded Software</span>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<div class="sep"></div>
+<section id="projects" class="S">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Product Work</div><div class="TN">03</div></div>
+    <h2 class="BIG" style="margin-bottom:.8rem">
+      <span class="sub">Discovery, strategy, and measurable impact —</span>Work.
+    </h2>
+    <p style="font-family:var(--P);font-size:1.05rem;color:var(--smoke);margin-bottom:2.5rem">Different domains. Same deliberate product eye.</p>
+    <div class="pj-grid">
+
+      <!-- TrustShield — FEATURED -->
+      <div class="pjc feat" style="display:block">
+        <div class="pj-acc"></div>
+        <div class="pj-badge" style="margin:1.7rem 0 0 2rem">Featured · AI Product Design</div>
+        <div class="pj-body" style="padding:1.2rem 2rem 2rem">
+          <div class="pj-title" role="heading" aria-level="3" style="font-size:2.6rem">TrustShield AI</div>
+          <div class="pj-sub">AI Trust &amp; Safety Platform · Human-in-the-Loop Moderation</div>
+          <div class="pj-struct">
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Problem</span>
+              <span class="pj-s-txt">Short-form video platforms struggle to detect harmful content quickly while maintaining transparency — moderation teams act on flags they can't explain or challenge</span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Insight</span>
+              <span class="pj-s-txt">Moderation teams don't just need a flag — they need <strong>explainable AI signals</strong> that surface why content was flagged, confidence levels, and appeal pathways. Trust in the system drives adoption</span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Direction</span>
+              <span class="pj-s-txt">Designed configurable trust thresholds, human-in-the-loop review queues, explainability layers, and operator dashboards that balance <strong>recall, precision, and reviewer cognitive load</strong></span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Focus</span>
+              <span class="pj-s-txt">AI product design · trust &amp; safety infrastructure · moderation systems · platform safety · explainable AI</span>
+            </div>
+          </div>
+          <div class="pj-ms">
+            <span class="pm">AI Product Design</span><span class="pm">Trust &amp; Safety Systems</span>
+            <span class="pm">Human-in-the-Loop</span><span class="pm">Explainable AI</span>
+          </div>
+          <div class="pj-tech" style="margin-top:.6rem">
+            <span>Python</span><span>LLM APIs</span><span>AI Product Thinking</span>
+          </div>
+          <div style="display:flex;gap:.75rem;margin-top:1.2rem;flex-wrap:wrap">
+            <a href="#featured" class="btn bA" style="font-size:.52rem;padding:.6rem 1.1rem">View Case Study ↓</a>
+            <a href="https://github.com/devothamgn321/TrustShield" target="_blank" rel="noopener noreferrer" class="btn bO" style="font-size:.52rem;padding:.6rem 1.1rem">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- KaraOrchee -->
+      <div class="pjc">
+        <div class="pj-acc"></div>
+        <div class="pj-badge">AI · EdTech · PMF Discovery</div>
+        <div class="pj-body">
+          <div class="pj-title" role="heading" aria-level="3">KaraOrchee</div>
+          <div class="pj-sub">AI Music Learning Platform · Peabody Conservatory · PMF Discovery</div>
+          <div class="pj-struct">
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Problem</span>
+              <span class="pj-s-txt">Music learners lack structured, real-time feedback during practice — passive tutorials don't replicate the coaching dynamic they need to improve</span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Insight</span>
+              <span class="pj-s-txt">20+ interviews at Peabody Conservatory revealed users want <strong>adaptive accompaniment, not AI branding</strong> — repositioning practice-outcome-first unlocked willingness to pay</span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Direction</span>
+              <span class="pj-s-txt">Designed AI-assisted practice sessions with real-time feedback loops; tiered pricing (B2C + B2B institutional) with <strong>LTV:CAC ~9:1, payback &lt;3 months</strong></span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Outcome</span>
+              <span class="pj-s-txt"><strong>85% WTP at $10–20/month</strong> · $2–3.5B TAM sized · GTM report delivered to CEO</span>
+            </div>
+          </div>
+          <div class="pj-ms">
+            <span class="pm">$2–3.5B TAM</span><span class="pm">LTV:CAC 9:1</span><span class="pm">85% WTP</span>
+          </div>
+          <div style="margin-top:1.2rem">
+            <a href="https://github.com/devothamgn321/KaraOrchee" target="_blank" rel="noopener noreferrer" class="btn bO" style="font-size:.52rem;padding:.6rem 1.1rem">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- NviGo -->
+      <div class="pjc">
+        <div class="pj-acc"></div>
+        <div class="pj-badge">Platform Strategy · Partnerships</div>
+        <div class="pj-body">
+          <div class="pj-title" role="heading" aria-level="3">NviGo</div>
+          <div class="pj-sub">International Student Services Platform · Partnership Strategy</div>
+          <div class="pj-struct">
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Problem</span>
+              <span class="pj-s-txt">International students face fragmented, unreliable information when relocating — housing, immigration, banking all siloed with no trusted unified platform</span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Insight</span>
+              <span class="pj-s-txt">Pain-point analysis across geographies confirmed <strong>housing as the highest-severity, highest-urgency problem</strong> — trust, not features, is the core product challenge</span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Direction</span>
+              <span class="pj-s-txt">Designed a scalable partnership framework (segmentation, value exchange, incentives); prioritized housing as <strong>Phase 1</strong>; modeled referral-based revenue and contributed to MVP sequencing</span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Targets</span>
+              <span class="pj-s-txt"><strong>CAC &lt;$5</strong> · Retention 60%+ · NPS 50+ · GTM report delivered</span>
+            </div>
+          </div>
+          <div class="pj-ms">
+            <span class="pm">CAC &lt;$5</span><span class="pm">Retention 60%+</span><span class="pm">NPS 50+</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Johns Hopkins Hospital -->
+      <div class="pjc">
+        <div class="pj-acc"></div>
+        <div class="pj-badge">Healthcare Ops · Process Design</div>
+        <div class="pj-body">
+          <div class="pj-title" role="heading" aria-level="3">Johns Hopkins Hospital</div>
+          <div class="pj-sub">Bloomberg Children's Center · Pediatric Surgical Registration Redesign</div>
+          <div class="pj-struct">
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Problem</span>
+              <span class="pj-s-txt">Pediatric surgical registration at Johns Hopkins Bloomberg Children's Center caused consistent delays, check-in errors, and staff inefficiencies — root cause invisible to leadership</span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Approach</span>
+              <span class="pj-s-txt">10+ stakeholder interviews, on-site observations, patient-family surveys; end-to-end workflow mapping identified wayfinding gaps, communication failures, language barriers</span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Direction</span>
+              <span class="pj-s-txt"><strong>Day-of-Surgery one-pager via MyChart</strong>, priority-based registration queue for late arrivals, multilingual wayfinding — all designed against feasibility and adoption constraints</span>
+            </div>
+            <div class="pj-s-row">
+              <span class="pj-s-lbl">Outcome</span>
+              <span class="pj-s-txt"><strong>15% delay reduction · 22% satisfaction increase</strong> · presented at Hopkins poster session</span>
+            </div>
+          </div>
+          <div class="pj-ms">
+            <span class="pm">15% Delay Reduction</span><span class="pm">22% Satisfaction +</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<div class="sep"></div>
+
+<!-- ═══════════════════ DATA PIPELINE CASE STUDY ════════════════════════════ -->
+<section id="pipeline" class="S" style="background:var(--void)">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Case Study · 03</div><div class="TN">Platform</div></div>
+    <h2 class="BIG" style="margin-bottom:.8rem">
+      <span class="sub">Platform Product Case Study</span>
+      Cross-Continental<br>Data Pipeline
+    </h2>
+    <p style="font-family:var(--M);font-size:.65rem;color:var(--smoke);letter-spacing:.07em;text-transform:uppercase;margin-bottom:3rem">
+      Analyst-Facing Eco-Economic Intelligence Platform &nbsp;·&nbsp; 5 Countries &nbsp;·&nbsp; 4 APIs &nbsp;·&nbsp; PostgreSQL &nbsp;·&nbsp; Flask REST API
+    </p>
+
+    <div class="feat-wrap">
+      <div class="feat-left">
+        <div class="feat-vision">
+          <div class="feat-vision-lbl">Product Vision</div>
+          <div class="feat-vision-txt">Policy analysts, risk officers, and researchers spend 60–70% of their time acquiring and cleaning data from fragmented government APIs — leaving little time for the analysis that drives decisions. The product eliminates that wrangling by delivering a unified, query-ready eco-economic warehouse designed around analytical questions, not raw data schemas.</div>
+        </div>
+
+        <div class="feat-block red-left">
+          <div class="feat-blbl red">The Problem</div>
+          <div class="feat-btxt">A researcher studying drought impact on food prices must pull from Open-Meteo (weather), World Bank (GDP/inflation), EIA (energy), and FAO (commodity prices) — each with different authentication, schemas, and update frequencies. There is no shared platform. Every research question requires rebuilding the same data plumbing from scratch. <strong>The bottleneck is not analysis capability — it is data access.</strong></div>
+        </div>
+
+        <div class="feat-block amber-left">
+          <div class="feat-blbl amber">PM Decision</div>
+          <div class="feat-btxt">Built for the analyst, not the data engineer. API response schema was designed around analytical questions ("How did weather anomalies in Nigeria affect food prices?") — not around source system schema. No analyst should need to write a JOIN. Modular connector architecture means adding a new data source never touches existing pipelines.</div>
+        </div>
+
+        <div class="pj-struct" style="margin-top:1.5rem">
+          <div class="pj-s-row"><div class="pj-s-lbl">Users</div><div class="pj-s-txt">Policy Analysts · NGO Research Leads · Academic Researchers · Supply-Chain Risk Officers</div></div>
+          <div class="pj-s-row"><div class="pj-s-lbl">Countries</div><div class="pj-s-txt">USA · Brazil · India · Philippines · Nigeria — chosen for cross-source data availability</div></div>
+          <div class="pj-s-row"><div class="pj-s-lbl">Sources</div><div class="pj-s-txt">Open-Meteo (weather) · World Bank (GDP/inflation) · EIA (energy) · FAO (food prices)</div></div>
+          <div class="pj-s-row"><div class="pj-s-lbl">Scope</div><div class="pj-s-txt">Deferred: real-time ingestion, UI layer, predictive modeling — until historical data quality validated</div></div>
+        </div>
+
+        <div class="feat-tags">
+          <span class="feat-tag">Python ETL</span>
+          <span class="feat-tag">PostgreSQL</span>
+          <span class="feat-tag">Flask REST API</span>
+          <span class="feat-tag">Docker</span>
+          <span class="feat-tag">Platform Product</span>
+          <span class="feat-tag">Data Engineering</span>
+          <span class="feat-tag">PM Case Study</span>
+        </div>
+
+        <div class="feat-cta" style="margin-top:2rem">
+          <a href="https://github.com/devothamgn321/cross-continental-eco-economic-data-pipeline" target="_blank" rel="noopener noreferrer" class="btn bA">GitHub ↗</a>
+          <a href="#contact" class="btn bO">Discuss This Project</a>
+        </div>
+      </div>
+
+      <div class="feat-right">
+        <div class="feat-panel">
+          <div class="feat-panel-lbl">System Architecture</div>
+          <div class="feat-panel-items">
+            <div class="feat-panel-item"><strong>Ingestion Layer</strong> — 4 isolated Python connectors (weather.py, world_bank.py, eia_energy.py, food_prices.py); each fails independently</div>
+            <div class="feat-panel-item"><strong>Normalization</strong> — Per-source transformation to monthly grain, consistent ISO3 country codes, documented imputation rules</div>
+            <div class="feat-panel-item"><strong>PostgreSQL Warehouse</strong> — master.py orchestrates: load CSVs → create master_data table → add constraints; star schema for time-series queries</div>
+            <div class="feat-panel-item"><strong>Flask REST API</strong> — Analyst-facing endpoints filterable by country, date range, indicator type; no SQL knowledge required</div>
+            <div class="feat-panel-item"><strong>Orchestration</strong> — Cron + Docker Compose; run_incremental.sh handles delta updates without full reloads</div>
+          </div>
+        </div>
+
+        <div class="feat-panel">
+          <div class="feat-panel-lbl">PM Thinking — Key Decisions</div>
+          <div class="feat-panel-items">
+            <div class="feat-panel-item"><strong>Modular connectors over monolithic ETL</strong> — a new data source shouldn't touch existing pipelines; critical for a research platform where the data universe keeps expanding</div>
+            <div class="feat-panel-item"><strong>Data lineage as a product feature</strong> — every imputation decision is traceable; analysts can see how a value was derived, not just what it is</div>
+            <div class="feat-panel-item"><strong>Reproducibility is a trust feature</strong> — Docker Compose packages the full stack so an analyst can reproduce a result from 6 months ago even after source corrections</div>
+            <div class="feat-panel-item"><strong>Rejected flat-table approach</strong> — query performance at analytical scale matters; an analyst waiting 40 seconds abandons the tool</div>
+          </div>
+        </div>
+
+        <div class="feat-panel">
+          <div class="feat-panel-lbl">Metrics Framework</div>
+          <div class="feat-panel-items">
+            <div class="feat-panel-item"><strong>Data Freshness &lt; 30 days</strong> — policy relevance degrades with stale data</div>
+            <div class="feat-panel-item"><strong>Schema Coverage &gt; 90%</strong> — low coverage means analysts discover gaps mid-project</div>
+            <div class="feat-panel-item"><strong>API Response &lt; 150ms P95</strong> — slow queries kill adoption for research workflows</div>
+            <div class="feat-panel-item"><strong>Imputation Rate &lt; 10%</strong> — high imputation signals underlying data reliability issues</div>
+          </div>
+        </div>
+
+        <div class="feat-panel">
+          <div class="feat-panel-lbl">Roadmap</div>
+          <div class="feat-panel-items">
+            <div class="feat-panel-item"><strong>MVP (Done)</strong> — 4-source ingestion, normalization, PostgreSQL warehouse, Flask API, Docker, cron orchestration</div>
+            <div class="feat-panel-item"><strong>Phase 2</strong> — Airflow orchestration, data quality scoring, 20-country coverage, API auth + rate limiting</div>
+            <div class="feat-panel-item"><strong>Phase 3</strong> — Lightweight analyst query UI, partner integrations (UN OCHA, WFP data feeds)</div>
+            <div class="feat-panel-item"><strong>Phase 4</strong> — Predictive module: weather + energy → food price impact forecasting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TECHNICAL PROJECTS ═══════════════════════ -->
+<section id="tech" class="S">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Technical Projects</div><div class="TN">04</div></div>
+    <h2 class="BIG" style="margin-bottom:.8rem">
+      <span class="sub">Code, systems, and data —</span>Built things.
+    </h2>
+    <p style="font-family:var(--P);font-size:1.05rem;color:var(--smoke);margin-bottom:2.5rem">Engineering depth behind the product thinking.</p>
+    <div class="tp-grid">
+
+      <div class="tpc">
+        <div class="tp-type">Full-Stack · Campus Platform</div>
+        <div class="tp-title">Student Link</div>
+        <div class="tp-sub">Smart Campus Services · Blockchain-Secured Records</div>
+        <div class="tp-desc">
+          Built a centralized digital platform to streamline campus services — food ordering, library management, student inquiries. Designed with product intent: what services do students actually need unified access to, and what data architecture supports reliability at scale? Integrated <strong>blockchain for secure record storage</strong>.
+        </div>
+        <div class="tp-ms">
+          <span class="tpm">80% Service Accessibility +</span><span class="tpm">50% Admin Workload ↓</span>
+        </div>
+        <div class="tp-tech">
+          <span>Node.js</span><span>PHP</span><span>MySQL</span><span>Blockchain</span><span>Full-Stack</span>
+        </div>
+      </div>
+
+      <div class="tpc">
+        <div class="tp-type">Machine Learning · Healthcare</div>
+        <div class="tp-title">Stroke Risk Prediction</div>
+        <div class="tp-sub">ML Classification · Clinical Data · ANN · 85% Accuracy</div>
+        <div class="tp-desc">
+          Built and evaluated multiple ML classifiers — <strong>KNN, Naive Bayes, ANN</strong> — on 5,000+ clinical records. ANN achieved <strong>85% prediction accuracy</strong>. Applied feature scaling, normalization, and comparative model evaluation. Documented failure modes and bias-variance tradeoffs the way a PM would: what does this model get wrong, and when does it matter to real users?
+        </div>
+        <div class="tp-ms">
+          <span class="tpm">85% ANN Accuracy</span><span class="tpm">5K+ Clinical Records</span>
+        </div>
+        <div class="tp-tech">
+          <span>Python</span><span>scikit-learn</span><span>TensorFlow</span><span>Keras</span>
+        </div>
+      </div>
+
+      <div class="tpc">
+        <div class="tp-type">Platform Product · Data Engineering</div>
+        <div class="tp-title">Cross-Continental Data Pipeline</div>
+        <div class="tp-sub">Analyst-Facing Eco-Economic Intelligence Platform · 5 Countries · 4 APIs</div>
+        <div class="tp-desc">Designed and built an <strong>analyst-facing data platform</strong> integrating climate disaster data, commodity price feeds, and macroeconomic indicators across 5 countries into a unified PostgreSQL warehouse. Built for policy analysts who need cross-domain signals in one place — not just engineers who can query APIs. Containerized with Docker; Flask API layer designed around analytical questions, not data schemas.</div>
+        <div class="tp-ms">
+          <span class="tpm">5 Countries</span>
+          <span class="tpm">4 APIs Integrated</span>
+          <span class="tpm">Containerized · Docker</span>
+        </div>
+        <div class="tp-tech">
+          <span class="tpt">Python</span>
+          <span class="tpt">PostgreSQL</span>
+          <span class="tpt">Flask</span>
+          <span class="tpt">REST APIs</span>
+          <span class="tpt">Docker</span>
+          <span class="tpt">ETL</span>
+          <span class="tpt">Data Modeling</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ═══════════════════════ CAPABILITIES ═══════════════════════ -->
+<section id="capabilities" class="S">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">What I Bring</div><div class="TN">05</div></div>
+    <h2 class="BIG" style="margin-bottom:3.5rem">
+      <span class="sub">Across product, AI, technical, and execution —</span>Capabilities.
+    </h2>
+    <div class="cap-grid">
+      <div class="capcard">
+        <div class="cap-lbl">01 · Product</div>
+        <div class="cap-h">Product Management</div>
+        <div class="pills">
+          <span class="pill">Customer Discovery</span><span class="pill">User Research</span>
+          <span class="pill">PRD Writing</span><span class="pill">Roadmap Strategy</span>
+          <span class="pill">Feature Prioritization</span><span class="pill">KPI / OKR Design</span>
+          <span class="pill">TAM/SAM/SOM</span><span class="pill">Go-to-Market</span>
+          <span class="pill">Persona Development</span><span class="pill">Competitive Analysis</span>
+          <span class="pill">Pricing Strategy</span><span class="pill">MVP Scoping</span>
+          <span class="pill">Backlog Management</span><span class="pill">Stakeholder Alignment</span>
+        </div>
+      </div>
+      <div class="capcard">
+        <div class="cap-lbl">02 · AI &amp; Data</div>
+        <div class="cap-h">AI &amp; Data</div>
+        <div class="pills">
+          <span class="pill">AI Product Thinking</span><span class="pill">LLM Application Design</span>
+          <span class="pill">Agentic AI Concepts</span><span class="pill">ML Fundamentals</span>
+          <span class="pill">Model Evaluation</span><span class="pill">Data Pipelines / ETL</span>
+          <span class="pill">Product Analytics</span><span class="pill">Python / SQL</span>
+          <span class="pill">REST APIs</span><span class="pill">Docker / CI-CD</span>
+          <span class="pill">scikit-learn / TF / Keras</span><span class="pill">Generative AI</span>
+        </div>
+      </div>
+      <div class="capcard">
+        <div class="cap-lbl">03 · Technical</div>
+        <div class="cap-h">Technical Depth</div>
+        <div class="pills">
+          <span class="pill">ADAS / AUTOSAR</span><span class="pill">CANoe / HIL Validation</span>
+          <span class="pill">ECU Integration</span><span class="pill">Embedded Systems</span>
+          <span class="pill">Systems Architecture</span><span class="pill">API Design</span>
+          <span class="pill">Safety-Critical Environments</span><span class="pill">Flask / Node.js</span>
+          <span class="pill">Full-Stack Fundamentals</span><span class="pill">Blockchain Concepts</span>
+          <span class="pill">Technical Documentation</span>
+        </div>
+      </div>
+      <div class="capcard">
+        <div class="cap-lbl">04 · Execution</div>
+        <div class="cap-h">Execution</div>
+        <div class="pills">
+          <span class="pill">Cross-functional Leadership</span><span class="pill">Cross-geo Coordination</span>
+          <span class="pill">Stakeholder Communication</span><span class="pill">Negotiation</span>
+          <span class="pill">Conflict Resolution</span><span class="pill">Agile / Scrum</span>
+          <span class="pill">Release Management</span><span class="pill">Process Redesign</span>
+          <span class="pill">Partnership Frameworks</span><span class="pill">Executive Presentations</span>
+          <span class="pill">Jira / Confluence</span><span class="pill">Visual Storytelling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ═══════ PRODUCT THINKING NOTES ═══════ -->
+<section id="thinking" class="S">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Product Thinking</div></div>
+    <h2 class="BIG" style="margin-bottom:.8rem">
+      <span class="sub">How I think about hard problems —</span>Principles.
+    </h2>
+    <p style="font-family:var(--P);font-size:1.05rem;color:var(--smoke);margin-bottom:2.5rem">Four things I've learned building products at the intersection of AI, systems, and people.</p>
+    <div class="thinking-grid">
+      <div class="think-card">
+        <div class="think-num">01</div>
+        <div class="think-title">AI Changes What Decisions Are Worth Making</div>
+        <div class="think-body">AI doesn't just automate tasks — it changes which decisions are worth making at the product level. Building TrustShield AI taught me that the real PM challenge with AI products isn't the model: it's <strong>deciding what confidence threshold justifies removing human judgment</strong>, and designing the workflow around that boundary. Most AI product failures happen because that question never gets asked.</div>
+      </div>
+      <div class="think-card">
+        <div class="think-num">02</div>
+        <div class="think-title">System Visibility Is Itself a Product Decision</div>
+        <div class="think-body">At Mercedes-Benz, I watched six engineering pods work toward the same release with different mental models of "ready." No individual was wrong — the system had no shared visibility layer. <strong>The most impactful product decision isn't always a feature.</strong> Sometimes it's a dashboard that gives distributed teams the same picture of reality at the same time. Alignment is a product outcome.</div>
+      </div>
+      <div class="think-card">
+        <div class="think-num">03</div>
+        <div class="think-title">User Insight Beats Feature Ideas Every Time</div>
+        <div class="think-body">KaraOrchee's most important product decision came from discovery, not ideation. Users at Peabody didn't want an "AI music app" — they wanted <strong>practice that felt coached</strong>. That reframe changed the positioning, the feature set, and the pricing model. The best product decisions I've made weren't clever — they were honest responses to what users actually said when given space to be specific.</div>
+      </div>
+      <div class="think-card">
+        <div class="think-num">04</div>
+        <div class="think-title">The Frame Is the Product</div>
+        <div class="think-body">Photography taught me that a great shot isn't about the subject — it's about <strong>what you choose to include and exclude</strong>. Product management is the same. The way you define a problem shapes every decision downstream: what gets built, what gets cut, what gets measured. Most product failures aren't execution failures — they're framing failures. Getting the frame right is the most underrated PM skill.</div>
+      </div>
+      <div class="think-card">
+        <div class="think-num">05</div>
+        <div class="think-title">Balance Automation with Human Judgment</div>
+        <div class="think-body">The most dangerous AI product decision is removing humans from the loop too early. TrustShield AI taught me this directly: moderation accuracy alone doesn't build trust — <strong>explainability and override capability do</strong>. The right question isn't "can the model decide this?" but "at what confidence level should a human stay involved?" Designing that boundary is a PM responsibility, not an ML one.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ═══════ CERTIFICATIONS ═══════ -->
+<section id="certifications" class="S">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Certifications &amp; Learning</div></div>
+    <h2 class="BIG" style="margin-bottom:3.5rem">
+      <span class="sub">Continuous learning —</span>Credentials.
+    </h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <span class="cert-ico">🤖</span>
+        <div class="cert-title">Machine Learning &amp; AI Foundations</div>
+        <div class="cert-area">Applied ML · Model Evaluation<br>Neural Networks · AI Fundamentals</div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-ico">📊</span>
+        <div class="cert-title">Data Analytics &amp; Data Science</div>
+        <div class="cert-area">Analytics for Decisions · ETL<br>Data Engineering · SQL</div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-ico">⚙️</span>
+        <div class="cert-title">Web Dev &amp; Software Systems</div>
+        <div class="cert-area">Full-Stack Fundamentals<br>APIs · Docker · Cloud Basics</div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-ico">🗺</span>
+        <div class="cert-title">AI &amp; Product Ecosystem</div>
+        <div class="cert-area">Product Management · Agile<br>AI Project Management · GTM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ═══════════════════════ EDUCATION ═══════════════════════ -->
+<section id="education" class="S" aria-label="Education">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Education</div><div class="TN">06</div></div>
+    <h2 class="BIG" style="margin-bottom:3.5rem">
+      <span class="sub">Academic foundation —</span>Education.
+    </h2>
+    <div class="edu-grid">
+
+      <!-- JHU -->
+      <div class="edu-card">
+        <div class="edu-inst">Johns Hopkins University — Whiting School of Engineering</div>
+        <div class="edu-deg" role="heading" aria-level="3">M.S. Engineering Management</div>
+        <div class="edu-detail">Baltimore, MD · Aug 2025 – Dec 2026</div>
+        <div class="edu-gpa">3.82 <span class="edu-gpa-l">/ 4.00</span></div>
+        <div class="edu-detail" style="margin-top:.5rem">
+          Product Management · Data Engineering · AI Project Management · Intelligent Algorithms · Generative AI · Agile Development · Systems Engineering · Business Analytics · Negotiation &amp; Conflict Resolution
+        </div>
+        <div class="edu-sub">
+          <div class="edu-sub-hdr">Roles &amp; Involvement</div>
+          <div class="edu-roles">
+            <div class="edu-role-item">
+              <div class="edu-role-dot"></div>
+              <div class="edu-role-text">
+                <strong>Teaching Assistant — Oral Presentations</strong>
+                <span>EN.661.250 · JHU Center for Leadership Education<br>Supporting engineers in building communication confidence, clarity, and delivery for technical and non-technical audiences</span>
+              </div>
+            </div>
+            <div class="edu-role-item">
+              <div class="edu-role-dot"></div>
+              <div class="edu-role-text">
+                <strong>Teaching Assistant — Negotiation &amp; Conflict Resolution</strong>
+                <span>EN.660.607 · JHU Center for Leadership Education<br>Facilitating exercises in conflict styles, negotiation tactics, and structured alignment — core PM skills</span>
+              </div>
+            </div>
+            <div class="edu-role-item">
+              <div class="edu-role-dot"></div>
+              <div class="edu-role-text">
+                <strong>Video Crew — Athletic Media Division</strong>
+                <span>Captured and produced live sports broadcast footage for university telecasts and streaming</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JSSSTU -->
+      <div class="edu-card">
+        <div class="edu-inst">JSS Science and Technology University</div>
+        <div class="edu-deg" role="heading" aria-level="3">B.E. Computer Science &amp; Engineering</div>
+        <div class="edu-detail">Mysore, India · Aug 2019 – Jul 2023</div>
+        <div class="edu-gpa">8.97 <span class="edu-gpa-l">/ 10.0 CGPA</span></div>
+        <div class="edu-detail" style="margin-top:.5rem">
+          AI &amp; Machine Learning · Cloud Computing · Blockchain Technology · Computer Networks · Data Mining · Big Data Analytics · Software Engineering · Software Project Management · Enterprise Resource Planning
+        </div>
+        <div class="edu-sub">
+          <div class="edu-sub-hdr">Leadership &amp; Activities</div>
+          <div class="edu-roles">
+            <div class="edu-role-item">
+              <div class="edu-role-dot"></div>
+              <div class="edu-role-text">
+                <strong>Bureau Club — Social Media Head</strong>
+                <span>Grew online engagement by 40% through structured content strategy and audience analysis</span>
+              </div>
+            </div>
+            <div class="edu-role-item">
+              <div class="edu-role-dot"></div>
+              <div class="edu-role-text">
+                <strong>Linux Campus Club — Student Coordinator</strong>
+                <span>Organized technical events including annual tech fest (Trackback) and open-source workshops</span>
+              </div>
+            </div>
+            <div class="edu-role-item">
+              <div class="edu-role-dot"></div>
+              <div class="edu-role-text">
+                <strong>Team Photon — Video Lead</strong>
+                <span>Storyboarding, filming, and post-production for university events; deadline-driven creative production</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ═══════════════════════ HONORS ═══════════════════════ -->
+<section id="honors" class="S">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Recognition</div><div class="TN">07</div></div>
+    <h2 class="BIG" style="margin-bottom:3rem">
+      <span class="sub">Selected as Key Speaker —</span>TEDxJHU.
+    </h2>
+    <div class="ted-card">
+      <div class="ted-left">
+        <div class="ted-badge">TEDxJHU · Key Speaker · Nov 2025</div>
+        <div class="ted-title">TEDxJHU<br>Speaker</div>
+        <div class="ted-org">Johns Hopkins University · Whiting School of Engineering · "A Carousel of Ideas"</div>
+        <div class="ted-desc">
+          Selected as one of four Key Speakers for the <strong>TEDxJHU Salon Event</strong> — "A Carousel of Ideas" (November 15, 2025). Delivered a talk titled <em>"Life is not a straight line"</em> — a personal narrative on self-discovery, disconnection, and the choice to live and build with intention.<br><br>
+          Introduced on the TED platform as: <em>"a logical mind with a creative lens, finding stories in light, people, and life's beauty."</em> The same description that defines how I approach product management.
+        </div>
+        <div class="ted-quote">
+          <p>"Life is not a straight line — and neither is the best product thinking. It loops, it returns, and every rotation reveals a new angle."</p>
+        </div>
+      </div>
+      <div class="ted-right">
+        <div class="ted-stat-n">Nov<br>2025</div>
+        <div class="ted-stat-l">TEDxJHU · Baltimore</div>
+        <div style="margin-top:1.5rem">
+          <div class="ted-stat-n" style="font-size:3rem">4</div>
+          <div class="ted-stat-l">Speakers selected</div>
+        </div>
+        <a href="https://msem.engineering.jhu.edu/news/tedx-talk-narasimhamurthy/" target="_blank" rel="noopener noreferrer"
+          class="btn bO" style="margin-top:1.5rem;font-size:.55rem;padding:.65rem 1.2rem;display:inline-block">
+          Read Coverage ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+
+<div class="sep"></div>
+
+<!-- ═══════════════════════ RESUME ═══════════════════════ -->
+<section id="resume" class="S" aria-label="Resume">
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Resume</div><div class="TN">↓</div></div>
+    <h2 class="BIG" style="margin-bottom:2rem">
+      <span class="sub">Download or view —</span>Resume.
+    </h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:860px">
+      <div style="background:var(--panel);border:1px solid var(--line2);padding:2.5rem;border-radius:2px">
+        <div style="font-family:var(--M);font-size:.55rem;color:var(--amber);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem">AI Product Manager</div>
+        <div style="font-family:var(--H);font-size:2rem;color:var(--chalk);margin-bottom:.5rem">PM Resume</div>
+        <div style="font-family:var(--M);font-size:.58rem;color:var(--smoke);line-height:1.7;margin-bottom:2rem">
+          Targeting AI PM · Technical PM · Platform PM · Product Strategy roles
+        </div>
+        <a href="AI_PM_FINALV3.pdf" target="_blank" rel="noopener noreferrer" 
+           class="btn bA" style="display:inline-block">
+          Download Resume ↗
+        </a>
+        <div style="font-family:var(--M);font-size:.5rem;color:var(--ash);margin-top:1rem;letter-spacing:.08em">
+          PDF · Updated Jun 2026
+        </div>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--line);padding:2.5rem;border-radius:2px">
+        <div style="font-family:var(--M);font-size:.55rem;color:var(--amber2);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem">Quick Look</div>
+        <div style="font-family:var(--M);font-size:.58rem;color:var(--paper);line-height:2">
+          <div>↳ <strong>JHTV</strong> — Corporate Partnerships · Jun 2026</div>
+          <div>↳ <strong>Mercedes-Benz ADAS</strong> — Integration Eng · 2023–25</div>
+          <div>↳ <strong>News Corp</strong> — Product Dev Intern · 2021</div>
+          <div style="margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--line)">
+          ↳ <strong>Johns Hopkins</strong> MSEM · GPA 3.82 · 2025–26</div>
+          <div>↳ <strong>TEDxJHU Key Speaker</strong> · Nov 2025</div>
+          <div style="margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--line)">
+          ↳ Campus Atlas · Data Pipeline · TrustShield AI</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-family:var(--M);font-size:.54rem;color:var(--ash);letter-spacing:.08em;margin-top:2rem">
+      Resume link will be live once PDF is uploaded. Use the contact section to reach out directly in the meantime.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<section id="contact" class="S" aria-label="Contact">
+  <div class="ct-glow"></div>
+  <div class="W">
+    <div class="TR"><div class="TL"></div><div class="TT">Open Aperture</div><div class="TN">08</div></div>
+    <div class="ct-grid">
+      <div class="ct-left">
+        <h2 class="BIG"><span class="sub">Let's build something meaningful —</span>Let's talk.</h2>
+        <p>I enjoy building products where <strong>AI, systems thinking, and human needs intersect</strong>. If you're working on interesting product challenges — and looking for a PM who brings both engineering depth and product judgment — I'd love to connect.</p>
+        <p style="margin-top:1rem;font-family:var(--M);font-size:.6rem;color:var(--smoke);letter-spacing:.08em">Open to full-time roles and impactful internships · United States · Open to relocation</p>
+        <div class="ct-links">
+          <a href="mailto:workwith.devothamagn@gmail.com" class="ct-link">
+            <div><span class="ct-lbl">Primary Email</span><span class="ct-val">workwith.devothamagn@gmail.com</span></div>
+            <span class="ct-arr">→</span>
+          </a>
+          <a href="tel:+14102403504" class="ct-link">
+            <div><span class="ct-lbl">Phone</span><span class="ct-val">+1 (410) 240-3504</span></div>
+            <span class="ct-arr">→</span>
+          </a>
+          <a href="https://www.linkedin.com/in/devothamagn/" target="_blank" rel="noopener noreferrer" class="ct-link">
+            <div><span class="ct-lbl">LinkedIn</span><span class="ct-val">linkedin.com/in/devothamagn</span></div>
+            <span class="ct-arr">↗</span>
+          </a>
+          <a href="https://github.com/devothamgn321" target="_blank" rel="noopener noreferrer" class="ct-link">
+            <div><span class="ct-lbl">GitHub</span><span class="ct-val">github.com/devothamgn321</span></div>
+            <span class="ct-arr">↗</span>
+          </a>
+          <a href="https://bio.link/devothamagn" target="_blank" rel="noopener noreferrer" class="ct-link">
+            <div><span class="ct-lbl">Photography · TheRubyVisions</span><span class="ct-val">bio.link/devothamagn</span></div>
+            <span class="ct-arr">↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="ct-right">
+        <blockquote>"Life is not a straight line — and neither is the best product thinking. It loops, it returns, and every rotation reveals a new angle."</blockquote>
+        <cite>— Devothama Gundugurki Narasimhamurthy · TEDxJHU, Nov 2025</cite>
+        <div class="sys-card">
+          <div class="sc-hdr">SYSTEM · Devothama Gundugurki Narasimhamurthy · 2026</div>
+          <div class="sc-row"><span class="sc-k">ALIAS</span><span class="sc-v hot">Ruby</span></div>
+          <div class="sc-row"><span class="sc-k">ROLE TARGET</span><span class="sc-v">PM · AI PM · TPM · Platform PM</span></div>
+          <div class="sc-row"><span class="sc-k">LOCATION</span><span class="sc-v">Baltimore, MD · Open to Relocation</span></div>
+          <div class="sc-row"><span class="sc-k">JHU GPA</span><span class="sc-v hot">3.82 / 4.00</span></div>
+          <div class="sc-row"><span class="sc-k">JSSSTU CGPA</span><span class="sc-v hot">8.97 / 10.0</span></div>
+          <div class="sc-row"><span class="sc-k">TRADEMARK</span><span class="sc-v">f/1.4 · a logical mind with a creative lens</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">© 2026 Devothama Gundugurki Narasimhamurthy · Product Manager · Baltimore, MD · Framing Problems. Building Products.</div>
+  <div class="fr">
+    <a href="#home">Top ↑</a>
+    <a href="#featured">TrustShield</a>
+    <a href="#projects">Work</a>
+    <a href="#thinking">Thinking</a>
+    <a href="https://linkedin.com/in/devothamagn" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <a href="https://github.com/devothamgn321" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    <a href="https://bio.link/devothamagn" target="_blank" rel="noopener noreferrer">Photos ↗</a>
+  </div>
+</footer>
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+  </html>
