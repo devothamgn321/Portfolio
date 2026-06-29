@@ -488,6 +488,7 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.3rem 3r
 /* ═══════════ HERO PHOTO ═══════════ */
 .h-layout{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:center;width:100%}
 .h-left{}
+.h-mobile-top{display:none}
 .h-right{display:flex;flex-direction:column;align-items:center;gap:1rem;
   opacity:0;animation:rise .9s .6s forwards}
 .h-photo-wrap{position:relative}
@@ -723,20 +724,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   .nav-pip{width:6px;height:6px}
   .nav-cta{font-size:.52rem;padding:.45rem .8rem;letter-spacing:.1em}
 
-  /* ── HERO: compact, no wasted space ── */
+  /* ── HERO: compact mobile ── */
   .h-inner{padding:4rem 1.1rem 1.5rem}
   .h-grid{display:none}
   .h-streak{display:none}
   .h-layout{grid-template-columns:1fr;gap:0}
 
-  /* Photo: small inline row at top */
-  .h-right{
-    flex-direction:row;align-items:center;gap:.75rem;
-    margin-bottom:1rem;order:-1;
-    opacity:1;animation:none
+  /* Desktop elements hidden on mobile */
+  .h-right{display:none !important}
+  .h-name{display:none !important}
+
+  /* Mobile photo + name row */
+  .h-mobile-top{
+    display:flex;align-items:center;gap:.9rem;
+    margin-bottom:.9rem;
   }
-  .h-photo{width:56px;height:56px;border-width:1.5px}
-  .h-photo-caption{display:none}
+  .h-photo-mobile{
+    width:54px;height:54px;border-radius:50%;
+    object-fit:cover;object-position:center top;
+    border:1.5px solid var(--amber);
+    flex-shrink:0
+  }
+  .h-mobile-name{flex:1}
 
   /* Tags: tight wrap */
   .h-meta{gap:.35rem .5rem;margin-bottom:.9rem}
@@ -798,12 +807,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   .film-strip{display:none}
 
   /* ── GLOBAL SECTION spacing ── */
-  .S{padding:2.5rem 0;scroll-margin-top:3rem}
+  .S{padding:2rem 0;scroll-margin-top:3rem}
   .W{padding:0 1.1rem}
-  .BIG{font-size:2rem;line-height:.92;margin-bottom:.8rem !important}
-  .TR{margin-bottom:1rem}
-  .TT{font-size:.48rem;letter-spacing:.14em}
-  .sub{font-size:.48rem}
+  .BIG{font-size:1.85rem;line-height:.92;margin-bottom:.6rem !important}
+  .TR{margin-bottom:.7rem}
+  .TT{font-size:.46rem;letter-spacing:.12em}
+  .sub{font-size:.46rem;margin-bottom:.2rem}
+  /* Kill excessive section margins */
+  section + section{margin-top:0}
+  .S + .S{padding-top:1.8rem}
 
   /* ── BODY TEXT ── */
   p,.ab-body,.pj-desc,.tp-desc,.feat-body,.exp-body{
@@ -979,6 +991,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   <div class="h-inner">
     <div class="h-layout">
       <div class="h-left">
+
+        <!-- Mobile-only: photo + name in one compact row -->
+        <div class="h-mobile-top">
+          <img class="h-photo h-photo-mobile" alt="Devothama GN" src="photo.jpg" loading="eager" fetchpriority="high" />
+          <div class="h-mobile-name">
+            <div class="h-nick" style="font-family:var(--M);font-size:.44rem;color:var(--amber);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.2rem">Framing Problems. Building Products.</div>
+            <div style="font-family:var(--H);font-size:1.55rem;line-height:.95;color:var(--chalk)">Devothama<br>Gundugurki N.</div>
+          </div>
+        </div>
 
         <div class="h-meta">
           <span class="h-tag">Product Manager</span>
@@ -2204,92 +2225,64 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 
 <script>
-/* ── MOBILE ACCORDION + CASE STUDY COLLAPSE ── */
+/* ── MOBILE: progressive disclosure ── */
 (function(){
   const isMobile = () => window.innerWidth <= 768;
 
-  /* ── Case study sections: collapse on mobile ── */
+  /* ── Case study collapse ── */
   function initCaseStudyToggles(){
     if(!isMobile()) return;
-    /* Sections to collapse: campusos, featured (TrustShield), pipeline */
-    const sections = ['campusos','featured','pipeline'];
-    sections.forEach(id => {
+    ['campusos','featured','pipeline'].forEach(id => {
       const sec = document.getElementById(id);
       if(!sec) return;
-      /* Find the content wrapper — everything after the TR header row */
       const tr = sec.querySelector('.TR');
-      if(!tr) return;
-      /* Wrap content after TR in collapsible body */
+      const W = sec.querySelector('.W');
+      if(!tr || !W) return;
       const body = document.createElement('div');
       body.className = 'm-cs-body';
       body.id = 'cs-body-' + id;
-      /* Move all siblings after TR into body */
-      const W = sec.querySelector('.W');
-      if(!W) return;
       const children = Array.from(W.children);
       const trIdx = children.indexOf(tr);
       children.slice(trIdx + 1).forEach(c => body.appendChild(c));
       W.appendChild(body);
-      /* Create toggle button */
       const btn = document.createElement('button');
       btn.className = 'm-cs-toggle';
       btn.setAttribute('aria-expanded','false');
-      btn.setAttribute('aria-controls','cs-body-' + id);
-      btn.innerHTML = '▼ <span class="m-cs-arrow">▾</span> View Full Case Study';
+      btn.innerHTML = '<span>▾</span> View Full Case Study';
       btn.addEventListener('click', function(){
         const open = body.classList.toggle('open');
-        this.setAttribute('aria-expanded', open);
-        this.innerHTML = (open ? '▲ ' : '▼ ') + '<span class="m-cs-arrow" style="transform:rotate('+(open?'180deg':'0deg')+')">▾</span> ' + (open ? 'Collapse' : 'View Full Case Study');
+        this.setAttribute('aria-expanded', String(open));
+        this.innerHTML = '<span style="display:inline-block;transform:rotate('+(open?'180deg':'0deg')+');transition:transform .25s">▾</span> ' + (open ? 'Collapse' : 'View Full Case Study');
       });
       tr.after(btn);
     });
   }
 
-  /* ── Product Thinking: title-only accordion on mobile ── */
-  function initThinkingAccordions(){
+  /* ── Mobile photo+name row: hide desktop elements, show mobile ── */
+  function initMobileHero(){
     if(!isMobile()) return;
-    const grid = document.querySelector('.thinking-grid');
-    if(!grid) return;
-    grid.classList.add('m-accordion');
-    Array.from(grid.children).forEach(card => {
-      /* Find title (first heading or strong) */
-      const heading = card.querySelector('h3,[role="heading"],.think-num');
-      const titleText = card.querySelector('.think-title, h3, [role="heading"]');
-      if(!titleText) return;
-      const titleStr = titleText.textContent.trim();
-      /* Wrap card content in body */
-      const body = document.createElement('div');
-      body.className = 'm-acc-body';
-      Array.from(card.children).forEach(c => body.appendChild(c));
-      /* Build trigger */
-      const trigger = document.createElement('button');
-      trigger.className = 'm-accordion-trigger';
-      trigger.setAttribute('aria-expanded','false');
-      trigger.innerHTML = '<span class="m-acc-title">' + titleStr + '</span><span class="m-acc-arrow">▾</span>';
-      trigger.addEventListener('click', function(){
-        const open = body.classList.toggle('open');
-        this.setAttribute('aria-expanded', open);
-      });
-      card.innerHTML = '';
-      card.appendChild(trigger);
-      card.appendChild(body);
-    });
+    const mobileTop = document.querySelector('.h-mobile-top');
+    const desktopName = document.querySelector('.h-name');
+    const desktopRight = document.querySelector('.h-right');
+    if(mobileTop) mobileTop.style.display = 'flex';
+    if(desktopName) desktopName.style.display = 'none';
+    if(desktopRight) desktopRight.style.display = 'none';
   }
 
-  /* ── Horizontal swipe hint for featured projects ── */
+  /* ── Swipe hint ── */
   function addSwipeHint(){
     if(!isMobile()) return;
     const featWrap = document.querySelector('.feat-wrap');
     if(!featWrap) return;
-    const hint = document.createElement('div');
-    hint.style.cssText = 'font-family:var(--M);font-size:.44rem;color:var(--ash);letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:.4rem 0;';
-    hint.textContent = '← swipe to browse →';
+    const hint = document.createElement('p');
+    hint.style.cssText = 'font-family:var(--M);font-size:.44rem;color:var(--ash);letter-spacing:.12em;text-transform:uppercase;text-align:center;margin-top:.5rem';
+    hint.textContent = '← swipe →';
     featWrap.after(hint);
   }
 
   document.addEventListener('DOMContentLoaded', function(){
+    initMobileHero();
     initCaseStudyToggles();
-    initThinkingAccordions();
     addSwipeHint();
   });
 })();
