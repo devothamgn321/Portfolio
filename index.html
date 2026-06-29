@@ -496,12 +496,6 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.3rem 3r
   box-shadow:0 0 0 6px rgba(232,146,42,.08), 0 0 40px rgba(232,146,42,.12)}
 .h-photo-caption{font-family:var(--M);font-size:.52rem;color:var(--smoke);
   letter-spacing:.14em;text-transform:uppercase;text-align:center}
-@media(max-width:960px){
-  .h-layout{grid-template-columns:1fr}
-  .h-right{flex-direction:row;justify-content:flex-start;margin-bottom:1.5rem;order:-1}
-  .h-photo{width:100px;height:100px}
-}
-
 /* ─── RESPONSIVE ─── */
 @media(max-width:960px){
   nav{padding:0 1.5rem}.nav-links{display:none}
@@ -527,12 +521,7 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.3rem 3r
   .ct-grid{grid-template-columns:1fr;gap:3rem}
   footer{flex-direction:column;gap:.75rem;text-align:center}
 }
-@media(max-width:600px){
-  .h-name{font-size:3.1rem}
-  .ab-stats{grid-template-columns:1fr}
-  .tp-grid,.cap-grid,.cert-grid{grid-template-columns:1fr 1fr}
-  .h-strip{grid-template-columns:1fr 1fr}
-}
+
 
 /* ═══ ACCESSIBILITY: Focus states ═══ */
 :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:1px}
@@ -555,9 +544,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   .film-inner{animation:none !important}
 }
 
-/* ═══ TABLET: 768px breakpoint ═══ */
-@media(max-width:768px){
-  .h-name{font-size:3.4rem;line-height:.9}
+
   .h-ctas{flex-wrap:wrap;gap:.6rem}
   .h-ctas .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
   .h-strip{grid-template-columns:1fr 1fr;gap:1rem}
@@ -582,9 +569,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   .h-streak{display:none}
 }
 
-/* ═══ MOBILE: 480px breakpoint ═══ */
-@media(max-width:480px){
-  .h-name{font-size:2.4rem;line-height:.88}
+
   .h-meta{gap:.4rem .6rem}
   .h-tag{font-size:.48rem;padding:.25rem .55rem}
   .h-ctas{flex-direction:column;gap:.5rem;width:100%}
@@ -601,14 +586,59 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   .tp-grid,.cap-grid,.cert-grid{grid-template-columns:1fr}
   .mini.m3{grid-template-columns:1fr}
   .ab-stats{grid-template-columns:1fr}
-  .h-photo{width:80px;height:80px}
+  .h-photo{width:64px;height:64px}
   .h-photo-caption{display:none}
-  section.S{padding:3.5rem 0}
+  .h-meta{margin-bottom:1rem}
+  .h-name{margin-bottom:.6rem !important}
+  .h-role{margin-bottom:.5rem}
+  .h-stmt{margin-bottom:1.2rem;font-size:1.1rem}
+  section.S{padding:3rem 0}
   .TR{margin-bottom:1.2rem}
   nav{padding:0 1rem}
   .nav-id{font-size:.6rem}
   .nav-cta{font-size:.55rem;padding:.5rem .9rem}
   .film-strip{display:none}
+
+  /* Tighten section vertical rhythm on mobile */
+  .S{padding:2.8rem 0}
+  .BIG{margin-bottom:1rem !important}
+  .TR{margin-bottom:1rem}
+  .TT{font-size:.55rem}
+
+  /* Readable body text on mobile */
+  p, .ab-body, .pj-desc, .tp-desc, .feat-body{font-size:.95rem;line-height:1.65}
+
+  /* Section labels smaller */
+  .sub{font-size:.55rem}
+
+  /* Skills/tags chips — wrap tightly */
+  .skill-tags{gap:.3rem .4rem}
+  .skill-tag{font-size:.45rem;padding:.2rem .5rem}
+
+  /* Experience cards */
+  .exp-role{font-size:1.1rem}
+  .exp-co{font-size:.9rem}
+  .exp-meta{flex-direction:column;gap:.2rem;align-items:flex-start}
+
+  /* Project cards */
+  .pj-title{font-size:1.3rem}
+  .pjc{padding:1.5rem}
+
+  /* Case study sections */
+  .cs-grid{grid-template-columns:1fr !important;gap:1.5rem}
+  .cs-aside{display:none}
+
+  /* Impact grid numbers */
+  .hs-n{font-size:2.2rem}
+  .hs-l{font-size:.7rem}
+  .hs-s{font-size:.55rem}
+
+  /* Contact grid */
+  .ct-item{padding:1.2rem}
+
+  /* Footer */
+  footer{font-size:.5rem}
+  .foot-links{flex-wrap:wrap;gap:.5rem .8rem;justify-content:center}
 }
 
 /* ═══ LARGE MONITOR: cap max content width ═══ */
@@ -617,9 +647,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   .h-inner{max-width:1400px}
 }
 
-/* ═══ PROJECT CAROUSEL: responsive ═══ */
-@media(max-width:840px){
-  .proj-carousel{grid-template-columns:1fr !important}
 }
 @media(min-width:841px) and (max-width:1100px){
   .proj-carousel{grid-template-columns:1fr 1fr !important}
@@ -636,6 +663,298 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   font-family:var(--M);font-size:.6rem;letter-spacing:.1em;padding:.5rem 1rem;
   text-decoration:none;z-index:9999;transition:top .2s}
 .skip-link:focus{top:1rem}
+
+
+/* ╔══════════════════════════════════════════════════════════╗
+   ║  MOBILE — ALL BREAKPOINTS (desktop untouched above)     ║
+   ╚══════════════════════════════════════════════════════════╝ */
+
+/* ── PROJECT CAROUSEL: tablet ── */
+@media(max-width:1100px){
+  .proj-carousel{grid-template-columns:1fr 1fr !important}
+}
+@media(max-width:840px){
+  .proj-carousel{grid-template-columns:1fr !important}
+}
+
+/* ══════════════════════════════
+   TABLET  ≤ 960px
+══════════════════════════════ */
+@media(max-width:960px){
+  nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  .W{padding:0 1.5rem}
+  .h-inner{padding:5rem 1.5rem 2rem}
+  .h-layout{grid-template-columns:1fr;gap:0}
+  .h-right{flex-direction:row;align-items:center;gap:1rem;margin-bottom:1.2rem;order:-1}
+  .h-photo{width:72px;height:72px}
+  .h-photo-caption{font-size:.44rem;text-align:left}
+  .h-strip{grid-template-columns:1fr 1fr}
+  .h-streak{display:none}
+  .ab-grid{grid-template-columns:1fr;gap:3rem}
+  .ab-stats{display:grid;grid-template-columns:1fr 1fr}
+  .exp-row{grid-template-columns:1fr;gap:.45rem}
+  .mini.m3{grid-template-columns:1fr 1fr}
+  .pj-grid{grid-template-columns:1fr}
+  .pjc.feat{grid-template-columns:1fr}
+  .pj-vis{min-height:140px}
+  .tp-grid{grid-template-columns:1fr 1fr}
+  .cap-grid{grid-template-columns:1fr 1fr}
+  .edu-grid{grid-template-columns:1fr}
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .feat-wrap{grid-template-columns:1fr}
+  .thinking-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr 1fr}
+  .ted-card{grid-template-columns:1fr;gap:1.5rem}
+  .ted-right{text-align:left}
+  .ct-grid{grid-template-columns:1fr;gap:3rem}
+  footer{flex-direction:column;gap:.75rem;text-align:center}
+}
+
+/* ══════════════════════════════
+   MOBILE  ≤ 768px
+   Primary mobile experience
+══════════════════════════════ */
+@media(max-width:768px){
+
+  /* ── NAV ── */
+  nav{padding:0 1rem;height:48px}
+  .nav-id{font-size:.58rem}
+  .nav-pip{width:6px;height:6px}
+  .nav-cta{font-size:.52rem;padding:.45rem .8rem;letter-spacing:.1em}
+
+  /* ── HERO: compact, no wasted space ── */
+  .h-inner{padding:4rem 1.1rem 1.5rem}
+  .h-grid{display:none}
+  .h-streak{display:none}
+  .h-layout{grid-template-columns:1fr;gap:0}
+
+  /* Photo: small inline row at top */
+  .h-right{
+    flex-direction:row;align-items:center;gap:.75rem;
+    margin-bottom:1rem;order:-1;
+    opacity:1;animation:none
+  }
+  .h-photo{width:56px;height:56px;border-width:1.5px}
+  .h-photo-caption{display:none}
+
+  /* Tags: tight wrap */
+  .h-meta{gap:.35rem .5rem;margin-bottom:.9rem}
+  .h-tag{font-size:.44rem;padding:.2rem .5rem;letter-spacing:.1em}
+  .h-loc{font-size:.46rem !important}
+
+  /* Name: big but tight */
+  .h-name{
+    font-size:2.6rem;line-height:.9;
+    margin-bottom:.5rem !important
+  }
+  .h-nick{font-size:.48rem;margin-bottom:.4em;letter-spacing:.18em}
+
+  /* Role line */
+  .h-role{font-size:.55rem;margin-bottom:.7rem;line-height:1.5}
+
+  /* Credentials line */
+  .h-cred{font-size:.5rem !important;margin-bottom:1rem}
+
+  /* Statement */
+  .h-stmt{font-size:1rem;line-height:1.65;margin-bottom:1.2rem;max-width:100%}
+
+  /* Metrics strip: 2-col, compact */
+  .h-strip{
+    grid-template-columns:1fr 1fr;gap:0;
+    margin-bottom:1.2rem;border:1px solid var(--line)
+  }
+  .hs{padding:.6rem .9rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .hs-n{font-size:1.6rem}
+  .hs-l{font-size:.42rem;margin-top:.1rem}
+  .hs-s{font-size:.4rem}
+  .hs-badge{padding:.6rem .9rem;border-bottom:1px solid var(--line)}
+  .hs-bv{font-size:1.4rem !important}
+  .hs-bl{font-size:.4rem}
+
+  /* CTAs: 2-column grid then 1-col for secondary */
+  .h-ctas{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:.5rem;
+    width:100%;
+    animation:none;opacity:1
+  }
+  .h-ctas .btn{
+    width:100%;text-align:center;justify-content:center;
+    min-height:48px;font-size:.55rem;
+    padding:.8rem .5rem;letter-spacing:.1em
+  }
+  /* Primary two span full on their own rows */
+  .h-ctas .btn:nth-child(1){grid-column:1/3}
+  .h-ctas .btn:nth-child(2){grid-column:1/3}
+  /* Secondary three share 2-col then 1-col */
+  .h-ctas .btn:nth-child(3),
+  .h-ctas .btn:nth-child(4){grid-column:span 1}
+  .h-ctas .btn:nth-child(5){grid-column:1/3}
+
+  /* Hide scroll indicator */
+  .h-scroll{display:none}
+  .film-strip{display:none}
+
+  /* ── GLOBAL SECTION spacing ── */
+  .S{padding:2.5rem 0;scroll-margin-top:3rem}
+  .W{padding:0 1.1rem}
+  .BIG{font-size:2rem;line-height:.92;margin-bottom:.8rem !important}
+  .TR{margin-bottom:1rem}
+  .TT{font-size:.48rem;letter-spacing:.14em}
+  .sub{font-size:.48rem}
+
+  /* ── BODY TEXT ── */
+  p,.ab-body,.pj-desc,.tp-desc,.feat-body,.exp-body{
+    font-size:.95rem;line-height:1.65
+  }
+
+  /* ── ABOUT ── */
+  .ab-grid{grid-template-columns:1fr;gap:1.5rem}
+  .ab-stats{grid-template-columns:1fr 1fr;gap:.8rem}
+
+  /* ── IMPACT ── */
+  .impact-grid{grid-template-columns:1fr 1fr;gap:.8rem}
+
+  /* ── FEATURED PROJECTS: swipeable horizontal scroll ── */
+  .feat-wrap{
+    display:flex !important;
+    flex-direction:row !important;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:1rem;
+    padding-bottom:1rem;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none
+  }
+  .feat-wrap::-webkit-scrollbar{display:none}
+  .feat-wrap > *{
+    flex:0 0 88vw;
+    scroll-snap-align:start;
+    max-width:88vw
+  }
+
+  /* ── EXPERIENCE: card style ── */
+  .exp-row{
+    grid-template-columns:1fr;gap:0;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:1.2rem;
+    margin-bottom:.8rem
+  }
+  .exp-row + .exp-row{
+    border-top:1px solid var(--line);
+    padding-top:1.2rem;margin-top:0
+  }
+  .exp-row > div:first-child{
+    padding-bottom:.6rem;
+    border-bottom:1px solid var(--line);
+    margin-bottom:.6rem
+  }
+
+  /* ── MOBILE ACCORDION: product thinking, certs ── */
+  .m-accordion .m-acc-body{
+    display:none;
+    padding:.8rem 0 0
+  }
+  .m-accordion .m-acc-body.open{display:block}
+  .m-accordion-trigger{
+    display:flex;justify-content:space-between;align-items:center;
+    width:100%;background:none;border:none;border-bottom:1px solid var(--line);
+    padding:.9rem 0;cursor:pointer;text-align:left
+  }
+  .m-accordion-trigger .m-acc-title{
+    font-family:var(--H);font-size:1.2rem;color:var(--chalk);letter-spacing:.03em
+  }
+  .m-accordion-trigger .m-acc-arrow{
+    font-family:var(--M);font-size:.7rem;color:var(--amber);
+    transition:transform .25s;display:inline-block
+  }
+  .m-accordion-trigger[aria-expanded="true"] .m-acc-arrow{transform:rotate(180deg)}
+
+  /* ── CASE STUDY: collapse on mobile ── */
+  .m-cs-toggle{
+    display:flex !important;
+    align-items:center;gap:.5rem;
+    font-family:var(--M);font-size:.52rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--amber);
+    background:none;border:1px solid var(--line);
+    padding:.6rem 1rem;cursor:pointer;margin-top:1rem;width:100%;
+    justify-content:center
+  }
+  .m-cs-toggle .m-cs-arrow{transition:transform .25s;display:inline-block}
+  .m-cs-toggle[aria-expanded="true"] .m-cs-arrow{transform:rotate(180deg)}
+  .m-cs-body{display:none}
+  .m-cs-body.open{display:block}
+
+  /* ── PROJECT CARDS ── */
+  .pj-grid{grid-template-columns:1fr;gap:.8rem}
+  .pjc{padding:1.2rem}
+  .pjc.feat{grid-template-columns:1fr;gap:1rem}
+  .pj-title{font-size:1.2rem}
+  .pj-vis{min-height:100px}
+
+  /* ── CAPABILITIES ── */
+  .cap-grid{grid-template-columns:1fr;gap:.8rem}
+
+  /* ── CERTIFICATIONS ── */
+  .cert-grid{grid-template-columns:1fr 1fr;gap:.6rem}
+
+  /* ── EDUCATION ── */
+  .edu-grid{grid-template-columns:1fr;gap:1.2rem}
+
+  /* ── TED ── */
+  .ted-card{grid-template-columns:1fr;gap:1rem}
+  .ted-right{text-align:left}
+
+  /* ── RESUME SECTION ── */
+  div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important
+  }
+
+  /* ── CONTACT ── */
+  .ct-grid{grid-template-columns:1fr;gap:1rem}
+  .ct-item{padding:1rem}
+
+  /* ── FOOTER ── */
+  footer{flex-direction:column;gap:.6rem;text-align:center;font-size:.46rem}
+  .foot-links{flex-wrap:wrap;gap:.4rem .6rem;justify-content:center}
+
+  /* ── THINKING SECTION ── */
+  .thinking-grid{grid-template-columns:1fr;gap:.8rem}
+
+  /* ── SKILLS TAGS ── */
+  .skill-tags{gap:.25rem .35rem}
+  .skill-tag{font-size:.44rem;padding:.18rem .45rem}
+
+  /* ── MINI GRIDS ── */
+  .mini.m3{grid-template-columns:1fr}
+  .tp-grid{grid-template-columns:1fr;gap:.8rem}
+}
+
+/* ══════════════════════════════
+   SMALL PHONE  ≤ 390px
+══════════════════════════════ */
+@media(max-width:390px){
+  .h-name{font-size:2.2rem}
+  .BIG{font-size:1.8rem}
+  .h-ctas .btn{font-size:.5rem;padding:.7rem .4rem;min-height:44px}
+  .W{padding:0 .9rem}
+  .h-inner{padding:3.8rem .9rem 1.2rem}
+  .h-strip{grid-template-columns:1fr 1fr}
+  .hs-n{font-size:1.4rem}
+  .feat-wrap > *{flex:0 0 92vw;max-width:92vw}
+}
+
+/* ══════════════════════════════
+   LARGE MONITOR  ≥ 1600px
+══════════════════════════════ */
+@media(min-width:1600px){
+  .W{max-width:1400px}
+  .h-inner{max-width:1400px}
+}
 
 </style>
 </head>
@@ -1883,5 +2202,98 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
 
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+<script>
+/* ── MOBILE ACCORDION + CASE STUDY COLLAPSE ── */
+(function(){
+  const isMobile = () => window.innerWidth <= 768;
+
+  /* ── Case study sections: collapse on mobile ── */
+  function initCaseStudyToggles(){
+    if(!isMobile()) return;
+    /* Sections to collapse: campusos, featured (TrustShield), pipeline */
+    const sections = ['campusos','featured','pipeline'];
+    sections.forEach(id => {
+      const sec = document.getElementById(id);
+      if(!sec) return;
+      /* Find the content wrapper — everything after the TR header row */
+      const tr = sec.querySelector('.TR');
+      if(!tr) return;
+      /* Wrap content after TR in collapsible body */
+      const body = document.createElement('div');
+      body.className = 'm-cs-body';
+      body.id = 'cs-body-' + id;
+      /* Move all siblings after TR into body */
+      const W = sec.querySelector('.W');
+      if(!W) return;
+      const children = Array.from(W.children);
+      const trIdx = children.indexOf(tr);
+      children.slice(trIdx + 1).forEach(c => body.appendChild(c));
+      W.appendChild(body);
+      /* Create toggle button */
+      const btn = document.createElement('button');
+      btn.className = 'm-cs-toggle';
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-controls','cs-body-' + id);
+      btn.innerHTML = '▼ <span class="m-cs-arrow">▾</span> View Full Case Study';
+      btn.addEventListener('click', function(){
+        const open = body.classList.toggle('open');
+        this.setAttribute('aria-expanded', open);
+        this.innerHTML = (open ? '▲ ' : '▼ ') + '<span class="m-cs-arrow" style="transform:rotate('+(open?'180deg':'0deg')+')">▾</span> ' + (open ? 'Collapse' : 'View Full Case Study');
+      });
+      tr.after(btn);
+    });
+  }
+
+  /* ── Product Thinking: title-only accordion on mobile ── */
+  function initThinkingAccordions(){
+    if(!isMobile()) return;
+    const grid = document.querySelector('.thinking-grid');
+    if(!grid) return;
+    grid.classList.add('m-accordion');
+    Array.from(grid.children).forEach(card => {
+      /* Find title (first heading or strong) */
+      const heading = card.querySelector('h3,[role="heading"],.think-num');
+      const titleText = card.querySelector('.think-title, h3, [role="heading"]');
+      if(!titleText) return;
+      const titleStr = titleText.textContent.trim();
+      /* Wrap card content in body */
+      const body = document.createElement('div');
+      body.className = 'm-acc-body';
+      Array.from(card.children).forEach(c => body.appendChild(c));
+      /* Build trigger */
+      const trigger = document.createElement('button');
+      trigger.className = 'm-accordion-trigger';
+      trigger.setAttribute('aria-expanded','false');
+      trigger.innerHTML = '<span class="m-acc-title">' + titleStr + '</span><span class="m-acc-arrow">▾</span>';
+      trigger.addEventListener('click', function(){
+        const open = body.classList.toggle('open');
+        this.setAttribute('aria-expanded', open);
+      });
+      card.innerHTML = '';
+      card.appendChild(trigger);
+      card.appendChild(body);
+    });
+  }
+
+  /* ── Horizontal swipe hint for featured projects ── */
+  function addSwipeHint(){
+    if(!isMobile()) return;
+    const featWrap = document.querySelector('.feat-wrap');
+    if(!featWrap) return;
+    const hint = document.createElement('div');
+    hint.style.cssText = 'font-family:var(--M);font-size:.44rem;color:var(--ash);letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:.4rem 0;';
+    hint.textContent = '← swipe to browse →';
+    featWrap.after(hint);
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    initCaseStudyToggles();
+    initThinkingAccordions();
+    addSwipeHint();
+  });
+})();
+</script>
+
 </body>
   </html>
