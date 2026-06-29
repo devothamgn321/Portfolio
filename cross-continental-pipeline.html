@@ -157,7 +157,53 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
 .skip-link:focus{top:1rem}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
 @media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.W{padding:0 1.5rem}.cs-body{grid-template-columns:1fr}.cs-sidebar{position:static}.cs-hero-inner{padding:6rem 1.5rem 0}.cs-breadcrumb{padding:1rem 1.5rem}}
-@media(max-width:768px){nav{padding:0 1rem;height:48px}.W{padding:0 1rem}.cs-hero-title{font-size:2.4rem}.cs-hero-summary{font-size:.97rem}.cs-hero-links{flex-direction:column}.cs-hero-links .btn{width:100%}.cs-section h2{font-size:2rem}.metric-row{grid-template-columns:1fr 1fr}.country-grid{grid-template-columns:1fr 1fr}.tech-stack{grid-template-columns:1fr}footer{flex-direction:column;gap:.6rem;text-align:center}.cs-bc-inner{flex-direction:column;gap:.6rem}}
+@media(max-width:768px){
+  nav{padding:0 1rem;height:48px}.W{padding:0 1rem}
+  .cs-hero-title{font-size:2.4rem}
+  .cs-hero-summary{font-size:.9rem;line-height:1.72}
+  .cs-hero-links{flex-direction:column}.cs-hero-links .btn{width:100%}
+  /* READING MODE */
+  .cs-section h2{font-size:1.75rem;line-height:.97;margin-bottom:.9rem}
+  .cs-section h3{font-size:.62rem;margin-top:1.2rem;margin-bottom:.45rem}
+  .cs-section p{font-size:.88rem;line-height:1.88;margin-bottom:.85rem}
+  .cs-section ul li{font-size:.86rem;line-height:1.8}
+  .hl-box,.hl-amber{padding:1rem 1.1rem}
+  .hl-box p,.hl-amber p{font-size:.86rem;line-height:1.8}
+  .hl-box .hl-label,.hl-amber .hl-label{font-size:.42rem}
+  .metric-row{grid-template-columns:1fr 1fr}
+  .metric-n{font-size:2.2rem}
+  .metric-l{font-size:.43rem}
+  .country-grid{grid-template-columns:1fr 1fr}
+  .country-flag{font-size:1.3rem}
+  .country-name{font-size:.46rem}
+  .country-apis{font-size:.39rem}
+  .query-example{padding:.8rem 1rem}
+  .query-q{font-size:.54rem}
+  .query-a{font-size:.82rem}
+  .tech-stack{grid-template-columns:1fr}
+  .tech-cat{font-size:.46rem}
+  .tech-item{font-size:.48rem}
+  .arch-diagram{padding:1.1rem}
+  .arch-label{font-size:.43rem}
+  .arch-layer-name{font-size:.43rem}
+  .arch-item{font-size:.52rem;padding:.3rem .6rem}
+  .roadmap-table th,.roadmap-table td{font-size:.5rem;padding:.4rem .4rem}
+  footer{flex-direction:column;gap:.6rem;text-align:center}
+  .cs-bc-inner{flex-direction:column;gap:.6rem}
+}
+@media(max-width:414px){
+  .S{padding:2.5rem 0}
+  .W{padding:0 .9rem}
+  .cs-hero-inner{padding:5rem 1rem 0}
+  .cs-hero-title{font-size:2rem}
+  .cs-hero-summary{font-size:.85rem}
+  .cs-section h2{font-size:1.55rem}
+  .cs-section p{font-size:.84rem;line-height:1.84}
+  .cs-section ul li{font-size:.83rem}
+  .country-grid{grid-template-columns:1fr 1fr}
+  .cs-toc a{font-size:.5rem}
+  .cs-meta-val{font-size:.54rem}
+}
 </style>
 </head>
 <body>

@@ -85,7 +85,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .bO{background:transparent;color:var(--paper);border:1px solid var(--line2)}.bO:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
 
 /* HERO */
-#home{min-height:80vh;position:relative;overflow:hidden;display:flex;align-items:center}
+#home{min-height:66vh;position:relative;overflow:hidden;display:flex;align-items:center}
 .h-grid{position:absolute;inset:0;pointer-events:none;
   background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
   background-size:55px 55px;mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 0%,transparent 80%);opacity:.45}
@@ -94,12 +94,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
   mask-image:linear-gradient(to left,black 0%,transparent 100%)}
 .h-ledge{position:absolute;left:0;top:0;bottom:0;width:3px;
   background:linear-gradient(to bottom,transparent,var(--red),var(--amber),transparent)}
-.h-inner{position:relative;z-index:1;padding:5rem 3rem 3rem;max-width:1160px;margin:0 auto;width:100%}
+.h-inner{position:relative;z-index:1;padding:4rem 3rem 2.5rem;max-width:1160px;margin:0 auto;width:100%}
 .h-layout{display:grid;grid-template-columns:1fr 260px;gap:4rem;align-items:center;width:100%}
 .h-mobile-top{display:none}
 
-/* Hero tags row — single clean row */
-.h-tags{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;margin-bottom:1.6rem;
+/* Hero credibility row */
+.h-tags{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;margin-bottom:1rem;
   opacity:0;animation:rise .7s .15s forwards}
 .h-tag{font-family:var(--M);font-size:.51rem;letter-spacing:.13em;text-transform:uppercase;
   padding:.22rem .65rem;border:1px solid var(--ash);color:var(--smoke)}
@@ -115,18 +115,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 
 /* Positioning row — ONE row only */
 .h-role{font-family:var(--M);font-size:.65rem;color:var(--smoke);letter-spacing:.07em;
-  text-transform:uppercase;margin-bottom:1.8rem;opacity:0;animation:rise .85s .45s forwards;line-height:1.6}
+  text-transform:uppercase;margin-bottom:1.3rem;opacity:0;animation:rise .85s .45s forwards;line-height:1.6}
 .h-role b{color:var(--amber)}
 
-.h-stmt{font-family:var(--P);font-size:1.12rem;font-weight:300;font-style:italic;
-  color:var(--paper);line-height:1.8;max-width:560px;margin-bottom:2.2rem;
+.h-stmt{font-family:var(--P);font-size:1.08rem;font-weight:300;font-style:italic;
+  color:var(--paper);line-height:1.78;max-width:560px;margin-bottom:1.6rem;
   opacity:0;animation:rise .85s .6s forwards}
 .h-stmt em{color:var(--chalk);font-style:normal;font-weight:400}
 
 /* Metrics strip */
 .h-strip{display:grid;grid-template-columns:repeat(3,1fr) auto;border:1px solid var(--line);
-  margin-bottom:2.2rem;opacity:0;animation:rise .85s .75s forwards}
-.hs{padding:.8rem 1.2rem;border-right:1px solid var(--line)}
+  margin-bottom:1.6rem;opacity:0;animation:rise .85s .75s forwards}
+.hs{padding:.7rem 1.1rem;border-right:1px solid var(--line)}
 .hs-n{font-family:var(--H);font-size:2rem;color:var(--amber2);line-height:1}
 .hs-l{font-family:var(--M);font-size:.46rem;color:var(--smoke);letter-spacing:.09em;text-transform:uppercase;margin-top:.15rem}
 .hs-s{font-family:var(--M);font-size:.44rem;color:var(--paper);letter-spacing:.06em}
@@ -261,11 +261,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
   .h-photo-m{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;border:1.5px solid var(--amber);flex-shrink:0}
   .h-mobile-name{font-family:var(--H);font-size:1rem;line-height:.95;color:var(--chalk)}
 
-  .h-tags{gap:.3rem .5rem;margin-bottom:.8rem}
+  .h-tags{gap:.3rem .5rem;margin-bottom:.6rem}
   .h-tag{font-size:.44rem;padding:.18rem .48rem}
-  .h-cred{font-size:.44rem}
-  .h-role{font-size:.52rem;margin-bottom:1rem}
-  .h-stmt{font-size:.97rem;margin-bottom:1.2rem}
+  .h-cred{font-size:.42rem;line-height:1.6}
+  .h-role{font-size:.52rem;margin-bottom:.9rem}
+  .h-stmt{font-size:.95rem;margin-bottom:1.1rem}
   .h-strip{grid-template-columns:1fr 1fr;margin-bottom:1.2rem}
   .hs{padding:.6rem .8rem}
   .hs-n{font-size:1.6rem}
@@ -348,13 +348,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
           <div class="h-mobile-name">Devothama<br>Gundugurki<br>Narasimhamurthy</div>
         </div>
 
-        <!-- Primary positioning — one row -->
+        <!-- Credibility row — one clean line, no duplication -->
         <div class="h-tags">
-          <span class="h-tag">AI Product Manager</span>
-          <span class="h-tag">Platform Products</span>
-          <span class="h-tag">Technical PM</span>
-          <span class="h-tag amber">TEDxJHU Speaker</span>
-          <span class="h-cred">&nbsp;&nbsp;<b>Ex-Mercedes-Benz R&D</b> · Johns Hopkins MSEM · Open to Work · USA</span>
+          <span class="h-cred"><b>Ex-Mercedes-Benz R&D</b> &nbsp;·&nbsp; Johns Hopkins MSEM &nbsp;·&nbsp; TEDxJHU Speaker &nbsp;·&nbsp; Open to Work · USA</span>
         </div>
 
         <h1 class="h-name">
@@ -362,6 +358,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
           Devothama<br>Gundugurki<br>Narasimhamurthy
         </h1>
 
+        <!-- Primary positioning — once only -->
         <div class="h-role">
           <b>AI Product Manager</b> &nbsp;·&nbsp; Platform Products &nbsp;·&nbsp; Technical PM
         </div>
