@@ -163,10 +163,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 
 /* ── LANES ── */
 .lanes-intro{font-family:var(--P);font-size:1rem;font-weight:300;color:var(--paper);line-height:1.7;max-width:640px;margin-top:1.2rem}
-.lane-jump{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
-.lane-jump a{font-family:var(--M);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
-  color:var(--paper);border:1px solid var(--line2);padding:.45rem .8rem;border-left:3px solid var(--lc);transition:background .2s,color .2s}
-.lane-jump a:hover{background:var(--amber3);color:var(--chalk)}
 .lane{margin-top:3.4rem;scroll-margin-top:4.5rem}
 .lane-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:.4rem 1rem;border-bottom:1px solid var(--line);padding-bottom:.7rem;margin-bottom:1.2rem}
 .lane-n{font-family:var(--H);font-size:1.6rem;color:var(--ash);letter-spacing:.04em}
@@ -556,13 +552,6 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
     <h2 class="BIG"><span class="sub">One flagship per lane —</span>Built.</h2>
     <p class="lanes-intro">Each lane leads with the project that best proves it. Every case study covers the problem, the decisions, and the work, and links to GitHub for the full build and docs.</p>
 
-    <nav class="lane-jump" aria-label="Jump to lane">
-      <a href="#lane-aipm" style="--lc:var(--red)">AI Product</a>
-      <a href="#lane-tpm" style="--lc:var(--blue)">Technical Program</a>
-      <a href="#lane-data" style="--lc:var(--green)">Data</a>
-      <a href="#lane-ops" style="--lc:var(--violet)">Business Ops</a>
-      <a href="#lane-strategy" style="--lc:var(--amber)">Strategy</a>
-    </nav>
 
     <!-- LANE 01 · AI PRODUCT -->
     <div class="lane" id="lane-aipm">
