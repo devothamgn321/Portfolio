@@ -22,7 +22,12 @@
     .about{background:#10151d;color:#fff}.about .panel{background:#171f2a;border-color:#2b3542;box-shadow:none}.about p,.about li{color:#cdd4dc}.about h2,.about h3{color:#fff}.about ul{padding-left:19px}.footer{padding:25px 20px;text-align:center;color:#7c8793;font-size:12px;background:#0d1117}
     @media(max-width:980px){.cards{grid-template-columns:repeat(3,1fr)}.grid2,.grid3,.heroin{grid-template-columns:1fr}.hero .side{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:18px 0 0}.scenario-result{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:620px){.links{display:none}.cards{grid-template-columns:repeat(2,1fr)}.sectionhead{display:block}.sectionhead p{margin-top:8px}.controls{grid-template-columns:1fr}.hero h1{font-size:46px}.scenario-result{grid-template-columns:1fr 1fr}.wrap{padding-top:38px}.card{padding:14px}}
-  </style>
+  
+/* mobile overflow fix */
+.panel,.grid2>*,.grid3>*{min-width:0}
+.chartbox svg{max-width:100%;height:auto}
+html,body{overflow-x:hidden}
+</style>
 </head>
 <body>
 <nav class="nav"><div class="navin"><div class="brand"><a href="labops.html" style="color:inherit;text-decoration:none">← DEVOTHAMA GN · LAB PORTFOLIO</a></div><div class="links"><a href="#dashboard">Dashboard</a><a href="#scenario">Scenario</a><a href="#portfolio">Portfolio</a><a href="#risks">Risks</a><a href="#method">Method</a></div></div></nav>
