@@ -200,12 +200,15 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
 <body>
 <a href="#case-study-top" class="skip-link">Skip to main content</a>
 <nav aria-label="Primary navigation">
-  <div class="nav-id"><div class="nav-pip"></div><span class="nav-wm">DGN · Ruby</span></div>
+  <div class="nav-id"><div class="nav-pip"></div><span class="nav-wm">Devothama GN</span></div>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="index.html#casestudies">Case Studies</a>
-    <a href="campus-atlas.html">← Campus Atlas</a>
-    <a href="cross-continental-pipeline.html">Pipeline →</a>
+    <a href="index.html#casestudies">All Work</a>
+    <a href="trustshield.html">TrustShield</a>
+    <a href="campus-atlas.html">Campus Atlas</a>
+    <a href="labops.html">LabOps</a>
+    <a href="cross-continental-pipeline.html">Pipeline</a>
+    <a href="lead-routing.html">Lead Routing</a>
   </div>
   <a href="AI_PM_FINALV3.pdf" target="_blank" rel="noopener noreferrer" class="nav-cta">Resume ↗</a>
 </nav>
@@ -214,7 +217,7 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
   <div class="cs-hero-grid" aria-hidden="true"></div>
   <div class="cs-hero-ledge" aria-hidden="true"></div>
   <div class="cs-hero-inner">
-    <div class="cs-hero-label">AI Trust & Safety · Case Study · 02 / 03</div>
+    <div class="cs-hero-label">AI Product Management · Trust &amp; Safety · Case Study · 01 / 05</div>
     <h1 class="cs-hero-title">TrustShield<br>AI</h1>
     <p class="cs-hero-summary">Responsible AI moderation platform — explainable risk signals, configurable trust thresholds, and human-in-the-loop review workflows for high-stakes content domains.</p>
     <div class="cs-hero-tags">
@@ -385,6 +388,29 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
 
         <div class="sep"></div>
 
+        <div class="cs-section" id="v2">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">v2 · Discovery &amp; Strategy</div></div>
+          <h2>From Prototype<br>to Product Bet.</h2>
+          <p>The prototype showed the idea worked on screen. It didn't show that anyone would buy it. So before building v2, I stopped and ran a structured market scan. <strong>Every decision below is dated and logged in the repo.</strong></p>
+          <h3>Market scan: 7 spaces, 8 criteria</h3>
+          <p>I scored seven problem spaces on pain, budget, urgency, buildability, sellability, measurable value, recurring need and career fit. Big markets that a solo builder can't build for or sell into (bank voice-fraud, LLM red-teaming) were ruled out however attractive they looked.</p>
+          <div class="hl-box">
+            <div class="hl-label">Killed on Evidence</div>
+            <p>EU AI Act compliance ranked first on paper a month earlier. Its forcing function was the August 2026 deadline, and that disappeared when the EU pushed high-risk obligations to December 2027. I dropped it (Decision 001).</p>
+          </div>
+          <h3>Decisions that set the direction</h3>
+          <ul>
+            <li><strong>Decision layer, not detection (003):</strong> detection is owned by well-funded vendors. The open gap is what happens after a signal fires: prioritising, explaining and routing to a person.</li>
+            <li><strong>North-star metric (004):</strong> not accuracy. It's <em>how many high-risk cases are caught within a fixed human-review budget</em> (recall@K), because reviewer time is the real limit.</li>
+            <li><strong>Build first, with discovery in parallel (002):</strong> a working system makes the practitioner conversations concrete.</li>
+            <li><strong>Zero-cost stack and two releases (005, 006):</strong> free-tier LLMs with confidence handling. First the core release, then a depth release with a published evaluation.</li>
+          </ul>
+          <h3>Where it stands</h3>
+          <p>Discovery, strategy and the v2 product spec are done and on GitHub. The v2 build (database with per-customer access rules, case-intake API, AI decision layer, review queue) is in progress. A hand-labelled evaluation report is the next milestone, and it isn't claimed here until it ships.</p>
+        </div>
+
+        <div class="sep"></div>
+
         <div class="cs-section" id="roadmap">
           <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">Roadmap & Impact</div></div>
           <h2>From Signal<br>to Platform.</h2>
@@ -425,6 +451,7 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
           <a href="#problem">Problem & Users</a>
           <a href="#pm-thinking">PM Thinking</a>
           <a href="#ai-depth">AI Architecture</a>
+          <a href="#v2">v2 Discovery &amp; Strategy</a>
           <a href="#roadmap">Roadmap & Impact</a>
         </div>
         <div class="cs-meta-box">
@@ -434,12 +461,12 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
           <div class="cs-meta-row"><div class="cs-meta-label">Focus</div><div class="cs-meta-val">Responsible AI · HITL</div></div>
         </div>
         <div class="cs-nav-prev-next">
-          <a href="campus-atlas.html" class="cs-pn-link">
+          <a href="index.html#casestudies" class="cs-pn-link">
             <span>←</span>
-            <div><div class="cs-pn-dir">← Previous</div>Campus Atlas</div>
+            <div><div class="cs-pn-dir">All Work</div>Back to Portfolio</div>
           </a>
-          <a href="cross-continental-pipeline.html" class="cs-pn-link">
-            <div><div class="cs-pn-dir">Next →</div>Data Pipeline</div>
+          <a href="campus-atlas.html" class="cs-pn-link">
+            <div><div class="cs-pn-dir">Next →</div>Campus Atlas</div>
             <span>→</span>
           </a>
         </div>
@@ -453,24 +480,21 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
     <div class="cs-bc-left">
       <a href="index.html" class="cs-bc-link">← Home</a>
       <span class="cs-bc-sep">·</span>
-      <a href="index.html#casestudies" class="cs-bc-link">Case Studies</a>
+      <a href="index.html#casestudies" class="cs-bc-link">All Work</a>
       <span class="cs-bc-sep">·</span>
       <span style="font-family:var(--M);font-size:.51rem;color:var(--red)">TrustShield AI</span>
     </div>
-    <div class="cs-bc-right">
-      <a href="campus-atlas.html" class="cs-bc-link">← Campus Atlas</a>
-      <a href="cross-continental-pipeline.html" class="cs-bc-link">Pipeline →</a>
-    </div>
+    <div class="cs-bc-right"><a href="campus-atlas.html" class="cs-bc-link">Campus Atlas →</a></div>
   </div>
 </div>
 
 <footer>
-  <span class="fl">© 2026 Devothama GN · AI Product Manager · TrustShield AI</span>
+  <span class="fl">© 2026 Devothama GN · Product &amp; Technical Program Manager · TrustShield AI</span>
   <div class="fr">
     <a href="index.html">Home</a>
-    <a href="campus-atlas.html">Campus Atlas</a>
-    <a href="cross-continental-pipeline.html">Pipeline</a>
+    <a href="index.html#casestudies">All Work</a>
     <a href="https://linkedin.com/in/devothamagn" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <a href="https://github.com/devothamgn321" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
   </div>
 </footer>
 </body>

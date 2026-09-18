@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Cross-Continental Eco-Economic Data Pipeline — Case Study · Devothama GN</title>
-<meta name="description" content="One analysis-ready dataset of weather, food prices, energy and economic data for 5 countries, served through a REST API and refreshed weekly. Case study by Devothama GN.">
+<title>LabOps Intelligence — Portfolio Planning Case Study · Devothama GN</title>
+<meta name="description" content="Interactive portfolio-planning tool linking 24-month engineering demand to lab capacity, projects, budget, risk and approvals. Case study by Devothama GN.">
 <meta name="author" content="Devothama Gundugurki Narasimhamurthy">
-<meta property="og:title" content="Cross-Continental Eco-Economic Data Pipeline — Case Study">
-<meta property="og:description" content="One analysis-ready dataset of weather, food prices, energy and economic data for 5 countries, served through a REST API and refreshed weekly. Case study by Devothama GN.">
+<meta property="og:title" content="LabOps Intelligence — Portfolio Planning Case Study">
+<meta property="og:description" content="Interactive portfolio-planning tool linking 24-month engineering demand to lab capacity, projects, budget, risk and approvals. Case study by Devothama GN.">
 <meta property="og:image" content="https://devothamagn.netlify.app/photo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
   --void:#070706;--carbon:#0e0e0d;--panel:#141412;--surface:#1a1a18;
   --chalk:#eeeadf;--paper:#c4bfb4;--smoke:#787470;--ash:#6b6860;
   --amber:#e8922a;--amber2:#f4ae55;--amber3:rgba(232,146,42,.11);
-  --red:#d93030;--green:#4caf7d;--green2:rgba(76,175,125,.12);
+  --red:#d93030;--green:#5b9bd5;--green2:rgba(91,155,213,.12);
   --line:rgba(232,146,42,.13);--line2:rgba(232,146,42,.28);
   --H:'Bebas Neue',sans-serif;--P:'Inter',system-ui,sans-serif;--M:'JetBrains Mono',monospace;
 }
@@ -61,7 +61,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .cs-hero{min-height:70vh;display:flex;align-items:flex-end;padding-bottom:4rem;
   position:relative;overflow:hidden;background:var(--carbon)}
 .cs-hero-grid{position:absolute;inset:0;
-  background-image:linear-gradient(rgba(76,175,125,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(76,175,125,.06) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(91,155,213,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(91,155,213,.06) 1px,transparent 1px);
   background-size:55px 55px;mask-image:radial-gradient(ellipse 90% 80% at 20% 70%,black 0%,transparent 80%);opacity:.8}
 .cs-hero-ledge{position:absolute;left:0;top:0;bottom:0;width:3px;
   background:linear-gradient(to bottom,transparent,var(--green),transparent)}
@@ -72,7 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .cs-hero-summary{font-family:var(--P);font-size:1.12rem;font-weight:300;font-style:italic;
   color:var(--paper);line-height:1.8;max-width:680px;margin-bottom:2rem;opacity:0;animation:rise .85s .4s forwards}
 .cs-hero-tags{display:flex;flex-wrap:wrap;gap:.4rem;opacity:0;animation:rise .7s .55s forwards}
-.cs-hero-tag{font-family:var(--M);font-size:.49rem;color:var(--green);border:1px solid rgba(76,175,125,.4);
+.cs-hero-tag{font-family:var(--M);font-size:.49rem;color:var(--green);border:1px solid rgba(91,155,213,.4);
   padding:.2rem .6rem;letter-spacing:.1em;text-transform:uppercase}
 .cs-hero-links{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem;opacity:0;animation:rise .7s .7s forwards}
 
@@ -103,7 +103,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
   padding:.25rem 0 .25rem 1.2rem;position:relative;font-weight:300}
 .cs-section ul li::before{content:'▸';position:absolute;left:0;color:var(--green);font-size:.7em;top:.38rem}
 .cs-section ul li strong{color:var(--chalk);font-weight:500}
-.hl-box{background:var(--green2);border:1px solid rgba(76,175,125,.3);border-left:3px solid var(--green);
+.hl-box{background:var(--green2);border:1px solid rgba(91,155,213,.3);border-left:3px solid var(--green);
   padding:1.4rem 1.6rem;margin:1.5rem 0}
 .hl-box p{margin:0;color:var(--paper);font-style:italic}
 .hl-box .hl-label{font-family:var(--M);font-size:.46rem;color:var(--green);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
@@ -130,11 +130,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .arch-layer-name{font-size:.5rem;color:var(--ash);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
 .arch-layer-items{display:flex;flex-wrap:wrap;gap:.5rem}
 .arch-item{background:var(--panel);border:1px solid var(--line2);padding:.4rem .8rem;font-size:.58rem;color:var(--chalk);letter-spacing:.04em}
-.arch-item.green{border-color:rgba(76,175,125,.5);color:var(--green)}
+.arch-item.green{border-color:rgba(91,155,213,.5);color:var(--green)}
 .arch-item.amber{border-color:var(--amber2);color:var(--amber2)}
 
 .metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0}
-.metric-box{background:var(--panel);border:1px solid rgba(76,175,125,.3);padding:1.2rem;text-align:center}
+.metric-box{background:var(--panel);border:1px solid rgba(91,155,213,.3);padding:1.2rem;text-align:center}
 .metric-n{font-family:var(--H);font-size:2.8rem;color:var(--green);line-height:1}
 .metric-l{font-family:var(--M);font-size:.48rem;color:var(--paper);letter-spacing:.09em;text-transform:uppercase;margin-top:.2rem}
 
@@ -240,24 +240,21 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
   <div class="cs-hero-grid" aria-hidden="true"></div>
   <div class="cs-hero-ledge" aria-hidden="true"></div>
   <div class="cs-hero-inner">
-    <div class="cs-hero-label">Data &amp; Analytics · Case Study · 04 / 05</div>
-    <h1 class="cs-hero-title">Cross-Continental<br>Eco-Economic<br>Data Pipeline</h1>
-    <p class="cs-hero-summary">One analysis-ready dataset combining weather, food prices, energy and economic data for 5 countries, so an analyst can ask a cross-country question without doing the joins by hand.</p>
+    <div class="cs-hero-label">Technical Program Management · Case Study · 03 / 05</div>
+    <h1 class="cs-hero-title">LabOps<br>Intelligence</h1>
+    <p class="cs-hero-summary">An interactive planning tool for an engineering organisation that is growing faster than its lab space. It connects hiring growth to lab capacity, then to the build projects, budgets, risks and approvals needed to close the gap.</p>
     <div class="cs-hero-tags">
-      <span class="cs-hero-tag">Python</span>
-      <span class="cs-hero-tag">PostgreSQL</span>
-      <span class="cs-hero-tag">Flask API</span>
-      <span class="cs-hero-tag">Docker</span>
-      <span class="cs-hero-tag">Cron</span>
-      <span class="cs-hero-tag">5 Countries</span>
-      <span class="cs-hero-tag">4 Sources</span>
+      <span class="cs-hero-tag">24-Month Forecast</span>
+      <span class="cs-hero-tag">Capacity Planning</span>
+      <span class="cs-hero-tag">Scenario Planning</span>
+      <span class="cs-hero-tag">Risk Triage</span>
+      <span class="cs-hero-tag">Governance</span>
+      <span class="cs-hero-tag">Synthetic Data</span>
     </div>
-    <div class="role-box">
-      <div class="rb-l">Team &amp; My Role</div>
-      <p>Built with a 4-person team for Data Engineering Principles &amp; Practice at Johns Hopkins (Spring 2026). <strong>I built the infrastructure</strong> (Docker setup, scheduled refresh, Flask API) <strong>and wrote the product spec</strong>.</p>
-    </div>
+    
     <div class="cs-hero-links">
-      <a href="https://github.com/devothamgn321/cross-continental-eco-economic-data-pipeline" target="_blank" rel="noopener noreferrer" class="btn bA">GitHub ↗</a>
+      <a href="labops-demo.html" target="_blank" rel="noopener noreferrer" class="btn bA">Live Demo ↗</a>
+      <a href="https://github.com/devothamgn321/labops-intelligence" target="_blank" rel="noopener noreferrer" class="btn bO">GitHub ↗</a>
       <a href="index.html#casestudies" class="btn bO">← All Work</a>
     </div>
   </div>
@@ -271,114 +268,77 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
       <div class="cs-main">
         <div class="cs-section" id="problem">
           <div class="TR"><div class="TL"></div><div class="TT">The Problem</div></div>
-          <h2>The Data Exists.<br>It Doesn’t Line Up.</h2>
+          <h2>Growth Outruns<br>Lab Space.</h2>
 
-          <p>Weather, food prices, energy and economic data are all public. But they come from different sources in different shapes: some monthly, some yearly, some keyed by country name, some by code. An analyst who wants to ask <em>"did a dry year line up with higher rice prices and slower growth?"</em> spends most of their time cleaning and joining files before they can answer it.</p>
+          <p>Engineering organisations hire faster than they can build lab space. The warning signs sit in different places: headcount plans in HR, seat and bench counts in facilities, build projects in a project tracker, budgets in finance, and risks and approvals in someone's inbox.</p>
+          <p>So the shortfall shows up late, when engineers are already waiting for benches. At that point the only fixes are expensive ones. <strong>The problem isn't missing data. Nobody connects it early enough to act.</strong></p>
           <div class="hl-box">
-            <div class="hl-label">Product Goal</div>
-            <p>One analysis-ready table with one row per country per month, served through an API and refreshed on its own. The analyst starts at the question, not the joins.</p>
+            <div class="hl-label">Design Goal</div>
+            <p>Not a prettier spreadsheet. A repeatable way of deciding that links demand signals to projects, budget, approvals and leadership decisions, so a planning number turns into an action with an owner and a date.</p>
           </div>
           <h3>Who It's For</h3>
           <ul>
-            <li><strong>Commodity risk analyst:</strong> wants to predict food-price swings, and currently combines World Bank, food-price and weather CSVs by hand.</li>
-            <li><strong>International policy adviser:</strong> wants to compare climate and economic trends across countries to decide where aid goes.</li>
-            <li><strong>Agriculture business PM:</strong> wants cross-continental trends for sourcing decisions without running data pipelines themselves.</li>
+            <li><strong>Program / portfolio manager:</strong> runs the recurring review and needs to see which labs, projects and risks need attention this week.</li>
+            <li><strong>Engineering leadership:</strong> needs a short list of decisions (speed up, re-order, fund, escalate), not a 40-row status report.</li>
+            <li><strong>Facilities, finance and safety owners:</strong> each owns part of the critical path and needs to see how their item affects lab capacity.</li>
+          </ul>
+        </div>
+        <div class="sep"></div>
+
+        <div class="cs-section" id="how">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">How It Works</div></div>
+          <h2>Forecast → Capacity<br>→ Decisions.</h2>
+
+          <div class="dt-wrap"><table class="dt">
+            <tr><th>Step</th><th>What the model does</th></tr>
+            <tr><td>1 · Forecast demand</td><td>Starts from current headcount per team, annual growth, seats per engineer, specialised bench needs and a planning buffer. Projects monthly seat demand 24 months out.</td></tr>
+            <tr><td>2 · Model real capacity</td><td>Discounts nominal capacity for downtime, and counts new capacity only from the month its build project is due to finish. Seats and benches are tracked separately.</td></tr>
+            <tr><td>3 · Drive decisions</td><td>Links each shortfall to the projects that would close it, then to their budget, risks, approvals and dependencies. Red items go to executive triage with an owner.</td></tr>
+          </table></div>
+          <h3>What You Can Do in the Demo</h3>
+          <ul>
+            <li><strong>Scenario planning:</strong> move the annual growth and planning-buffer sliders, and demand, lab usage and the recommended capacity action all recalculate.</li>
+            <li><strong>Executive dashboard:</strong> a 24-month demand vs capacity chart, plus how full each of the 8 lab zones will be at month 12.</li>
+            <li><strong>Portfolio view:</strong> 12 concurrent projects (capacity, safety, IT, utilities) with priority, progress, target date and budget, filtered into Executive Triage, Weekly Watch or Standard Cadence.</li>
+            <li><strong>Risk and approval triage:</strong> risks scored by likelihood × impact with an owner, and approvals flagged when they are close to blocking a schedule.</li>
           </ul>
         </div>
         <div class="sep"></div>
 
         <div class="cs-section" id="decisions">
-          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">Key Decisions</div></div>
-          <h2>Choices That<br>Shaped the Data.</h2>
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">PM Thinking</div></div>
+          <h2>The Decisions<br>That Mattered.</h2>
 
-          <div class="dt-wrap"><table class="dt">
-            <tr><th>Decision</th><th>Why</th></tr>
-            <tr><td>Country code + month as the key</td><td>Different sources name countries differently. The ISO3 country code plus year-month gives every source one join key and one time scale.</td></tr>
-            <tr><td>Keep gaps visible</td><td>Outer joins keep every record. Missing coverage (for example, no US food-price data) stays as a blank, so a gap in the source never looks like a processing error.</td></tr>
-            <tr><td>Spread yearly data across months</td><td>Energy and economic data are yearly. Spreading them evenly across months lets them sit next to monthly weather and food data without inventing seasonal patterns.</td></tr>
-            <tr><td>5 countries, 2022 onward</td><td>US and Brazil give strong economic and energy coverage; India, the Philippines and Nigeria give food-price coverage and different climate exposure. Starting in 2022 keeps the overlap useful.</td></tr>
-            <tr><td>Weekly refresh, not real-time</td><td>The sources update slowly. A weekly scheduled job is cheaper and simpler, and plenty for this kind of analysis.</td></tr>
-          </table></div>
-        </div>
-        <div class="sep"></div>
-
-        <div class="cs-section" id="build">
-          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">What I Built</div></div>
-          <h2>Infrastructure<br>and API.</h2>
-
-          <div class="arch-diagram">
-            <div class="arch-label">Pipeline Architecture</div>
-            <div class="arch-layer">
-              <div class="arch-layer-name">Sources · 4 public datasets</div>
-              <div class="arch-layer-items">
-                <span class="arch-item green">Open-Meteo (weather)</span>
-                <span class="arch-item green">World Bank (GDP, inflation, population)</span>
-                <span class="arch-item green">U.S. EIA (energy)</span>
-                <span class="arch-item green">WFP (food prices)</span>
-              </div>
-            </div>
-            <div class="arch-layer">
-              <div class="arch-layer-name">Processing · Python</div>
-              <div class="arch-layer-items">
-                <span class="arch-item">One loader per source</span>
-                <span class="arch-item">master.py orchestrator</span>
-                <span class="arch-item">Full history backfill</span>
-                <span class="arch-item">Weekly incremental update</span>
-                <span class="arch-item">Deduplication + schema checks</span>
-              </div>
-            </div>
-            <div class="arch-layer">
-              <div class="arch-layer-name">Storage · PostgreSQL 15</div>
-              <div class="arch-layer-items">
-                <span class="arch-item amber">master_data (one row per country-month)</span>
-                <span class="arch-item">countries · weather · food_prices · energy · world_bank</span>
-              </div>
-            </div>
-            <div class="arch-layer">
-              <div class="arch-layer-name">API · Flask · 7 endpoints</div>
-              <div class="arch-layer-items">
-                <span class="arch-item">/api/get_all</span>
-                <span class="arch-item">/api/get_weather</span>
-                <span class="arch-item">/api/get_food_prices</span>
-                <span class="arch-item">/api/get_energy</span>
-                <span class="arch-item">/api/get_world_bank</span>
-                <span class="arch-item">/api/get_countries</span>
-                <span class="arch-item">/api/health</span>
-              </div>
-            </div>
-            <div class="arch-layer">
-              <div class="arch-layer-name">Infrastructure</div>
-              <div class="arch-layer-items">
-                <span class="arch-item green">Docker Compose (database, app, notebook)</span>
-                <span class="arch-item">Weekly cron job</span>
-                <span class="arch-item">API smoke tests</span>
-                <span class="arch-item">Environment-based config</span>
-              </div>
-            </div>
+          <h3>Capacity only counts when it's real</h3>
+          <p>A common planning mistake is counting a lab expansion as capacity the day it's approved. Here, new capacity only counts from the month its project is due to finish. So if that project slips, the chart shows the shortfall right away. <em>That ties the project schedule directly to capacity risk.</em></p>
+          <h3>Tiers of management attention</h3>
+          <p>Not every project deserves leadership time. Projects sit in three review tiers (Executive Triage, Weekly Watch, Standard Cadence), so the recurring review spends its time on the few items that can actually change the outcome.</p>
+          <div class="hl-amber">
+            <div class="hl-label">The Recurring Review, in Four Questions</div>
+            <p>Which labs are close to their buffer or already short? Which milestones or dependencies threaten capacity delivery? Which investments need funding or escalated approval? Who owns each mitigation, and by what date?</p>
           </div>
-          <ul>
-            <li><strong>One command to run:</strong> <code>docker compose up</code> starts the database, loads the full history on first start, then serves the API.</li>
-            <li><strong>Runs on its own:</strong> a cron job refreshes the data every Sunday without anyone touching it.</li>
-            <li><strong>Checked:</strong> a smoke-test script hits every endpoint after a build.</li>
-          </ul>
+          <h3>Synthetic data on purpose</h3>
+          <p>Every lab, budget, schedule and risk is synthetic. That keeps the model reproducible and shareable while keeping the shape of a real engineering portfolio.</p>
         </div>
         <div class="sep"></div>
 
         <div class="cs-section" id="next">
-          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">Product Spec & Roadmap</div></div>
-          <h2>From Pipeline<br>to Product.</h2>
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">In a Real Environment</div></div>
+          <h2>What I Would<br>Connect Next.</h2>
 
-          <p>I wrote a product spec on top of the pipeline: user types, value proposition, success targets and a three-phase roadmap.</p>
-          <div class="metric-row">
-            <div class="metric-box"><div class="metric-n">&lt;3m</div><div class="metric-l">Target weekly refresh time</div></div>
-            <div class="metric-box"><div class="metric-n">95%</div><div class="metric-l">Target complete rows</div></div>
-            <div class="metric-box"><div class="metric-n">&lt;150ms</div><div class="metric-l">Target API response (p95)</div></div>
-          </div>
-          <p>These are targets set in the spec, not measured results.</p>
           <ul>
-            <li><strong>Phase 1 (built):</strong> PostgreSQL warehouse, Docker, REST API, scheduled refresh</li>
-            <li><strong>Phase 2 (designed, not built):</strong> a plain-English question box. An LLM writes a <em>read-only</em> SQL query, runs it, and summarises the answer with a chart. Write commands are blocked.</li>
-            <li><strong>Phase 3 (planned):</strong> models that predict food-price swings</li>
+            <li>Approved headcount and hiring forecasts, instead of an assumed growth rate</li>
+            <li>Badge, booking and usage data, so utilisation is measured rather than modelled</li>
+            <li>Lab asset and calibration inventories</li>
+            <li>Project schedules and critical paths from the real project tracker</li>
+            <li>Capital budgets, committed cost, invoices and forecasts</li>
+            <li>Procurement lead times, outage calendars, and facilities, safety and permitting constraints</li>
+          </ul>
+          <h3>What This Shows</h3>
+          <ul>
+            <li><strong>Program thinking:</strong> linking a forecast to the projects, money and approvals that act on it.</li>
+            <li><strong>Prioritisation:</strong> attention tiers and risk scoring that reduce a portfolio to a short decision list.</li>
+            <li><strong>Engineering context:</strong> built from my time at Mercedes-Benz R&amp;D, where bench and hardware-in-the-loop (HIL) test-rig availability directly paced integration work.</li>
           </ul>
         </div>
 
@@ -388,25 +348,24 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
         <div class="cs-toc">
           <div class="cs-toc-label">On This Page</div>
           <a href="#problem">Problem & Users</a>
-          <a href="#decisions">Key Decisions</a>
-          <a href="#build">What I Built</a>
-          <a href="#next">Spec & Roadmap</a>
+          <a href="#how">How It Works</a>
+          <a href="#decisions">PM Thinking</a>
+          <a href="#next">What’s Next</a>
         </div>
         <div class="cs-meta-box">
-          <div class="cs-meta-row"><div class="cs-meta-label">Type</div><div class="cs-meta-val">Data Platform Case Study</div></div>
-          <div class="cs-meta-row"><div class="cs-meta-label">Team</div><div class="cs-meta-val">4 people · Johns Hopkins · Spring 2026</div></div>
-          <div class="cs-meta-row"><div class="cs-meta-label">My Role</div><div class="cs-meta-val">Infrastructure, API, product spec</div></div>
-          <div class="cs-meta-row"><div class="cs-meta-label">Countries</div><div class="cs-meta-val">US · Brazil · India · Philippines · Nigeria</div></div>
-          <div class="cs-meta-row"><div class="cs-meta-label">Sources</div><div class="cs-meta-val">Open-Meteo · World Bank · EIA · WFP</div></div>
-          <div class="cs-meta-row"><div class="cs-meta-label">Stack</div><div class="cs-meta-val">Python · Flask · PostgreSQL · Docker</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Type</div><div class="cs-meta-val">Program Management Case Study</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Scope</div><div class="cs-meta-val">24 months · 12 projects · 8 labs</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Built</div><div class="cs-meta-val">Solo · September 2026</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Stack</div><div class="cs-meta-val">HTML · JavaScript · no libraries</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Data</div><div class="cs-meta-val">Fully synthetic</div></div>
         </div>
         <div class="cs-nav-prev-next">
-          <a href="labops.html" class="cs-pn-link">
+          <a href="campus-atlas.html" class="cs-pn-link">
             <span>←</span>
-            <div><div class="cs-pn-dir">← Previous</div>LabOps Intelligence</div>
+            <div><div class="cs-pn-dir">← Previous</div>Campus Atlas</div>
           </a>
-          <a href="lead-routing.html" class="cs-pn-link">
-            <div><div class="cs-pn-dir">Next →</div>Lead Routing Copilot</div>
+          <a href="cross-continental-pipeline.html" class="cs-pn-link">
+            <div><div class="cs-pn-dir">Next →</div>Data Pipeline</div>
             <span>→</span>
           </a>
         </div>
@@ -422,14 +381,14 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
       <span class="cs-bc-sep">·</span>
       <a href="index.html#casestudies" class="cs-bc-link">All Work</a>
       <span class="cs-bc-sep">·</span>
-      <span style="font-family:var(--M);font-size:.51rem;color:var(--green)">Data Pipeline</span>
+      <span style="font-family:var(--M);font-size:.51rem;color:var(--green)">LabOps Intelligence</span>
     </div>
-    <div class="cs-bc-right"><a href="labops.html" class="cs-bc-link">← LabOps Intelligence</a><a href="lead-routing.html" class="cs-bc-link">Lead Routing Copilot →</a></div>
+    <div class="cs-bc-right"><a href="campus-atlas.html" class="cs-bc-link">← Campus Atlas</a><a href="cross-continental-pipeline.html" class="cs-bc-link">Data Pipeline →</a></div>
   </div>
 </div>
 
 <footer>
-  <span class="fl">© 2026 Devothama GN · Product &amp; Technical Program Manager · Data Pipeline</span>
+  <span class="fl">© 2026 Devothama GN · Product &amp; Technical Program Manager · LabOps Intelligence</span>
   <div class="fr">
     <a href="index.html">Home</a>
     <a href="index.html#casestudies">All Work</a>
