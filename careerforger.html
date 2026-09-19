@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Cross-Continental Eco-Economic Data Pipeline — Case Study · Devothama GN</title>
-<meta name="description" content="One analysis-ready dataset of weather, food prices, energy and economic data for 5 countries, served through a REST API and refreshed weekly. Case study by Devothama GN.">
+<title>CareerForger — Human-Approved Job Application System · Devothama GN</title>
+<meta name="description" content="A local-first job application system: evidence-backed resume tailoring, automatic checks, packaging and guarded autofill, with a human reviewing and submitting every application. Built in public by Devothama GN.">
 <meta name="author" content="Devothama Gundugurki Narasimhamurthy">
-<meta property="og:title" content="Cross-Continental Eco-Economic Data Pipeline — Case Study">
-<meta property="og:description" content="One analysis-ready dataset of weather, food prices, energy and economic data for 5 countries, served through a REST API and refreshed weekly. Case study by Devothama GN.">
+<meta property="og:title" content="CareerForger — Human-Approved Job Application System">
+<meta property="og:description" content="A local-first job application system: evidence-backed resume tailoring, automatic checks, packaging and guarded autofill, with a human reviewing and submitting every application. Built in public by Devothama GN.">
 <meta property="og:image" content="https://devothamagn.netlify.app/photo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
   --void:#070706;--carbon:#0e0e0d;--panel:#141412;--surface:#1a1a18;
   --chalk:#eeeadf;--paper:#c4bfb4;--smoke:#787470;--ash:#6b6860;
   --amber:#e8922a;--amber2:#f4ae55;--amber3:rgba(232,146,42,.11);
-  --red:#d93030;--green:#4caf7d;--green2:rgba(76,175,125,.12);
+  --red:#d93030;--green:#4fc1c9;--green2:rgba(79,193,201,.12);
   --line:rgba(232,146,42,.13);--line2:rgba(232,146,42,.28);
   --H:'Bebas Neue',sans-serif;--P:'Inter',system-ui,sans-serif;--M:'JetBrains Mono',monospace;
 }
@@ -61,7 +61,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .cs-hero{min-height:70vh;display:flex;align-items:flex-end;padding-bottom:4rem;
   position:relative;overflow:hidden;background:var(--carbon)}
 .cs-hero-grid{position:absolute;inset:0;
-  background-image:linear-gradient(rgba(76,175,125,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(76,175,125,.06) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(79,193,201,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(79,193,201,.06) 1px,transparent 1px);
   background-size:55px 55px;mask-image:radial-gradient(ellipse 90% 80% at 20% 70%,black 0%,transparent 80%);opacity:.8}
 .cs-hero-ledge{position:absolute;left:0;top:0;bottom:0;width:3px;
   background:linear-gradient(to bottom,transparent,var(--green),transparent)}
@@ -72,7 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .cs-hero-summary{font-family:var(--P);font-size:1.12rem;font-weight:300;font-style:italic;
   color:var(--paper);line-height:1.8;max-width:680px;margin-bottom:2rem;opacity:0;animation:rise .85s .4s forwards}
 .cs-hero-tags{display:flex;flex-wrap:wrap;gap:.4rem;opacity:0;animation:rise .7s .55s forwards}
-.cs-hero-tag{font-family:var(--M);font-size:.49rem;color:var(--green);border:1px solid rgba(76,175,125,.4);
+.cs-hero-tag{font-family:var(--M);font-size:.49rem;color:var(--green);border:1px solid rgba(79,193,201,.4);
   padding:.2rem .6rem;letter-spacing:.1em;text-transform:uppercase}
 .cs-hero-links{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem;opacity:0;animation:rise .7s .7s forwards}
 
@@ -103,7 +103,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
   padding:.25rem 0 .25rem 1.2rem;position:relative;font-weight:300}
 .cs-section ul li::before{content:'▸';position:absolute;left:0;color:var(--green);font-size:.7em;top:.38rem}
 .cs-section ul li strong{color:var(--chalk);font-weight:500}
-.hl-box{background:var(--green2);border:1px solid rgba(76,175,125,.3);border-left:3px solid var(--green);
+.hl-box{background:var(--green2);border:1px solid rgba(79,193,201,.3);border-left:3px solid var(--green);
   padding:1.4rem 1.6rem;margin:1.5rem 0}
 .hl-box p{margin:0;color:var(--paper);font-style:italic}
 .hl-box .hl-label{font-family:var(--M);font-size:.46rem;color:var(--green);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
@@ -130,11 +130,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .arch-layer-name{font-size:.5rem;color:var(--ash);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
 .arch-layer-items{display:flex;flex-wrap:wrap;gap:.5rem}
 .arch-item{background:var(--panel);border:1px solid var(--line2);padding:.4rem .8rem;font-size:.58rem;color:var(--chalk);letter-spacing:.04em}
-.arch-item.green{border-color:rgba(76,175,125,.5);color:var(--green)}
+.arch-item.green{border-color:rgba(79,193,201,.5);color:var(--green)}
 .arch-item.amber{border-color:var(--amber2);color:var(--amber2)}
 
 .metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0}
-.metric-box{background:var(--panel);border:1px solid rgba(76,175,125,.3);padding:1.2rem;text-align:center}
+.metric-box{background:var(--panel);border:1px solid rgba(79,193,201,.3);padding:1.2rem;text-align:center}
 .metric-n{font-family:var(--H);font-size:2.8rem;color:var(--green);line-height:1}
 .metric-l{font-family:var(--M);font-size:.48rem;color:var(--paper);letter-spacing:.09em;text-transform:uppercase;margin-top:.2rem}
 
@@ -241,24 +241,21 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
   <div class="cs-hero-grid" aria-hidden="true"></div>
   <div class="cs-hero-ledge" aria-hidden="true"></div>
   <div class="cs-hero-inner">
-    <div class="cs-hero-label">Data &amp; Analytics · Case Study · 05 / 06</div>
-    <h1 class="cs-hero-title">Cross-Continental<br>Eco-Economic<br>Data Pipeline</h1>
-    <p class="cs-hero-summary">One analysis-ready dataset combining weather, food prices, energy and economic data for 5 countries, so an analyst can ask a cross-country question without doing the joins by hand.</p>
+    <div class="cs-hero-label">Flagship Build · AI Systems · Case Study · 01 / 06</div>
+    <h1 class="cs-hero-title">CareerForger</h1>
+    <p class="cs-hero-summary">A job-application system I built and use myself. It turns a job description into a tailored resume and a ready-to-review application, where every claim traces to real evidence, and it stops before Submit so I make the final call.</p>
     <div class="cs-hero-tags">
       <span class="cs-hero-tag">Python</span>
-      <span class="cs-hero-tag">PostgreSQL</span>
-      <span class="cs-hero-tag">Flask API</span>
-      <span class="cs-hero-tag">Docker</span>
-      <span class="cs-hero-tag">Cron</span>
-      <span class="cs-hero-tag">5 Countries</span>
-      <span class="cs-hero-tag">4 Sources</span>
+      <span class="cs-hero-tag">SQLite</span>
+      <span class="cs-hero-tag">Chrome Extension</span>
+      <span class="cs-hero-tag">Evidence-Backed AI</span>
+      <span class="cs-hero-tag">Human Review</span>
+      <span class="cs-hero-tag">Build in Public</span>
     </div>
-    <div class="role-box">
-      <div class="rb-l">Team &amp; My Role</div>
-      <p>Built with a 4-person team for Data Engineering Principles &amp; Practice at Johns Hopkins (Spring 2026). <strong>I built the infrastructure</strong> (Docker setup, scheduled refresh, Flask API) <strong>and wrote the product spec</strong>.</p>
-    </div>
+    
     <div class="cs-hero-links">
-      <a href="https://github.com/devothamgn321/cross-continental-eco-economic-data-pipeline" target="_blank" rel="noopener noreferrer" class="btn bA">GitHub ↗</a>
+      <a href="https://github.com/devothamgn321/CareerForger" target="_blank" rel="noopener noreferrer" class="btn bA">GitHub ↗</a>
+      <a href="https://github.com/devothamgn321/CareerForger/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer" class="btn bO">Architecture Report ↗</a>
       <a href="index.html#casestudies" class="btn bO">← All Work</a>
     </div>
   </div>
@@ -272,115 +269,79 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
       <div class="cs-main">
         <div class="cs-section" id="problem">
           <div class="TR"><div class="TL"></div><div class="TT">The Problem</div></div>
-          <h2>The Data Exists.<br>It Doesn’t Line Up.</h2>
+          <h2>Applying Well<br>Doesn’t Scale.</h2>
 
-          <p>Weather, food prices, energy and economic data are all public. But they come from different sources in different shapes: some monthly, some yearly, some keyed by country name, some by code. An analyst who wants to ask <em>"did a dry year line up with higher rice prices and slower growth?"</em> spends most of their time cleaning and joining files before they can answer it.</p>
+          <p>A serious job search means hundreds of applications. Each one needs a resume tuned to the role, answers that fit the job, and the same identity, education and eligibility fields typed again and again.</p>
+          <p>The shortcuts both fail. Mass-apply bots send generic or made-up content under your name. Doing it by hand in chat tools means every application starts from zero, and small errors creep in: a wrong sponsorship answer, a claim that isn't quite true, the wrong resume attached. <strong>I wanted speed without giving up truth or control.</strong></p>
           <div class="hl-box">
-            <div class="hl-label">Product Goal</div>
-            <p>One analysis-ready table with one row per country per month, served through an API and refreshed on its own. The analyst starts at the question, not the joins.</p>
+            <div class="hl-label">The Rule the Whole System Follows</div>
+            <p>Software handles everything repeatable: state, screening, routing, checks, packaging, filling. The AI model only writes where writing is actually needed. Every resume claim must trace back to real evidence. The human reviews everything and is the only one who clicks Submit.</p>
           </div>
           <h3>Who It's For</h3>
           <ul>
-            <li><strong>Commodity risk analyst:</strong> wants to predict food-price swings, and currently combines World Bank, food-price and weather CSVs by hand.</li>
-            <li><strong>International policy adviser:</strong> wants to compare climate and economic trends across countries to decide where aid goes.</li>
-            <li><strong>Agriculture business PM:</strong> wants cross-continental trends for sourcing decisions without running data pipelines themselves.</li>
+            <li><strong>Me, first:</strong> I use it for my own US job search across PM, TPM, Product Ops and related roles.</li>
+            <li><strong>Engineers and PMs</strong> who would rather run and inspect their own tool than pay a black-box service to apply on their behalf.</li>
           </ul>
         </div>
         <div class="sep"></div>
 
-        <div class="cs-section" id="decisions">
-          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">Key Decisions</div></div>
-          <h2>Choices That<br>Shaped the Data.</h2>
+        <div class="cs-section" id="how">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">How It Works</div></div>
+          <h2>Job Description<br>→ Reviewed Package.</h2>
 
           <div class="dt-wrap"><table class="dt">
-            <tr><th>Decision</th><th>Why</th></tr>
-            <tr><td>Country code + month as the key</td><td>Different sources name countries differently. The ISO3 country code plus year-month gives every source one join key and one time scale.</td></tr>
-            <tr><td>Keep gaps visible</td><td>Outer joins keep every record. Missing coverage (for example, no US food-price data) stays as a blank, so a gap in the source never looks like a processing error.</td></tr>
-            <tr><td>Spread yearly data across months</td><td>Energy and economic data are yearly. Spreading them evenly across months lets them sit next to monthly weather and food data without inventing seasonal patterns.</td></tr>
-            <tr><td>5 countries, 2022 onward</td><td>US and Brazil give strong economic and energy coverage; India, the Philippines and Nigeria give food-price coverage and different climate exposure. Starting in 2022 keeps the overlap useful.</td></tr>
-            <tr><td>Weekly refresh, not real-time</td><td>The sources update slowly. A weekly scheduled job is cheaper and simpler, and plenty for this kind of analysis.</td></tr>
+            <tr><th>Stage</th><th>What happens</th></tr>
+            <tr><td>Discover</td><td>Scouts public job boards (Greenhouse, Lever, Ashby) with freshness rules, or takes a pasted job description</td></tr>
+            <tr><td>Normalize &amp; screen</td><td>Cleans the posting and checks work-authorization fit before any effort is spent</td></tr>
+            <tr><td>Route</td><td>Picks one of six resume families (PM, TPM, and others) using simple text matching</td></tr>
+            <tr><td>Retrieve evidence</td><td>Pulls matching proof points from a curated Evidence Pack and lists the gaps</td></tr>
+            <tr><td>Tailor</td><td>Writes a file-based "ticket" that any AI model can complete; no single provider is locked in</td></tr>
+            <tr><td>Check</td><td>Builds the resume PDF and runs automatic checks for page fit, format, keywords and unsupported claims</td></tr>
+            <tr><td>Package</td><td>Bundles the approved resume, answers and profile data into one package, marked not-approved until I sign off</td></tr>
+            <tr><td>Autofill</td><td>A Chrome extension fills the application form from that package and stops before Submit</td></tr>
+            <tr><td>Human gate</td><td>I review every field and submit myself; outcomes feed back into the ledger</td></tr>
           </table></div>
         </div>
         <div class="sep"></div>
 
-        <div class="cs-section" id="build">
-          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">What I Built</div></div>
-          <h2>Infrastructure<br>and API.</h2>
+        <div class="cs-section" id="decisions">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">PM Thinking</div></div>
+          <h2>Decisions and<br>Trade-offs.</h2>
 
-          <div class="arch-diagram">
-            <div class="arch-label">Pipeline Architecture</div>
-            <div class="arch-layer">
-              <div class="arch-layer-name">Sources · 4 public datasets</div>
-              <div class="arch-layer-items">
-                <span class="arch-item green">Open-Meteo (weather)</span>
-                <span class="arch-item green">World Bank (GDP, inflation, population)</span>
-                <span class="arch-item green">U.S. EIA (energy)</span>
-                <span class="arch-item green">WFP (food prices)</span>
-              </div>
-            </div>
-            <div class="arch-layer">
-              <div class="arch-layer-name">Processing · Python</div>
-              <div class="arch-layer-items">
-                <span class="arch-item">One loader per source</span>
-                <span class="arch-item">master.py orchestrator</span>
-                <span class="arch-item">Full history backfill</span>
-                <span class="arch-item">Weekly incremental update</span>
-                <span class="arch-item">Deduplication + schema checks</span>
-              </div>
-            </div>
-            <div class="arch-layer">
-              <div class="arch-layer-name">Storage · PostgreSQL 15</div>
-              <div class="arch-layer-items">
-                <span class="arch-item amber">master_data (one row per country-month)</span>
-                <span class="arch-item">countries · weather · food_prices · energy · world_bank</span>
-              </div>
-            </div>
-            <div class="arch-layer">
-              <div class="arch-layer-name">API · Flask · 7 endpoints</div>
-              <div class="arch-layer-items">
-                <span class="arch-item">/api/get_all</span>
-                <span class="arch-item">/api/get_weather</span>
-                <span class="arch-item">/api/get_food_prices</span>
-                <span class="arch-item">/api/get_energy</span>
-                <span class="arch-item">/api/get_world_bank</span>
-                <span class="arch-item">/api/get_countries</span>
-                <span class="arch-item">/api/health</span>
-              </div>
-            </div>
-            <div class="arch-layer">
-              <div class="arch-layer-name">Infrastructure</div>
-              <div class="arch-layer-items">
-                <span class="arch-item green">Docker Compose (database, app, notebook)</span>
-                <span class="arch-item">Weekly cron job</span>
-                <span class="arch-item">API smoke tests</span>
-                <span class="arch-item">Environment-based config</span>
-              </div>
-            </div>
-          </div>
+          <h3>Deterministic first, AI second</h3>
+          <p>Anything that must be right every time (state, screening, checks, filling) is plain code that behaves the same way on every run. The model is used only for writing, through a file ticket that I can read before anything is used. <em>If the AI provider changes, nothing breaks.</em></p>
+          <h3>Simple over fashionable</h3>
           <ul>
-            <li><strong>One command to run:</strong> <code>docker compose up</code> starts the database, loads the full history on first start, then serves the API.</li>
-            <li><strong>Runs on its own:</strong> a cron job refreshes the data every Sunday without anyone touching it.</li>
-            <li><strong>Checked:</strong> a smoke-test script hits every endpoint after a build.</li>
+            <li><strong>SQLite, not a cloud database:</strong> one person, one machine, full audit history, no personal data on a server.</li>
+            <li><strong>Keyword matching, not embeddings:</strong> the evidence set is small and hand-curated, so simple matching is transparent and good enough. Embeddings only come in if a test set proves they help.</li>
+            <li><strong>A Chrome extension, not screen-driving automation:</strong> it works inside the real form, keeps my login session, and is built so it cannot submit.</li>
           </ul>
+          <div class="hl-amber">
+            <div class="hl-label">Learning From Real Failures</div>
+            <p>Live application forms broke the autofill in specific ways: React clearing uploaded files, a portal's resume parser overwriting fields, a "No" option matching inside "Latino". Each failure became a named pattern with a guard and a regression test, published in the repo.</p>
+          </div>
+          <h3>What it deliberately won't do</h3>
+          <p>Submit applications, accept legal terms, bypass CAPTCHAs, scrape logged-in sites, guess unknown answers, or invent experience. Leaving those manual is a safety feature, not a missing one.</p>
         </div>
         <div class="sep"></div>
 
-        <div class="cs-section" id="next">
-          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">Product Spec & Roadmap</div></div>
-          <h2>From Pipeline<br>to Product.</h2>
+        <div class="cs-section" id="status">
+          <div class="TR" style="margin-top:3rem"><div class="TL"></div><div class="TT">Status & Proof</div></div>
+          <h2>Built. Pending.<br>Measured By.</h2>
 
-          <p>I wrote a product spec on top of the pipeline: user types, value proposition, success targets and a three-phase roadmap.</p>
           <div class="metric-row">
-            <div class="metric-box"><div class="metric-n">&lt;3m</div><div class="metric-l">Target weekly refresh time</div></div>
-            <div class="metric-box"><div class="metric-n">95%</div><div class="metric-l">Target complete rows</div></div>
-            <div class="metric-box"><div class="metric-n">&lt;150ms</div><div class="metric-l">Target API response (p95)</div></div>
+            <div class="metric-box"><div class="metric-n">6</div><div class="metric-l">Resume families routed</div></div>
+            <div class="metric-box"><div class="metric-n">3</div><div class="metric-l">Job-board sources scouted</div></div>
+            <div class="metric-box"><div class="metric-n">18</div><div class="metric-l">Regression tests</div></div>
           </div>
-          <p>These are targets set in the spec, not measured results.</p>
           <ul>
-            <li><strong>Phase 1 (built):</strong> PostgreSQL warehouse, Docker, REST API, scheduled refresh</li>
-            <li><strong>Phase 2 (designed, not built):</strong> a plain-English question box. An LLM writes a <em>read-only</em> SQL query, runs it, and summarises the answer with a chart. Write commands are blocked.</li>
-            <li><strong>Phase 3 (planned):</strong> models that predict food-price swings</li>
+            <li><strong>Built:</strong> the state ledger, screening, routing, evidence retrieval, AI tickets, PDF checks, application packages, job-board scouting, an approval dashboard, and the autofill extension (v0.6.12) with guarded mappings for Greenhouse, Ashby and Lever.</li>
+            <li><strong>Not built yet:</strong> the bridge that links a live job page back to its application folder, and Gmail/Notion outcome sync.</li>
+            <li><strong>Rejected on purpose:</strong> automatic submission.</li>
           </ul>
+          <h3>How I judge it</h3>
+          <p>Zero unsupported resume claims. Zero wrong work-authorization or sponsorship answers. Zero automated submissions. Then: how many applications pass checks without manual repair, how many fields fill correctly, and how much time it takes to go from a job description to a review-ready package.</p>
+          <p>The public repo is sanitized. It contains the code, architecture report and synthetic templates, and none of my personal data.</p>
         </div>
 
       </div>
@@ -389,25 +350,24 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
         <div class="cs-toc">
           <div class="cs-toc-label">On This Page</div>
           <a href="#problem">Problem & Users</a>
-          <a href="#decisions">Key Decisions</a>
-          <a href="#build">What I Built</a>
-          <a href="#next">Spec & Roadmap</a>
+          <a href="#how">How It Works</a>
+          <a href="#decisions">PM Thinking</a>
+          <a href="#status">Status & Proof</a>
         </div>
         <div class="cs-meta-box">
-          <div class="cs-meta-row"><div class="cs-meta-label">Type</div><div class="cs-meta-val">Data Platform Case Study</div></div>
-          <div class="cs-meta-row"><div class="cs-meta-label">Team</div><div class="cs-meta-val">4 people · Johns Hopkins · Spring 2026</div></div>
-          <div class="cs-meta-row"><div class="cs-meta-label">My Role</div><div class="cs-meta-val">Infrastructure, API, product spec</div></div>
-          <div class="cs-meta-row"><div class="cs-meta-label">Countries</div><div class="cs-meta-val">US · Brazil · India · Philippines · Nigeria</div></div>
-          <div class="cs-meta-row"><div class="cs-meta-label">Sources</div><div class="cs-meta-val">Open-Meteo · World Bank · EIA · WFP</div></div>
-          <div class="cs-meta-row"><div class="cs-meta-label">Stack</div><div class="cs-meta-val">Python · Flask · PostgreSQL · Docker</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Type</div><div class="cs-meta-val">AI Systems / Product Build</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Built</div><div class="cs-meta-val">Solo · 2026 · in active use</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Stack</div><div class="cs-meta-val">Python · SQLite · LaTeX · Chrome MV3 · vanilla JS</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Boundary</div><div class="cs-meta-val">Prepares and pre-fills; never submits</div></div>
+          <div class="cs-meta-row"><div class="cs-meta-label">Data</div><div class="cs-meta-val">Local only; public repo is sanitized</div></div>
         </div>
         <div class="cs-nav-prev-next">
-          <a href="labops.html" class="cs-pn-link">
+          <a href="index.html#casestudies" class="cs-pn-link">
             <span>←</span>
-            <div><div class="cs-pn-dir">← Previous</div>LabOps Intelligence</div>
+            <div><div class="cs-pn-dir">All Work</div>Back to Portfolio</div>
           </a>
-          <a href="lead-routing.html" class="cs-pn-link">
-            <div><div class="cs-pn-dir">Next →</div>Lead Routing Copilot</div>
+          <a href="trustshield.html" class="cs-pn-link">
+            <div><div class="cs-pn-dir">Next →</div>TrustShield AI</div>
             <span>→</span>
           </a>
         </div>
@@ -423,14 +383,14 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
       <span class="cs-bc-sep">·</span>
       <a href="index.html#casestudies" class="cs-bc-link">All Work</a>
       <span class="cs-bc-sep">·</span>
-      <span style="font-family:var(--M);font-size:.51rem;color:var(--green)">Data Pipeline</span>
+      <span style="font-family:var(--M);font-size:.51rem;color:var(--green)">CareerForger</span>
     </div>
-    <div class="cs-bc-right"><a href="labops.html" class="cs-bc-link">← LabOps Intelligence</a><a href="lead-routing.html" class="cs-bc-link">Lead Routing Copilot →</a></div>
+    <div class="cs-bc-right"><a href="trustshield.html" class="cs-bc-link">TrustShield AI →</a></div>
   </div>
 </div>
 
 <footer>
-  <span class="fl">© 2026 Devothama GN · Product &amp; Technical Program Manager · Data Pipeline</span>
+  <span class="fl">© 2026 Devothama GN · Product &amp; Technical Program Manager · CareerForger</span>
   <div class="fr">
     <a href="index.html">Home</a>
     <a href="index.html#casestudies">All Work</a>

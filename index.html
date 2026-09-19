@@ -23,7 +23,7 @@
   --void:#070706;--carbon:#0e0e0d;--panel:#141412;--surface:#1a1a18;
   --chalk:#eeeadf;--paper:#c4bfb4;--smoke:#787470;--ash:#6b6860;
   --amber:#e8922a;--amber2:#f4ae55;--amber3:rgba(232,146,42,.11);
-  --red:#d93030;--green:#4caf7d;--blue:#5b9bd5;--violet:#a585e0;
+  --red:#d93030;--green:#4caf7d;--blue:#5b9bd5;--violet:#a585e0;--cyan:#4fc1c9;
   --line:rgba(232,146,42,.13);--line2:rgba(232,146,42,.28);
   --H:'Bebas Neue',sans-serif;--P:'Inter',system-ui,sans-serif;--M:'JetBrains Mono',monospace;
 }
@@ -160,6 +160,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .cs-cta{font-family:var(--M);font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
   padding:.65rem 1.2rem;display:inline-block;margin-top:auto;align-self:flex-start;transition:all .2s}
 
+
+
+/* ── NOW BUILDING ── */
+.h-now{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem .8rem;margin-top:1.4rem;max-width:600px;text-decoration:none;
+  border:1px solid rgba(79,193,201,.35);border-left:3px solid var(--cyan);background:rgba(79,193,201,.06);padding:.75rem 1rem;
+  opacity:0;animation:rise .85s 1s forwards;transition:background .2s,border-color .2s}
+.h-now:hover{background:rgba(79,193,201,.12);border-color:var(--cyan)}
+.h-now-pip{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:pip 2.4s ease-in-out infinite}
+.h-now-l{font-family:var(--M);font-size:.5rem;color:var(--cyan);letter-spacing:.14em;text-transform:uppercase}
+.h-now-t{font-family:var(--P);font-size:.9rem;font-weight:300;color:var(--paper);flex:1 1 260px}
+.h-now-t b{color:var(--chalk);font-weight:500}
+.h-now-a{color:var(--cyan);font-family:var(--M)}
+@media(max-width:768px){.h-now{opacity:1;animation:none}.h-now-t{font-size:.84rem}}
 
 /* ── LANES ── */
 .lanes-intro{font-family:var(--P);font-size:1rem;font-weight:300;color:var(--paper);line-height:1.7;max-width:640px;margin-top:1.2rem}
@@ -512,6 +525,13 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
           <a href="https://www.linkedin.com/in/devothamagn/" target="_blank" rel="noopener noreferrer" class="btn bO">LinkedIn ↗</a>
         </div>
 
+        <a href="careerforger.html" class="h-now">
+          <span class="h-now-pip"></span>
+          <span class="h-now-l">Now building in public</span>
+          <span class="h-now-t"><b>CareerForger</b> · a human-approved AI job-application system I use every day</span>
+          <span class="h-now-a">→</span>
+        </a>
+
       </div>
 
       <!-- Right: photo -->
@@ -527,6 +547,7 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
 <!-- FILM STRIP -->
 <div class="film" aria-hidden="true">
   <div class="film-inner">
+    <span class="ff on">CareerForger</span><span class="ff">Built in Public</span>
     <span class="ff on">TrustShield AI</span><span class="ff">AI Trust &amp; Safety</span>
     <span class="ff on">Campus Atlas</span><span class="ff">AI Testing · Guardrails</span>
     <span class="ff on">LabOps Intelligence</span><span class="ff">Portfolio Planning</span>
@@ -534,6 +555,7 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
     <span class="ff on">Lead Routing Copilot</span><span class="ff">Sales Ops · Human Review</span>
     <span class="ff">Ex-Mercedes-Benz R&amp;D</span><span class="ff on">TEDxJHU Speaker</span>
     <span class="ff">Johns Hopkins MSEM</span><span class="ff on">Open to US Opportunities</span>
+    <span class="ff on">CareerForger</span><span class="ff">Built in Public</span>
     <span class="ff on">TrustShield AI</span><span class="ff">AI Trust &amp; Safety</span>
     <span class="ff on">Campus Atlas</span><span class="ff">AI Testing · Guardrails</span>
     <span class="ff on">LabOps Intelligence</span><span class="ff">Portfolio Planning</span>
@@ -553,10 +575,46 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
     <p class="lanes-intro">Each lane leads with the project that best proves it. Every case study covers the problem, the decisions, and the work, and links to GitHub for the full build and docs.</p>
 
 
-    <!-- LANE 01 · AI PRODUCT -->
-    <div class="lane" id="lane-aipm">
+    <!-- LANE 01 · FLAGSHIP BUILD -->
+    <div class="lane" id="lane-build">
       <div class="lane-head">
         <span class="lane-n">01</span>
+        <span class="lane-name">Flagship Build · AI Systems</span>
+        <span class="lane-roles">AI PM · TPM · Product Ops · Built in Public</span>
+      </div>
+      <div class="cs-card wide">
+        <div class="cs-accent" style="background:var(--cyan)"></div>
+        <div class="cs-body">
+          <div class="cs-main-col">
+            <div class="cs-label" style="color:var(--cyan)">Flagship · In Daily Use</div>
+            <div class="cs-title">CareerForger</div>
+            <p class="cs-desc">A job-application system I built and run for my own search. It turns a job description into a tailored resume and a ready-to-review application. Every resume claim must trace to real evidence, AI only writes where writing is needed, and a Chrome extension fills the form but stops before Submit. I make the final call.</p>
+            <div class="cs-tags"><span class="cs-tag">Python</span><span class="cs-tag">SQLite</span><span class="cs-tag">Chrome Extension</span><span class="cs-tag">Evidence-Backed AI</span><span class="cs-tag">Human Review</span></div>
+            <div class="cs-ctas">
+              <a href="careerforger.html" class="cs-cta" style="background:var(--cyan);color:var(--void)">Case Study →</a>
+              <a href="https://github.com/devothamgn321/CareerForger" target="_blank" rel="noopener noreferrer" class="cs-cta cs-cta-o">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="cs-side-col">
+            <div class="cs-stat-row">
+              <div class="cs-stat"><b>6</b><span>resume families</span></div>
+              <div class="cs-stat"><b>3</b><span>job boards scouted</span></div>
+              <div class="cs-stat"><b>18</b><span>regression tests</span></div>
+            </div>
+            <ul class="cs-proof">
+              <li>Job description → screen → route → evidence → AI draft → automatic checks → package → autofill → my review</li>
+              <li>Automatic checks for page fit, format, keywords and unsupported claims before anything is packaged</li>
+              <li>Built so it cannot submit. Real form failures became named, tested guards.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANE 02 · AI PRODUCT -->
+    <div class="lane" id="lane-aipm">
+      <div class="lane-head">
+        <span class="lane-n">02</span>
         <span class="lane-name">AI Product Management</span>
         <span class="lane-roles">AI PM · Product Manager · Trust &amp; Safety</span>
       </div>
@@ -600,10 +658,10 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
       </div>
     </div>
 
-    <!-- LANE 02 · TPM -->
+    <!-- LANE 03 · TPM -->
     <div class="lane" id="lane-tpm">
       <div class="lane-head">
-        <span class="lane-n">02</span>
+        <span class="lane-n">03</span>
         <span class="lane-name">Technical Program Management</span>
         <span class="lane-roles">TPM · Program Manager · Engineering Ops</span>
       </div>
@@ -637,10 +695,10 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
       </div>
     </div>
 
-    <!-- LANE 03 · DATA -->
+    <!-- LANE 04 · DATA -->
     <div class="lane" id="lane-data">
       <div class="lane-head">
-        <span class="lane-n">03</span>
+        <span class="lane-n">04</span>
         <span class="lane-name">Data &amp; Analytics</span>
         <span class="lane-roles">Data Analyst · Data Engineering · Platform PM</span>
       </div>
@@ -673,10 +731,10 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
       </div>
     </div>
 
-    <!-- LANE 04 · OPS -->
+    <!-- LANE 05 · OPS -->
     <div class="lane" id="lane-ops">
       <div class="lane-head">
-        <span class="lane-n">04</span>
+        <span class="lane-n">05</span>
         <span class="lane-name">Business Systems &amp; Operations</span>
         <span class="lane-roles">RevOps · Sales Ops · Solutions · Product Ops</span>
       </div>
@@ -720,10 +778,10 @@ footer{background:var(--void);border-top:1px solid var(--line);padding:1.2rem 3r
       </div>
     </div>
 
-    <!-- LANE 05 · STRATEGY -->
+    <!-- LANE 06 · STRATEGY -->
     <div class="lane" id="lane-strategy">
       <div class="lane-head">
-        <span class="lane-n">05</span>
+        <span class="lane-n">06</span>
         <span class="lane-name">Strategy &amp; Discovery</span>
         <span class="lane-roles">Product Strategy · Consulting · Market Research</span>
       </div>
